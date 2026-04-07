@@ -1,13 +1,18 @@
 // Função para carregar componentes HTML de forma assíncrona
 async function loadComponent(elementId, filePath) {
     const placeholder = document.getElementById(elementId);
-    if (!placeholder) return;
+    if (!placeholder) {
+        console.error(`[CTG] Placeholder ${elementId} não encontrado`);
+        return;
+    }
 
     try {
+        console.log(`[CTG] Carregando ${filePath}...`);
         const response = await fetch(filePath);
         if (response.ok) {
             const html = await response.text();
             placeholder.innerHTML = html;
+            console.log(`[CTG] ${filePath} carregado com sucesso`);
         } else {
             console.error(`[CTG] Erro ao carregar ${filePath}: ${response.status} ${response.statusText}`);
             placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${filePath}</div>`;
@@ -32,8 +37,27 @@ async function loadComponent(elementId, filePath) {
 
 // Executa o carregamento quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", async () => {
-    await loadComponent("header-placeholder", "components/header.html");
-    await loadComponent("footer-placeholder", "components/footer.html");
+    console.log("[CTG] DOM carregado, iniciando componentes...");
+
+    // Carregar componentes imediatamente
+    try {
+        await loadComponent("header-placeholder", "components/header.html");
+        await loadComponent("footer-placeholder", "components/footer.html");
+        console.log("[CTG] Todos os componentes carregados com sucesso");
+
+        // Inicializar menu após carregamento
+        setTimeout(() => {
+            initializeMenu();
+        }, 100);
+
+    } catch (error) {
+        console.error("[CTG] Erro geral no carregamento de componentes:", error);
+    }
+});
+
+// Função separada para inicializar o menu
+function initializeMenu() {
+    console.log("[CTG] Inicializando funcionalidades do menu...");
 
     const menuToggle = document.querySelector(".menu-icon");
     const mobileMenu = document.querySelector(".nav-menu");
@@ -56,6 +80,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
+    // Efeito de "encolhimento" do header ao fazer scroll
+    window.addEventListener("scroll", () => {
+        const header = document.querySelector(".main-header");
+        if (header) {
+            if (window.scrollY > 60) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
+    });
+
+    // Reset menu on resize
     window.addEventListener("resize", () => {
         if (window.innerWidth > 991 && mobileMenu) {
             mobileMenu.classList.remove("open");
@@ -63,16 +100,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.querySelectorAll(".nav-menu li.open").forEach((item) => item.classList.remove("open"));
         }
     });
-});
 
-// Efeito de "encolhimento" do header ao fazer scroll
-window.addEventListener("scroll", () => {
-    const header = document.querySelector(".main-header");
-    if (header) {
-        if (window.scrollY > 60) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    }
-});
+    console.log("[CTG] Menu inicializado");
+}
