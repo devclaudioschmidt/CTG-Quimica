@@ -2,13 +2,14 @@
     <div class="container flex flex-between flex-align-center">
         <!-- Logo and Menu Icon -->
         <div class="flex flex-align-center gap-1">
-            <div class="menu-icon" style="cursor: pointer; padding: 5px;">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <button class="menu-icon" aria-label="Abrir menu" aria-expanded="false" type="button">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
-            </div>
+            </button>
             <a href="index.html" class="nav-brand">
                 <img src="assets/img/logo-ctgquimica.webp" alt="CTG Química Logo" class="main-logo">
             </a>
@@ -16,11 +17,43 @@
 
         <!-- Navigation Links -->
         <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Página Inicial</a></li>
-                <li><a href="empresa.html">Sobre</a></li>
-                <li><a href="#">Segmentos</a></li>
-                <li><a href="#">Contato</a></li>
+            <ul class="nav-menu" data-menu>
+                <li class="has-submenu">
+                    <a href="index.html" class="active">Página Inicial</a>
+                    <ul class="submenu">
+                        <li><a href="index.html#servicos">Serviços</a></li>
+                        <li><a href="index.html#novidades">Novidades</a></li>
+                        <li><a href="index.html#cases">Cases</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="empresa.html">Sobre</a>
+                    <ul class="submenu">
+                        <li><a href="empresa.html#nossa-historia">Nossa História</a></li>
+                        <li><a href="empresa.html#missao">Missão e Visão</a></li>
+                        <li><a href="empresa.html#equipe">Equipe</a></li>
+                        <li><a href="empresa.html#certificacoes">Certificações</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Segmentos</a>
+                    <ul class="submenu">
+                        <li><a href="#agroindustria">Agroindústria</a></li>
+                        <li><a href="#industria-quimica">Indústria Química</a></li>
+                        <li><a href="#construcao">Construção Civil</a></li>
+                        <li><a href="#saneamento">Saneamento</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Contato</a>
+                    <ul class="submenu">
+                        <li><a href="#orcamento">Orçamento</a></li>
+                        <li><a href="#suporte">Suporte Técnico</a></li>
+                        <li><a href="#localizacao">Localização</a></li>
+                        <li><a href="#trabalhe-conosco">Trabalhe Conosco</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 
@@ -28,11 +61,19 @@
         <div class="nav-utils">
             <div class="contact-info">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.8-3.9-8.7-8.7-8.7v2c3.7 0 6.7 3 6.7 6.7z"></path>
+                    <path
+                        d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.8-3.9-8.7-8.7-8.7v2c3.7 0 6.7 3 6.7 6.7z">
+                    </path>
                 </svg>
                 +55 (41) 99153-6821
             </div>
             <a href="#" class="btn btn-primary">Fale Conosco</a>
+            <a href="https://wa.me/5541991536821" target="_blank" rel="noopener noreferrer" class="btn btn-secondary whatsapp-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.667 10.667c-.163-.077-.969-.477-1.119-.532-.15-.055-.26-.077-.37.077-.109.154-.42.532-.514.641-.094.109-.188.123-.35.041-.163-.082-.689-.253-1.31-.808-.484-.434-.81-.971-.904-1.135-.094-.164-.01-.252.069-.33.071-.07.163-.188.244-.282.082-.094.109-.164.163-.273.055-.109.027-.205-.014-.282-.041-.078-.37-.89-.507-1.219-.133-.322-.269-.279-.37-.284-.094-.005-.205-.006-.316-.006-.109 0-.285.04-.435.188-.15.148-.574.559-.574 1.361 0 .802.588 1.577.671 1.686.082.109 1.162 1.774 2.82 2.487.395.171.702.273.94.35.395.136.754.117 1.039.071.317-.051.969-.396 1.106-.779.137-.383.137-.714.095-.78-.041-.066-.15-.109-.313-.186zM12 2C6.486 2 2 6.486 2 12c0 1.944.557 3.77 1.518 5.32L2 22l4.832-1.493A9.956 9.956 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2z"></path>
+                </svg>
+                WhatsApp
+            </a>
         </div>
 
     </div>

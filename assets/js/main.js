@@ -14,13 +14,13 @@ async function loadComponent(elementId, filePath) {
         }
     } catch (error) {
         console.error(`[CTG] Erro na requisição para ${filePath}:`, error);
-        
+
         // Alerta amigável para erro de CORS (comum ao abrir via file://)
         if (window.location.protocol === 'file:') {
             console.warn("%c[CTG Química] AVISO DE SEGURANÇA:", "color: orange; font-weight: bold; font-size: 14px;");
             console.warn("Navegadores bloqueiam o carregamento de componentes locais via 'file://'.");
             console.warn("Para ver o menu e o rodapé, por favor abra o projeto usando um servidor local (ex: Live Server no VS Code).");
-            
+
             placeholder.innerHTML = `
                 <div style="background: #fff3e0; color: #e65100; padding: 15px; border-radius: 8px; border: 1px solid #ffe0b2; margin: 10px; font-size: 14px; text-align: center;">
                     <b>Aviso:</b> O menu não pode ser carregado via <i>file://</i> por segurança do navegador.<br>
@@ -31,9 +31,38 @@ async function loadComponent(elementId, filePath) {
 }
 
 // Executa o carregamento quando o DOM estiver pronto
-document.addEventListener("DOMContentLoaded", () => {
-    loadComponent("header-placeholder", "components/header.html");
-    loadComponent("footer-placeholder", "components/footer.html");
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadComponent("header-placeholder", "components/header.html");
+    await loadComponent("footer-placeholder", "components/footer.html");
+
+    const menuToggle = document.querySelector(".menu-icon");
+    const mobileMenu = document.querySelector(".nav-menu");
+    const submenuLinks = document.querySelectorAll(".nav-menu li.has-submenu > a");
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+    }
+
+    submenuLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            if (window.innerWidth <= 991) {
+                event.preventDefault();
+                const parentItem = link.parentElement;
+                parentItem.classList.toggle("open");
+            }
+        });
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 991 && mobileMenu) {
+            mobileMenu.classList.remove("open");
+            menuToggle?.setAttribute("aria-expanded", "false");
+            document.querySelectorAll(".nav-menu li.open").forEach((item) => item.classList.remove("open"));
+        }
+    });
 });
 
 // Efeito de "encolhimento" do header ao fazer scroll

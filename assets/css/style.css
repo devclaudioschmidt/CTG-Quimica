@@ -123,6 +123,28 @@ body {
     box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
 }
 
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 22px;
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.25);
+    border-radius: 50px;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.whatsapp-btn svg {
+    flex-shrink: 0;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe57;
+    transform: translateY(-2px);
+}
+
 .btn-outline {
     background: transparent;
     border: 2px solid var(--primary-color);
@@ -192,13 +214,73 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 40px;
     flex-shrink: 1;
+    justify-content: center;
+}
+
+nav {
+    flex: 1;
+}
+
+.main-header .container {
+    position: relative;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 220px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    padding: 10px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 10;
+}
+
+.nav-menu li:hover>.submenu,
+.nav-menu li:focus-within>.submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--dark-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.submenu li a:hover {
+    color: var(--primary-color);
+    background: rgba(255, 122, 0, 0.08);
+}
+
+.submenu li+li {
+    margin-top: 0.1rem;
 }
 
 /* Hamburger: visível apenas em mobile */
 .menu-icon {
     display: none;
+    background: transparent;
+    border: none;
+    padding: 6px;
+    color: var(--dark-color);
+    cursor: pointer;
 }
 
 .nav-menu a {
@@ -208,7 +290,7 @@ body {
     font-size: 1.1rem;
     letter-spacing: 0.2px;
     position: relative;
-    padding-bottom: 4px;
+    padding: 0.55rem 0.85rem 0.35rem;
     transition: color 0.3s ease;
 }
 
@@ -238,7 +320,9 @@ body {
 .nav-utils {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
+    margin-left: auto;
+    justify-content: flex-end;
 }
 
 .contact-info {
@@ -421,6 +505,103 @@ body {
 
     .category-strip {
         justify-content: center;
+    }
+
+    .main-header .container {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 24px;
+    }
+
+    .nav-utils {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    nav {
+        width: 100%;
+        order: 2;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    }
+
+    .nav-menu.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.85rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .nav-menu li.has-submenu>a {
+        padding-right: 2.25rem;
+    }
+
+    .nav-menu li.has-submenu>a::before {
+        right: 1rem;
+        top: 50%;
+    }
+
+    .nav-menu li.open>a::before {
+        transform: translateY(-50%) rotate(-135deg);
+    }
+
+    .submenu {
+        position: static;
+        top: auto;
+        left: auto;
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-menu li.open>.submenu {
+        max-height: 420px;
+    }
+
+    .submenu li a {
+        padding-left: 2rem;
+        background: rgba(248, 249, 250, 0.9);
+    }
+
+    .submenu li a:hover {
+        background: rgba(255, 122, 0, 0.08);
+    }
+
+    .menu-icon {
+        display: inline-flex;
     }
 }
 
