@@ -1,0 +1,819 @@
+/* 1. Reset e Variáveis */
+:root {
+    --primary-color: #ff7a00;
+    /* Laranja Vibrante */
+    --primary-dark: #e06500;
+    --secondary-color: #1a7a3f;
+    /* Verde Escuro */
+    --secondary-dark: #155c30;
+    /* Verde Muito Escuro */
+    --dark-color: #1a1a1a;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --white: #ffffff;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white);
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* 2. Utilitários de Layout */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.py-2 {
+    padding: 1rem 0;
+}
+
+.py-5 {
+    padding: 5rem 0;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 3. Componentes Base */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-green {
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* 4. Custom Header - Fixo no Topo */
+.main-header {
+    background: var(--white);
+    padding: 18px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: padding 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+/* Header encolhe ao fazer scroll */
+.main-header.scrolled {
+    padding: 8px 0;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.main-header.scrolled .main-logo {
+    height: 52px;
+}
+
+.main-logo {
+    height: 100px;
+    display: block;
+    width: auto;
+    transition: height 0.4s ease;
+}
+
+/* Compensa o espaço do header fixo no topo */
+body {
+    padding-top: 136px;
+    /* altura do header expandido (100px logo + 18px*2 padding) */
+}
+
+
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    flex-shrink: 1;
+}
+
+/* Hamburger: visível apenas em mobile */
+.menu-icon {
+    display: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* Linha animada que desliza da esquerda para a direita */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.35s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-utils {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-info {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 5. Hero Section (Design Polido - Background Focus) */
+.hero {
+    background-color: var(--light-gray);
+    background-image:
+        linear-gradient(to right, var(--light-gray) 30%, rgba(248, 249, 250, 0.4) 70%, rgba(248, 249, 250, 0) 100%),
+        url('../img/fundo-hero.avif');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding: 120px 0 140px 0;
+    position: relative;
+    z-index: 1;
+    min-height: 600px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.location-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: var(--dark-color);
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 40px;
+    max-width: 550px;
+}
+
+/* Foreground image styles and animations removed */
+
+/* Search Bar Polida */
+.hero-search {
+    background: #fff;
+    padding: 10px;
+    padding-left: 28px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    max-width: 540px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hero-search input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+/* Category Cards Overlay */
+.category-strip {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s var(--transition);
+    border: 1px solid transparent;
+}
+
+.cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color-soft);
+}
+
+.cat-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.cat-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.cat-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 1100px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-search {
+        width: 100%;
+    }
+
+    .category-strip {
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   6. FOOTER MODERNO
+   ============================================ */
+
+/* Faixa de Newsletter */
+.footer-newsletter-band {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+    padding: 56px 0;
+}
+
+.footer-newsletter-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-newsletter-text h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.footer-newsletter-text p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+}
+
+.newsletter-input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 60px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.newsletter-input-group:focus-within {
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-input-group input {
+    background: transparent;
+    border: none;
+    padding: 14px 24px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    min-width: 280px;
+}
+
+.newsletter-input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-input-group .btn-primary {
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 60px;
+    font-weight: 700;
+    margin: 5px;
+    padding: 10px 28px;
+    box-shadow: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.newsletter-input-group .btn-primary:hover {
+    background: var(--dark-color);
+    color: #fff;
+    transform: scale(1.04);
+    box-shadow: none;
+}
+
+/* Footer Principal */
+.footer-main {
+    background: #111827;
+    padding: 80px 0 60px 0;
+}
+
+/* Footer 2 colunas equilibradas */
+.footer-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Footer 3 colunas */
+.footer-grid-3col {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.footer-grid-3col>.footer-col,
+.footer-grid-2col>.footer-col,
+.footer-grid-2col>.footer-left,
+.footer-grid-2col>.footer-right {
+    min-width: 0;
+    width: 100%;
+}
+
+
+
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Links de segmentos em verde */
+.footer-links--green a::before {
+    color: var(--secondary-color);
+}
+
+.footer-links--green a:hover {
+    color: var(--secondary-color);
+}
+
+
+.footer-logo {
+    height: 65px;
+    width: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-tagline {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+/* Ícones de Redes Sociais */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 122, 0, 0.35);
+}
+
+.social-whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* Colunas do Footer */
+.footer-col-title {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Variante verde para título de coluna */
+.footer-col-title--green::after {
+    background: var(--secondary-color);
+}
+
+/* Links do footer com hover verde no segmentos */
+.footer-right-links .footer-col:last-child .footer-links a::before {
+    color: var(--secondary-color);
+}
+
+.footer-right-links .footer-col:last-child .footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s, gap 0.3s;
+}
+
+.footer-links a::before {
+    content: '→';
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.3s, transform 0.3s;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    gap: 10px;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Lista de Contato */
+.footer-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-contact-list a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact-list a:hover {
+    color: var(--primary-color);
+}
+
+/* Barra inferior */
+.footer-bottom {
+    background: #0d1117;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.85rem;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom-links .separator {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 991px) {
+    .footer-grid-2col {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-newsletter-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-input-group input {
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-right-links {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   7. ACENTOS VERDES — destaques em pontos-chave
+   ============================================ */
+
+/* Location tag verde no hero */
+.location-tag {
+    border: 1.5px solid rgba(46, 204, 113, 0.35);
+}
+
+.location-tag svg {
+    color: var(--secondary-color);
+}
+
+/* Cards de categoria: hover alterna verde/laranja */
+.cat-card:nth-child(2):hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 12px 35px rgba(46, 204, 113, 0.12);
+}
+
+.cat-card:nth-child(2) .cat-info a {
+    color: var(--secondary-color);
+}
+
+/* Newsletter band já corrigida acima para verde */
+
+/* Botão "Fale Conosco" no header — contorno verde ao hover */
+.nav-utils .btn-primary:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+/* Menu: item ativo permanece laranja */
+.nav-menu a.active::after {
+    background: var(--primary-color);
+    width: 100%;
+}
+
+.nav-menu a.active {
+    color: var(--primary-color);
+}
