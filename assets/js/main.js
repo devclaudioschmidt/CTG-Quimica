@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Carregar componentes imediatamente
     try {
-        await loadComponent("header-placeholder", "components/header.html");
-        await loadComponent("footer-placeholder", "components/footer.html");
+        await loadComponent("espaco-cabecalho", "components/header.html");
+        await loadComponent("espaco-rodape", "components/footer.html");
         console.log("[CTG] Todos os componentes carregados com sucesso");
 
         // Inicializar menu após carregamento
@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 function initializeMenu() {
     console.log("[CTG] Inicializando funcionalidades do menu...");
 
-    const menuToggle = document.querySelector(".menu-icon");
-    const mobileMenu = document.querySelector(".nav-menu");
-    const submenuLinks = document.querySelectorAll(".nav-menu li.has-submenu > a");
-    const header = document.querySelector(".main-header");
+    const menuToggle = document.querySelector(".icone-menu");
+    const mobileMenu = document.querySelector(".menu-navegacao");
+    const submenuLinks = document.querySelectorAll(".menu-navegacao li.com-submenu > a");
+    const header = document.querySelector(".cabecalho-principal");
 
     // Lógica para compensar dinamicamente o padding do header no body
     if (header) {
@@ -91,7 +91,7 @@ function initializeMenu() {
         menuToggle.classList.toggle("open", isOpen);
         menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
         menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
-        document.body.classList.toggle("menu-open", isOpen);
+        document.body.classList.toggle("menu-aberto", isOpen);
     }
 
     if (menuToggle && mobileMenu) {
@@ -102,7 +102,7 @@ function initializeMenu() {
         link.addEventListener("click", (event) => {
             if (window.innerWidth <= 991) {
                 const parentItem = link.parentElement;
-                if (parentItem && parentItem.classList.contains("has-submenu")) {
+                if (parentItem && parentItem.classList.contains("com-submenu")) {
                     event.preventDefault();
                     parentItem.classList.toggle("open");
                 }
@@ -125,10 +125,10 @@ function initializeMenu() {
     window.addEventListener("resize", () => {
         if (window.innerWidth > 991 && mobileMenu) {
             mobileMenu.classList.remove("open");
-            document.body.classList.remove("menu-open");
+            document.body.classList.remove("menu-aberto");
             menuToggle?.classList.remove("open");
             menuToggle?.setAttribute("aria-expanded", "false");
-            document.querySelectorAll(".nav-menu li.open").forEach((item) => item.classList.remove("open"));
+            document.querySelectorAll(".menu-navegacao li.open").forEach((item) => item.classList.remove("open"));
         }
     });
 
