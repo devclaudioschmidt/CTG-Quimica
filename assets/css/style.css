@@ -31,6 +31,7 @@ body {
     background-color: var(--white);
     overflow-x: hidden;
     max-width: 100%;
+    transition: padding-top 0.3s ease;
 }
 
 /* 2. Utilitários de Layout */

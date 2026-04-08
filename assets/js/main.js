@@ -62,6 +62,28 @@ function initializeMenu() {
     const menuToggle = document.querySelector(".menu-icon");
     const mobileMenu = document.querySelector(".nav-menu");
     const submenuLinks = document.querySelectorAll(".nav-menu li.has-submenu > a");
+    const header = document.querySelector(".main-header");
+
+    // Lógica para compensar dinamicamente o padding do header no body
+    if (header) {
+        const updateBodyPadding = () => {
+            document.body.style.paddingTop = `${header.offsetHeight}px`;
+        };
+        
+        // Aplica o padding inicial
+        updateBodyPadding();
+        
+        // Observa mudanças de tamanho no header (ex: expansão do menu)
+        if (window.ResizeObserver) {
+            const resizeObserver = new ResizeObserver(() => {
+                updateBodyPadding();
+            });
+            resizeObserver.observe(header);
+        }
+        
+        // Em caso de redimensionamento da tela
+        window.addEventListener("resize", updateBodyPadding);
+    }
 
     function toggleMobileMenu() {
         if (!mobileMenu || !menuToggle) return;
@@ -90,7 +112,6 @@ function initializeMenu() {
 
     // Efeito de "encolhimento" do header ao fazer scroll
     window.addEventListener("scroll", () => {
-        const header = document.querySelector(".main-header");
         if (header) {
             if (window.scrollY > 60) {
                 header.classList.add("scrolled");
