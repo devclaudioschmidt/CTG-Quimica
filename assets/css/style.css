@@ -1,6 +1,7 @@
 /* 1. Reset e Variáveis */
 :root {
     --primary-color: #ff7a00;
+    --primary-color-soft: rgba(255, 122, 0, 0.18);
     /* Laranja Vibrante */
     --primary-dark: #e06500;
     --secondary-color: #1a7a3f;
@@ -30,6 +31,7 @@ body {
     background-color: var(--white);
     overflow-x: hidden;
     max-width: 100%;
+    transition: padding-top 0.3s ease;
 }
 
 /* 2. Utilitários de Layout */
@@ -236,7 +238,8 @@ nav {
     top: calc(100% + 10px);
     left: 0;
     min-width: 220px;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
     border-radius: 16px;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
     padding: 10px 0;
@@ -281,6 +284,24 @@ nav {
     padding: 6px;
     color: var(--dark-color);
     cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    color: var(--dark-color);
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 .nav-menu a {
@@ -472,9 +493,109 @@ nav {
     letter-spacing: 0.5px;
 }
 
+.hero-bottom-card {
+    position: relative;
+    margin-top: -72px;
+    padding-bottom: 84px;
+    z-index: 2;
+}
+
+.hero-card {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 36px 32px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hero-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.hero-card-item h3 {
+    margin: 0 0 12px;
+    font-size: 1.35rem;
+    color: var(--dark-color);
+}
+
+.hero-card-item p {
+    margin: 0;
+    color: #5a5a5a;
+    line-height: 1.7;
+}
+
+.lab-section {
+    padding: 100px 0 80px;
+    background: var(--white);
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.lab-image {
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.12);
+}
+
+.lab-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+.lab-subtitle {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.lab-title {
+    margin: 0 0 24px;
+    font-size: clamp(2.8rem, 4vw, 3.8rem);
+    line-height: 1.05;
+    color: var(--dark-color);
+}
+
+.lab-text {
+    margin: 0 0 32px;
+    max-width: 580px;
+    color: #5a5a5a;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.lab-actions {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
 @media (max-width: 1100px) {
     .hero h1 {
         font-size: 3.5rem;
+    }
+
+    .hero-card-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -507,49 +628,170 @@ nav {
         box-sizing: border-box;
     }
 
+    .lab-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .lab-image {
+        min-height: 320px;
+    }
+
+    .lab-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .category-strip {
         justify-content: center;
+        gap: 16px;
     }
 
     .main-header .container {
         flex-wrap: wrap;
         gap: 1rem;
-        padding: 1rem 24px;
+        padding: 1rem 20px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-brand {
+        position: relative;
+        z-index: 1110;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .main-header nav {
+        position: static;
+        width: auto;
+    }
+
+    .menu-icon {
+        display: inline-flex;
+        position: absolute;
+        right: 20px;
+        top: 16px;
+        transform: none;
+        z-index: 11100;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease, background 0.25s ease, top 0.25s ease;
+        padding: 0;
+    }
+
+    .main-header.scrolled .menu-icon {
+        top: 12px;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--dark-color);
+        transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+    }
+
+    .menu-icon span+span {
+        margin-top: 0;
+    }
+
+    .menu-icon:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+
+    .menu-icon.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-icon.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .menu-close {
+        display: none;
+    }
+
+    body.menu-open .menu-close {
+        display: none;
     }
 
     .nav-utils {
         order: 3;
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-utils .btn {
+        flex: 1 1 48%;
+        min-width: 140px;
     }
 
     nav {
-        width: 100%;
+        width: auto;
         order: 2;
     }
 
+    .main-header.scrolled .nav-utils {
+        margin-top: 0.75rem;
+    }
+
+    .main-header.scrolled .nav-utils .btn,
+    .main-header.scrolled .whatsapp-btn {
+        padding: 10px 18px;
+        font-size: 0.92rem;
+    }
+
+    .main-header.scrolled .btn.btn-primary,
+    .main-header.scrolled .btn.btn-secondary {
+        min-width: 120px;
+    }
+
     .nav-menu {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
-        background: var(--white);
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        max-width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        transform: translateY(-10px);
+        padding: 110px 24px 24px;
+        border: none;
+        transform: translateX(-110%);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 11000;
+        transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
+        overflow-y: auto;
     }
 
     .nav-menu.open {
+        transform: translateX(0);
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateY(0);
     }
 
     .nav-menu li {
@@ -558,12 +800,12 @@ nav {
 
     .nav-menu a {
         display: block;
-        padding: 0.85rem 1.25rem;
-        font-size: 1rem;
+        padding: 1rem 1.25rem;
+        font-size: 1.05rem;
     }
 
     .nav-menu li.has-submenu>a {
-        padding-right: 2.25rem;
+        padding-right: 2.8rem;
     }
 
     .nav-menu li.has-submenu>a::before {
@@ -596,8 +838,8 @@ nav {
     }
 
     .submenu li a {
-        padding-left: 2rem;
-        background: rgba(248, 249, 250, 0.9);
+        padding-left: 1.5rem;
+        background: rgba(248, 249, 250, 0.95);
     }
 
     .submenu li a:hover {
@@ -606,6 +848,63 @@ nav {
 
     .menu-icon {
         display: inline-flex;
+    }
+
+    .menu-close {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 18px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p,
+    .lab-text {
+        font-size: 1rem;
+    }
+
+    .hero-card {
+        padding: 28px 22px;
+    }
+
+    .hero-card-grid,
+    .footer-newsletter-inner,
+    .footer-main {
+        gap: 18px;
+    }
+
+    .footer-newsletter-band,
+    .footer-bottom {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 610px) {
+    .main-header {
+        padding: 14px 0;
+    }
+
+    body {
+        padding-top: 114px;
+    }
+
+    .hero {
+        padding: 40px 0 80px;
+    }
+
+    .hero-search {
+        padding-left: 18px;
+    }
+
+    .lab-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
