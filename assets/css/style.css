@@ -284,6 +284,24 @@ nav {
     cursor: pointer;
 }
 
+.menu-close {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: none;
+    color: var(--dark-color);
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
 .nav-menu a {
     text-decoration: none;
     color: var(--dark-color);
@@ -620,47 +638,141 @@ nav {
 
     .category-strip {
         justify-content: center;
+        gap: 16px;
     }
 
     .main-header .container {
         flex-wrap: wrap;
         gap: 1rem;
-        padding: 1rem 24px;
+        padding: 1rem 20px;
+        justify-content: center;
+        position: relative;
+    }
+
+    .nav-brand {
+        position: relative;
+        z-index: 1110;
+    }
+
+    .main-header nav {
+        position: static;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: inline-flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease, background 0.25s ease;
+        padding: 0;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--dark-color);
+        transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+    }
+
+    .menu-icon span+span {
+        margin-top: 0;
+    }
+
+    .menu-icon:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+
+    .menu-icon.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-icon.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .menu-close {
+        display: none;
+    }
+
+    body.menu-open .menu-close {
+        display: none;
     }
 
     .nav-utils {
         order: 3;
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-utils .btn {
+        flex: 1 1 48%;
+        min-width: 140px;
     }
 
     nav {
-        width: 100%;
+        width: auto;
         order: 2;
     }
 
+    .main-header.scrolled .nav-utils .btn,
+    .main-header.scrolled .whatsapp-btn {
+        padding: 10px 18px;
+        font-size: 0.92rem;
+    }
+
+    .main-header.scrolled .btn.btn-primary,
+    .main-header.scrolled .btn.btn-secondary {
+        min-width: 120px;
+    }
+
     .nav-menu {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
-        right: 0;
-        background: var(--white);
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.98));
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        transform: translateY(-10px);
+        padding: 110px 24px 24px;
+        border: none;
+        transform: translateX(-110%);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 1050;
+        transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s ease;
+        overflow-y: auto;
     }
 
     .nav-menu.open {
+        transform: translateX(0);
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateY(0);
     }
 
     .nav-menu li {
@@ -669,12 +781,12 @@ nav {
 
     .nav-menu a {
         display: block;
-        padding: 0.85rem 1.25rem;
-        font-size: 1rem;
+        padding: 1rem 1.25rem;
+        font-size: 1.05rem;
     }
 
     .nav-menu li.has-submenu>a {
-        padding-right: 2.25rem;
+        padding-right: 2.8rem;
     }
 
     .nav-menu li.has-submenu>a::before {
@@ -707,8 +819,8 @@ nav {
     }
 
     .submenu li a {
-        padding-left: 2rem;
-        background: rgba(248, 249, 250, 0.9);
+        padding-left: 1.5rem;
+        background: rgba(248, 249, 250, 0.95);
     }
 
     .submenu li a:hover {
@@ -717,6 +829,63 @@ nav {
 
     .menu-icon {
         display: inline-flex;
+    }
+
+    .menu-close {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 18px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p,
+    .lab-text {
+        font-size: 1rem;
+    }
+
+    .hero-card {
+        padding: 28px 22px;
+    }
+
+    .hero-card-grid,
+    .footer-newsletter-inner,
+    .footer-main {
+        gap: 18px;
+    }
+
+    .footer-newsletter-band,
+    .footer-bottom {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 610px) {
+    .main-header {
+        padding: 14px 0;
+    }
+
+    body {
+        padding-top: 114px;
+    }
+
+    .hero {
+        padding: 40px 0 80px;
+    }
+
+    .hero-search {
+        padding-left: 18px;
+    }
+
+    .lab-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
