@@ -106,6 +106,19 @@ body {
     background: var(--primary-color);
     color: var(--white);
     box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .btn-primary:hover {
@@ -151,6 +164,12 @@ body {
     background: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
+    transition: all 0.3s var(--transition);
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
 }
 
 .btn-outline-green {
