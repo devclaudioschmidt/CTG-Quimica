@@ -15,15 +15,15 @@
 
 <body>
 
-    <div id="header-placeholder"></div>
+    <div id="espaco-cabecalho"></div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-grid">
-                <!-- Hero Content (Now taking more space/centered if needed) -->
-                <div class="hero-content">
-                    <div class="location-tag">
+        <!-- SESSÃO DE DESTAQUE PRINCIPAL (Hero): Contém o título forte e a imagem de fundo -->
+        <section class="destaque">
+            <div class="container grade-destaque">
+                <!-- Caixa central com os textos, a barra de pesquisa e blocos de info -->
+                <div class="conteudo-destaque">
+                    <div class="tag-localizacao">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -35,8 +35,8 @@
                     <p>Fabricante de químicos com foco em nanotecnologia, equipamentos para preservação de água e ar, e
                         projetos sob medida para suas necessidades.</p>
 
-                    <!-- Decorative Search Bar -->
-                    <div class="hero-search">
+                    <!-- Barra de Pesquisa Simulada (Design Decorativo) -->
+                    <div class="busca-destaque">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
@@ -46,25 +46,25 @@
                         <button class="btn btn-primary" style="padding: 10px 25px;">Buscar</button>
                     </div>
 
-                    <!-- Categories -->
-                    <div class="category-strip">
-                        <div class="cat-card">
-                            <img src="assets/img/cat_solutions.png" alt="Alimentos" class="cat-icon">
-                            <div class="cat-info">
+                    <!-- Conjunto de Cartões de Categorias rápidas -->
+                    <div class="faixa-categorias">
+                        <div class="cartao-categoria">
+                            <img src="assets/img/cat_solutions.png" alt="Alimentos" class="icone-categoria">
+                            <div class="info-categoria">
                                 <h4>Indústria de Alimentos</h4>
                                 <a href="#">Ver soluções →</a>
                             </div>
                         </div>
-                        <div class="cat-card">
-                            <img src="assets/img/cat_industrial.png" alt="Agro" class="cat-icon">
-                            <div class="cat-info">
+                        <div class="cartao-categoria">
+                            <img src="assets/img/cat_industrial.png" alt="Agro" class="icone-categoria">
+                            <div class="info-categoria">
                                 <h4>Agroindústria</h4>
                                 <a href="#">Ver soluções →</a>
                             </div>
                         </div>
-                        <div class="cat-card">
-                            <img src="assets/img/cat_safety.png" alt="Águas" class="cat-icon">
-                            <div class="cat-info">
+                        <div class="cartao-categoria">
+                            <img src="assets/img/cat_safety.png" alt="Águas" class="icone-categoria">
+                            <div class="info-categoria">
                                 <h4>Esterilização & Águas</h4>
                                 <a href="#">Ver soluções →</a>
                             </div>
@@ -77,21 +77,21 @@
             </div>
         </section>
 
-        <section class="hero-bottom-card">
+        <section class="cartao-inferior-destaque">
             <div class="container">
-                <div class="hero-card">
-                    <div class="hero-card-grid">
-                        <div class="hero-card-item">
+                <div class="cartao-destaque">
+                    <div class="grade-cartao-destaque">
+                        <div class="item-cartao-destaque">
                             <h3>Atendimento Personalizado</h3>
                             <p>Atendimento ágil e suporte consultivo para projetos de nanotecnologia e proteção hídrica.
                             </p>
                         </div>
-                        <div class="hero-card-item">
+                        <div class="item-cartao-destaque">
                             <h3>Consultoria especializada</h3>
                             <p>Equipe especializada em soluções químicas para indústria, agro e preservação ambiental.
                             </p>
                         </div>
-                        <div class="hero-card-item">
+                        <div class="item-cartao-destaque">
                             <h3>Processos Simplificados</h3>
                             <p>Processos simples, transparência total e comunicação digital sem burocracia.</p>
                         </div>
@@ -100,19 +100,19 @@
             </div>
         </section>
 
-        <section class="lab-section">
-            <div class="container lab-grid">
-                <div class="lab-image">
+        <section class="secao-laboratorio">
+            <div class="container grade-laboratorio">
+                <div class="imagem-laboratorio">
                     <img src="assets/img/laboratorio.jpg" alt="Laboratório CTG Química">
                 </div>
                 <div class="lab-content">
-                    <span class="lab-subtitle">Soluções para seu negócio</span>
-                    <h2 class="lab-title">Mais que produtos, entregamos inteligência química para o seu negócio</h2>
-                    <p class="lab-text">Atuamos com foco total na excelência operacional, oferecendo produtos inovadores
+                    <span class="subtitulo-laboratorio">Soluções para seu negócio</span>
+                    <h2 class="titulo-laboratorio">Mais que produtos, entregamos inteligência química para o seu negócio</h2>
+                    <p class="texto-laboratorio">Atuamos com foco total na excelência operacional, oferecendo produtos inovadores
                         e suporte técnico ágil. Na CTG-Química, acreditamos que prazos e preços competitivos são a base
                         de uma parceria de sucesso. Agradecemos a visita de novos parceiros e reforçamos nossa
                         disponibilidade para desenvolver soluções sob medida para sua empresa.</p>
-                    <div class="lab-actions">
+                    <div class="acoes-laboratorio">
                         <a href="#" class="btn btn-outline">Consultoria técnica</a>
                         <a href="#" class="btn btn-primary">Nossas soluções</a>
                     </div>
@@ -121,7 +121,7 @@
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <div id="espaco-rodape"></div>
 
     <script src="assets/js/main.js"></script>
 </body>
