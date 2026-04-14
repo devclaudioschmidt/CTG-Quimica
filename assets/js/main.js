@@ -1,3 +1,12 @@
+// Função para calcular o caminho relativo até a raiz do projeto
+function getRootPath() {
+    const pathParts = window.location.pathname.split('/').filter(p => p);
+    const depth = pathParts.length - 1;
+    const root = depth > 0 ? '../'.repeat(depth) : './';
+    console.log('[CTG] Root path calculado:', root, 'de:', window.location.pathname);
+    return root;
+}
+
 // Função para carregar componentes HTML de forma assíncrona
 async function loadComponent(elementId, filePath) {
     const placeholder = document.getElementById(elementId);
@@ -6,19 +15,22 @@ async function loadComponent(elementId, filePath) {
         return;
     }
 
+    const rootPath = getRootPath();
+    const fullPath = rootPath + filePath;
+
     try {
-        console.log(`[CTG] Carregando ${filePath}...`);
-        const response = await fetch(filePath);
+        console.log(`[CTG] Carregando ${fullPath}...`);
+        const response = await fetch(fullPath);
         if (response.ok) {
             const html = await response.text();
             placeholder.innerHTML = html;
-            console.log(`[CTG] ${filePath} carregado com sucesso`);
+            console.log(`[CTG] ${fullPath} carregado com sucesso`);
         } else {
-            console.error(`[CTG] Erro ao carregar ${filePath}: ${response.status} ${response.statusText}`);
-            placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${filePath}</div>`;
+            console.error(`[CTG] Erro ao carregar ${fullPath}: ${response.status} ${response.statusText}`);
+            placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${fullPath}</div>`;
         }
     } catch (error) {
-        console.error(`[CTG] Erro na requisição para ${filePath}:`, error);
+        console.error(`[CTG] Erro na requisição para ${fullPath}:`, error);
 
         // Alerta amigável para erro de CORS (comum ao abrir via file://)
         if (window.location.protocol === 'file:') {
@@ -43,7 +55,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         await loadComponent("espaco-cabecalho", "components/header.html");
         await loadComponent("espaco-rodape", "components/footer.html");
-        console.log("[CTG] Todos os componentes carregados com sucesso");
 
         // Inicializar menu após carregamento
         setTimeout(() => {
@@ -61,7 +72,7 @@ function initializeMenu() {
 
     const menuToggle = document.querySelector(".icone-menu");
     const mobileMenu = document.querySelector(".menu-navegacao");
-    const submenuLinks = document.querySelectorAll(".menu-navegacao li.com-submenu > a");
+    const submenuLinks = document.querySelectorAll(".menu-navegacao > ul > li.com-submenu > a");
     const header = document.querySelector(".cabecalho-principal");
 
     // Lógica para compensar dinamicamente o padding do header no body
