@@ -297,12 +297,14 @@ nav {
 
 /* Hamburger: visível apenas em mobile */
 .icone-menu {
-    display: none;
+    display: inline-flex;
     background: transparent;
     border: none;
     padding: 6px;
     color: var(--dark-color);
     cursor: pointer;
+    position: relative;
+    z-index: 100;
 }
 
 .icone-fechar-menu {
