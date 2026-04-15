@@ -1,10 +1,15 @@
 // Função para calcular o caminho relativo até a raiz do projeto
 function getRootPath() {
-    const pathParts = window.location.pathname.split('/').filter(p => p);
-    const depth = pathParts.length - 1;
-    const root = depth > 0 ? '../'.repeat(depth) : './';
-    console.log('[CTG] Root path calculado:', root, 'de:', window.location.pathname);
-    return root;
+    const path = window.location.pathname;
+    const segments = path.split('/').filter(p => p);
+    
+    if (segments.length === 0 || segments[segments.length - 1] === '' || 
+        segments[segments.length - 1] === 'index.html') {
+        return './';
+    }
+    
+    const depth = segments.length - 1;
+    return depth > 0 ? '../'.repeat(depth) : './';
 }
 
 // Função para carregar componentes HTML de forma assíncrona
@@ -15,8 +20,8 @@ async function loadComponent(elementId, filePath) {
         return;
     }
 
-    const rootPath = getRootPath();
-    const fullPath = rootPath + filePath;
+    // Usar caminho absoluto desde a raiz do projeto
+    const fullPath = '/' + filePath;
 
     try {
         console.log(`[CTG] Carregando ${fullPath}...`);
