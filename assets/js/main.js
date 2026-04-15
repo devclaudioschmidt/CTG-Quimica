@@ -75,7 +75,11 @@ function initializeMenu() {
     }
 
     function toggleMobileMenu() {
-        if (!mobileMenu || !menuToggle) return;
+        console.log("[CTG] Clicou no menu toggle!");
+        if (!mobileMenu || !menuToggle) {
+            console.log("[CTG] mobileMenu ou menuToggle não encontrado");
+            return;
+        }
         const isOpen = mobileMenu.classList.toggle("open");
         menuToggle.classList.toggle("open", isOpen);
         menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
@@ -84,7 +88,10 @@ function initializeMenu() {
     }
 
     if (menuToggle && mobileMenu) {
+        console.log("[CTG] Adicionando evento de click ao menu toggle");
         menuToggle.addEventListener("click", toggleMobileMenu);
+    } else {
+        console.log("[CTG] Elementos não encontrados! menuToggle:", menuToggle, "mobileMenu:", mobileMenu);
     }
 
     submenuLinks.forEach((link) => {
