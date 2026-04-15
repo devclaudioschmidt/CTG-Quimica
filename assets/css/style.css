@@ -1339,6 +1339,22 @@ body.menu-aberto {
     position: relative;
 }
 
+.submenu .com-submenu > a::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--dark-color);
+    border-bottom: 2px solid var(--dark-color);
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.submenu .com-submenu:hover > a::after {
+    border-color: var(--primary-color);
+}
+
 .submenu .submenu {
     position: absolute;
     top: 0;

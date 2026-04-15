@@ -1,107 +1,3 @@
-// ==========================================
-// CONFIGURAÇÃO DO MENU - Edite aqui!
-// ==========================================
-const menuConfig = {
-    items: [
-        {
-            name: "Página Inicial",
-            href: "index.html",
-            active: true,
-            submenu: [
-                { name: "Serviços", href: "index.html#servicos" },
-                { name: "Novidades", href: "index.html#novidades" },
-                { name: "Cases", href: "index.html#cases" },
-                { name: "Blog", href: "index.html#blog" }
-            ]
-        },
-        {
-            name: "Sobre",
-            href: "empresa.html",
-            submenu: [
-                { name: "Nossa História", href: "empresa.html#nossa-historia" },
-                { name: "Missão e Visão", href: "empresa.html#missao" },
-                { name: "Equipe", href: "empresa.html#equipe" },
-                { name: "Certificações", href: "empresa.html#certificacoes" }
-            ]
-        },
-        {
-            name: "Segmentos",
-            href: "#",
-            isDropdown: true,
-            submenu: [
-                {
-                    name: "Cadeia de Produção de Proteína Animal",
-                    href: "#",
-                    isDropdown: true,
-                    submenu: [
-                        { name: "Avicultura", href: "aviculture.html" },
-                        { name: "Suínocultura", href: "suinocultura.html" },
-                        { name: "Bovinocultura", href: "bovinocultura.html" },
-                        { name: "Aquicultura", href: "aquicultura.html" }
-                    ]
-                },
-                { name: "Insumos", href: "#" },
-                { name: "Processamento", href: "#" },
-                { name: "Subprodutos", href: "#" },
-                { name: "Tratamento de Água e Efluentes", href: "#" },
-                { name: "Bem estar animal", href: "#" }
-            ]
-        },
-        {
-            name: "Contato",
-            href: "#",
-            submenu: [
-                { name: "Orçamento", href: "#orcamento" },
-                { name: "Suporte Técnico", href: "#suporte" },
-                { name: "Localização", href: "#localizacao" },
-                { name: "Trabalhe Conosco", href: "#trabalhe-conosco" }
-            ]
-        }
-    ]
-};
-
-// ==========================================
-// FUNÇÃO PARA GERAR O MENU
-// ==========================================
-function generateMenu(config) {
-    const urlAtual = window.location.pathname.split('/').pop() || 'index.html';
-    
-    function criarItem(item, nivel = 0) {
-        const isActive = item.href === urlAtual || (item.href === 'index.html' && urlAtual === '');
-        const activeClass = isActive ? ' class="active"' : '';
-        const comSubmenuClass = item.submenu ? ' com-submenu' : '';
-        
-        let html = `<li${comSubmenuClass}>`;
-        html += `<a href="${item.href}"${activeClass}>${item.name}</a>`;
-        
-        if (item.submenu) {
-            html += `<ul class="submenu">`;
-            item.submenu.forEach(subItem => {
-                html += criarItem(subItem, nivel + 1);
-            });
-            html += `</ul>`;
-        }
-        
-        html += `</li>`;
-        return html;
-    }
-    
-    let menuHTML = '<ul class="menu-navegacao" data-menu>';
-    config.items.forEach(item => {
-        menuHTML += criarItem(item);
-    });
-    menuHTML += '</ul>';
-    
-    return menuHTML;
-}
-
-function renderMenu() {
-    const menuContainer = document.querySelector('.menu-navegacao[data-menu]');
-    if (menuContainer) {
-        menuContainer.innerHTML = generateMenu(menuConfig);
-    }
-}
-
 // Função para carregar componentes HTML de forma assíncrona
 async function loadComponent(elementId, filePath) {
     const placeholder = document.getElementById(elementId);
@@ -144,10 +40,7 @@ async function loadComponent(elementId, filePath) {
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("[CTG] DOM carregado, iniciando componentes...");
 
-    // Gerar menu automaticamente
-    renderMenu();
-
-    // Carregar componentes (se ainda estiverem sendo usados)
+    // Carregar componentes imediatamente
     try {
         await loadComponent("espaco-cabecalho", "components/header.html");
         await loadComponent("espaco-rodape", "components/footer.html");
