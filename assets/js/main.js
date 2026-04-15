@@ -6,19 +6,22 @@ async function loadComponent(elementId, filePath) {
         return;
     }
 
+    // Usar caminho absoluto desde a raiz do projeto
+    const fullPath = '/' + filePath;
+
     try {
-        console.log(`[CTG] Carregando ${filePath}...`);
-        const response = await fetch(filePath);
+        console.log(`[CTG] Carregando ${fullPath}...`);
+        const response = await fetch(fullPath);
         if (response.ok) {
             const html = await response.text();
             placeholder.innerHTML = html;
-            console.log(`[CTG] ${filePath} carregado com sucesso`);
+            console.log(`[CTG] ${fullPath} carregado com sucesso`);
         } else {
-            console.error(`[CTG] Erro ao carregar ${filePath}: ${response.status} ${response.statusText}`);
-            placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${filePath}</div>`;
+            console.error(`[CTG] Erro ao carregar ${fullPath}: ${response.status} ${response.statusText}`);
+            placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${fullPath}</div>`;
         }
     } catch (error) {
-        console.error(`[CTG] Erro na requisição para ${filePath}:`, error);
+        console.error(`[CTG] Erro na requisição para ${fullPath}:`, error);
 
         // Alerta amigável para erro de CORS (comum ao abrir via file://)
         if (window.location.protocol === 'file:') {
