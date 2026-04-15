@@ -65,6 +65,10 @@ function initializeMenu() {
     const submenuLinks = document.querySelectorAll(".menu-navegacao li.com-submenu > a");
     const header = document.querySelector(".cabecalho-principal");
 
+    console.log("[CTG] Menu toggle:", menuToggle);
+    console.log("[CTG] Mobile menu:", mobileMenu);
+    console.log("[CTG] Header:", header);
+
     // Lógica para compensar dinamicamente o padding do header no body
     if (header) {
         const updateBodyPadding = () => {
