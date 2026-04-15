@@ -38,36 +38,20 @@ async function loadComponent(elementId, filePath) {
 
 // Executa o carregamento quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("[CTG] DOM carregado, iniciando componentes...");
-
-    // Carregar componentes imediatamente
-    try {
-        await loadComponent("espaco-cabecalho", "components/header.html");
-        await loadComponent("espaco-rodape", "components/footer.html");
-        console.log("[CTG] Todos os componentes carregados com sucesso");
-
-        // Inicializar menu após carregamento
-        setTimeout(() => {
-            initializeMenu();
-        }, 100);
-
-    } catch (error) {
-        console.error("[CTG] Erro geral no carregamento de componentes:", error);
-    }
+    console.log("[CTG] DOM carregado, iniciando...");
+    
+    // Menu já está inline no HTML, apenas inicializar as funcionalidades
+    initializeMenu();
 });
 
 // Função separada para inicializar o menu
 function initializeMenu() {
-    console.log("[CTG] Inicializando funcionalidades do menu...");
+    console.log("[CTG] Inicializando menu...");
 
     const menuToggle = document.querySelector(".icone-menu");
     const mobileMenu = document.querySelector(".menu-navegacao");
     const submenuLinks = document.querySelectorAll(".menu-navegacao li.com-submenu > a");
     const header = document.querySelector(".cabecalho-principal");
-
-    console.log("[CTG] Menu toggle:", menuToggle);
-    console.log("[CTG] Mobile menu:", mobileMenu);
-    console.log("[CTG] Header:", header);
 
     // Lógica para compensar dinamicamente o padding do header no body
     if (header) {
