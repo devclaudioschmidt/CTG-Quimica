@@ -9,15 +9,20 @@ async function loadComponent(elementId, filePath) {
     // Usar caminho absoluto desde a raiz do projeto
     const fullPath = '/' + filePath;
 
+    console.log(`[CTG] Tentando carregar: ${fullPath}`);
+    console.log(`[CTG] URL completa: ${window.location.origin}${fullPath}`);
+
     try {
         console.log(`[CTG] Carregando ${fullPath}...`);
         const response = await fetch(fullPath);
+        
         if (response.ok) {
             const html = await response.text();
             placeholder.innerHTML = html;
             console.log(`[CTG] ${fullPath} carregado com sucesso`);
         } else {
-            console.error(`[CTG] Erro ao carregar ${fullPath}: ${response.status} ${response.statusText}`);
+            console.error(`[CTG] Erro HTTP: ${response.status} ${response.statusText}`);
+            console.error(`[CTG] URL которая falhou: ${window.location.origin}${fullPath}`);
             placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${fullPath}</div>`;
         }
     } catch (error) {
