@@ -1072,6 +1072,11 @@ body.menu-aberto {
 .rodape-principal {
     background: #111827;
     padding: 80px 0 60px 0;
+    display: block !important;
+}
+
+.site-footer {
+    display: block !important;
 }
 
 /* Footer 2 colunas equilibradas */
@@ -1392,6 +1397,23 @@ body.menu-aberto {
 .menu-navegacao a.active::after {
     background: var(--primary-color);
     width: 100%;
+}
+
+/* Páginas de segmento */
+.pagina-conteudo {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark-color);
+}
 }
 
 .menu-navegacao a.active {
