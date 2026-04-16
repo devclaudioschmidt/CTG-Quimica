@@ -1376,19 +1376,335 @@ body.menu-aberto {
     width: 100%;
 }
 
-/* Páginas de segmento */
-.pagina-conteudo {
-    min-height: calc(100vh - 200px);
+/* ============================================
+   8. MODERN GLASSMORPISM & CONTACT PAGE
+   ============================================ */
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-moderno {
+    position: relative;
+    padding: 220px 0 160px;
+    background: var(--white);
+    overflow: hidden;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%), 
+                url('../img/fundo_contato.jpg');
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0;
+}
+
+.hero-bg-image.visible {
+    opacity: 1 !important;
+    animation: fadeInRight 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.conteudo-hero-texto {
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+}
+
+.conteudo-hero-texto.visible {
+    opacity: 1 !important;
+    animation: fadeInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: 0.2s;
+}
+
+.hero-moderno::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-color-soft) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.hero-moderno::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(26, 122, 63, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.grid-moderno {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    position: relative;
+    z-index: 10;
+    align-items: start;
+}
+
+.titulo-impacto {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 950;
+    line-height: 0.9;
+    color: var(--dark-color);
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.titulo-impacto span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--dark-color);
+    opacity: 0.3;
+}
+
+.texto-manifesto {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 500px;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 24px;
+    margin-bottom: 50px;
+}
+
+.hero-imagem-container {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.hero-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.floating-contact-card {
+    padding: 0;
+    background: transparent;
+}
+
+.secao-formulario-contato {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.grid-formulario-duplo {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+    align-items: start;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cartao-info-lateral {
+    background: var(--light-gray);
+    padding: 50px;
+    border-radius: 24px;
+    height: 100%;
+    opacity: 0;
+}
+
+.cartao-info-lateral.visible {
+    opacity: 1 !important;
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.formulario-container-modern {
+    opacity: 0;
+}
+
+.formulario-container-modern.visible {
+    opacity: 1 !important;
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: 0.2s;
+}
+
+@keyframes revealZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.secao-mapa-moderna h2, 
+.secao-mapa-moderna p {
+    opacity: 0;
+}
+
+.secao-mapa-moderna h2.visible, 
+.secao-mapa-moderna p.visible {
+    opacity: 1 !important;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.container-mapa-reveal {
+    opacity: 0;
+    transition: transform 0.5s ease;
+}
+
+.container-mapa-reveal.visible {
+    animation: revealZoom 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: 0.3s;
+}
+
+.form-tech .grupo-campo {
+    margin-bottom: 30px;
+}
+
+.form-tech input, 
+.form-tech select, 
+.form-tech textarea {
+    background: #f8f9fa;
+    border: 1px solid var(--medium-gray);
+    padding: 18px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    outline: none;
+}
+
+.form-tech input:focus, 
+.form-tech textarea:focus {
+    background: transparent;
+    border-color: var(--primary-color);
+}
+
+/* Feedback de Validação */
+.form-tech input:invalid:not(:placeholder-shown) {
+    border-color: #ff5252;
+    background: #fff8f8;
+}
+
+.form-tech input:valid:not(:placeholder-shown) {
+    border-color: #4caf50;
+}
+
+.form-tech input:focus, 
+.form-tech textarea:focus {
+    background: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-soft);
+}
+
+.card-contato-minimal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.card-contato-minimal:hover {
+    color: var(--primary-color);
+}
+
+.circulo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--light-gray);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0;
+    border: 1px solid var(--medium-gray);
+    font-size: 1.2rem;
 }
 
-.titulo-pagina {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--dark-color);
+@media (max-width: 1100px) {
+    .grid-moderno {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .texto-manifesto {
+        margin: 0 auto 50px;
+        text-align: left;
+    }
+
+    .lista-contatos-hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
 }
-}
+
+@media (max-width: 768px) {
+    .titulo-impacto {
+        font-size: 3.5rem;
+    }
+    
+    .floating-contact-card {
+        padding: 25px;
+    }
+}

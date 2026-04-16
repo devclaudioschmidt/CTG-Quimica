@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | CTG Química</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Seção Hero Clean com Animações -->
+        <section class="hero-moderno" style="border-bottom: none;">
+            <div class="hero-bg-image reveal"></div>
+            <div class="container">
+                <div class="grid-moderno" style="display: block;">
+                    <div class="conteudo-hero-texto reveal" style="max-width: 800px;">
+                        <h1 class="titulo-impacto">
+                            Conecte-se à <span>Inovação</span>
+                        </h1>
+                        <p class="texto-manifesto" style="margin-bottom: 40px;">
+                            A CTG Química une ciência e tecnologia para criar soluções sustentáveis. Fale com nossos especialistas.
+                        </p>
+                        
+                        <div class="lista-contatos-hero" style="display: flex; gap: 30px; flex-wrap: wrap;">
+                            <a href="https://wa.me/5541991536821" target="_blank" class="card-contato-minimal" style="margin-bottom: 0;">
+                                <div class="circulo-icon">💬</div>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="mailto:emerson@ctgquimica.com.br" class="card-contato-minimal" style="margin-bottom: 0;">
+                                <div class="circulo-icon">✉️</div>
+                                <span>E-mail</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Formulário Moderno (Split-Balance) -->
+        <section class="secao-formulario-contato">
+            <div class="container">
+                <div class="grid-formulario-duplo">
+                    <!-- Coluna de Apoio/Info -->
+                    <div class="cartao-info-lateral reveal">
+                        <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--dark-color); line-height: 1.1; margin-bottom: 40px;">
+                            Vamos construir o futuro da sua indústria?
+                        </h2>
+                        
+                        <div class="metodos-contato" style="display: flex; flex-direction: column; gap: 30px;">
+                            <div style="display: flex; align-items: flex-start; gap: 20px;">
+                                <div style="font-size: 1.5rem; color: var(--primary-color);">🏢</div>
+                                <div>
+                                    <h4 style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #888;">Nossa Sede</h4>
+                                    <p style="font-size: 1.1rem; color: var(--dark-color); font-weight: 500;">Curitiba, Paraná, Brasil</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 20px;">
+                                <div style="font-size: 1.5rem; color: var(--primary-color);">🛡️</div>
+                                <div>
+                                    <h4 style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #888;">Suporte Técnico</h4>
+                                    <p style="font-size: 1.1rem; color: var(--dark-color); font-weight: 500;">Atendimento especializado em nanotecnologia.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 20px;">
+                                <div style="font-size: 1.5rem; color: var(--primary-color);">📱</div>
+                                <div>
+                                    <h4 style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #888;">WhatsApp Canais</h4>
+                                    <a href="https://wa.me/5541991536821" style="font-size: 1.2rem; color: var(--primary-color); font-weight: 700; text-decoration: none;">+55 (41) 99153-6821</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna do Formulário -->
+                    <div class="formulario-container-modern reveal">
+                        <form action="#" class="form-tech">
+                            <!-- Linha 1: Nome -->
+                            <div class="grupo-campo">
+                                <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">Nome Completo</label>
+                                <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+                            </div>
+
+                            <!-- Linha 2: Telefone e Email -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 10px;">
+                                <div class="grupo-campo">
+                                    <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">Telefone</label>
+                                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                                </div>
+                                <div class="grupo-campo">
+                                    <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">E-mail de Contato</label>
+                                    <input type="email" id="email" name="email" placeholder="nome@empresa.com" 
+                                           pattern="[a-z0-0._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                                           title="Por favor, insira um e-mail válido (ex: nome@empresa.com)" 
+                                           required>
+                                </div>
+                            </div>
+
+                            <!-- Linha 3: Estado e Cidade -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 10px;">
+                                <div class="grupo-campo">
+                                    <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">Estado</label>
+                                    <select id="estado" name="estado" required>
+                                        <option value="">Selecione o Estado</option>
+                                    </select>
+                                </div>
+                                <div class="grupo-campo">
+                                    <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">Cidade</label>
+                                    <select id="cidade" name="cidade" required disabled>
+                                        <option value="">Selecione a Cidade</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Linha 4: Interesse -->
+                            <div class="grupo-campo" style="margin-top: 10px;">
+                                <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">Área de Interesse</label>
+                                <select id="assunto" name="assunto">
+                                    <optgroup label="Produção de Proteína Animal">
+                                        <option value="avicultura">Avicultura</option>
+                                        <option value="suinocultura">Suínocultura</option>
+                                        <option value="bovinocultura">Bovinocultura</option>
+                                        <option value="aquicultura">Aquicultura</option>
+                                    </optgroup>
+                                    <option value="insumos">Insumos</option>
+                                    <option value="processamento">Processamento</option>
+                                    <option value="subprodutos">Subprodutos</option>
+                                    <option value="aguas">Tratamento de Água e Efluentes</option>
+                                    <option value="bem-estar">Bem-estar Animal</option>
+                                    <option value="outros">Outros Assuntos</option>
+                                </select>
+                            </div>
+
+                            <!-- Linha 5: Mensagem -->
+                            <div class="grupo-campo" style="margin-top: 10px;">
+                                <label style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; color: #999;">Sua Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos impulsionar sua produção?" required></textarea>
+                            </div>
+
+                            <div style="margin-top: 40px;">
+                                <button type="submit" class="btn btn-primary" style="padding: 22px 50px; border-radius: 60px; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 15px 35px var(--primary-color-soft);">
+                                    Enviar Solicitação
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Localização -->
+        <section class="secao-mapa-moderna" style="background: var(--light-gray); padding: 100px 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2 class="reveal" style="font-size: 2.2rem; font-weight: 900; color: var(--dark-color); margin-bottom: 10px;">Encontre a CTG Química</h2>
+                    <p class="reveal" style="color: #777;">Rua Exemplo, 123 - Curitiba, PR</p>
+                </div>
+                
+                <div class="container-mapa-reveal reveal" style="border-radius: 30px; overflow: hidden; height: 480px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 1px solid var(--medium-gray);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.045089332561!2d-49.27306!3d-25.4284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI1JzQyLjIiUyA0OcKwMTYnMjMuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
