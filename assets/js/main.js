@@ -1,34 +1,20 @@
 // Função para carregar componentes HTML de forma assíncrona
 async function loadComponent(elementId, filePath) {
     const placeholder = document.getElementById(elementId);
-    if (!placeholder) {
-        // Silenciosamente ignora se o placeholder não existir na página atual
-        return;
-    }
+    if (!placeholder) return;
 
     try {
         const response = await fetch(filePath);
         if (response.ok) {
             const html = await response.text();
             placeholder.innerHTML = html;
-            console.log(`[CTG] ${filePath} carregado com sucesso em #${elementId}`);
             
-            // Se for o header, precisamos reinicializar os eventos do menu
             if (elementId === 'header-placeholder') {
                 initializeMenu();
             }
-        } else {
-            console.error(`[CTG] Erro ao carregar ${filePath}: ${response.status}`);
-            if (window.location.protocol === 'file:') {
-                placeholder.innerHTML = `
-                    <div style="background: #fff3e0; color: #e65100; padding: 15px; border-radius: 8px; border: 1px solid #ffe0b2; margin: 10px; font-size: 14px; text-align: center;">
-                        <b>Aviso:</b> O navegador bloqueou o carregamento dinâmico via <i>file://</i>.<br>
-                        Use o <b>Live Server</b> para visualizar o menu e rodapé.
-                    </div>`;
-            }
         }
     } catch (error) {
-        console.error(`[CTG] Erro na requisição para ${filePath}:`, error);
+        console.error(`[CTG] Erro ao carregar ${filePath}:`, error);
     }
 }
 
@@ -36,15 +22,13 @@ async function loadComponent(elementId, filePath) {
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("[CTG] Inicializando site...");
     
-    // Carrega componentes dinâmicos (se os placeholders existirem)
-    // Se o header já estiver inline no HTML, o initializeMenu será chamado diretamente
+    // Carrega componentes dinâmicos
     const headerPlaceholder = document.getElementById('header-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
 
     if (headerPlaceholder) {
         await loadComponent('header-placeholder', 'components/header.html');
     } else {
-        // Se o header já estiver no HTML de forma estática
         initializeMenu();
     }
 
@@ -75,7 +59,6 @@ async function initializeLocationSelects() {
     if (!estadoSelect || !cidadeSelect) return;
 
     try {
-        // 1. Carregar Estados
         const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
         const estados = await response.json();
 
@@ -86,11 +69,8 @@ async function initializeLocationSelects() {
             estadoSelect.appendChild(option);
         });
 
-        // 2. Evento ao mudar Estado
         estadoSelect.addEventListener('change', async (e) => {
             const uf = e.target.value;
-            
-            // Limpa e desabilita cidades
             cidadeSelect.innerHTML = '<option value="">Carregando cidades...</option>';
             cidadeSelect.disabled = true;
 
@@ -116,10 +96,8 @@ async function initializeLocationSelects() {
                 cidadeSelect.innerHTML = '<option value="">Erro ao carregar cidades</option>';
             }
         });
-
     } catch (error) {
         console.error("[CTG] Erro ao carregar estados:", error);
-        // Fallback: se a API falhar, poderíamos reverter para input de texto aqui se necessário
     }
 }
 
@@ -127,27 +105,24 @@ async function initializeLocationSelects() {
  * Aplica máscara de telefone (00) 00000-0000
  */
 function applyPhoneMask(input) {
-    let value = input.value.replace(/\D/g, ''); // Remove tudo que não é dígito
-    
-    if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
+    let value = input.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
 
     if (value.length > 10) {
-        // Formato Celular: (00) 00000-0000
         value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
     } else if (value.length > 6) {
-        // Formato Intermediário: (00) 0000-0000
         value = value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
     } else if (value.length > 2) {
-        // Formato Intermediário: (00) 0000
         value = value.replace(/^(\d{2})(\d{0,5}).*/, '($1) $2');
     } else if (value.length > 0) {
-        // Formato Inicial: (00
         value = value.replace(/^(\d{0,2})/, '($1');
     }
-
     input.value = value;
 }
 
+/**
+ * Sistema de Revelação ao Scroll (Intersection Observer)
+ */
 function initScrollReveal() {
     const observerOptions = {
         root: null,
@@ -168,7 +143,9 @@ function initScrollReveal() {
     revealElements.forEach(el => observer.observe(el));
 }
 
-// Função para inicializar as funcionalidades do menu
+/**
+ * Inicializa as funcionalidades do menu
+ */
 function initializeMenu() {
     console.log("[CTG] Configurando interações do menu...");
 
@@ -179,7 +156,6 @@ function initializeMenu() {
 
     if (!header) return;
 
-    // Lógica para compensar dinamicamente o padding do header no body
     const updateBodyPadding = () => {
         document.body.style.paddingTop = `${header.offsetHeight}px`;
     };
@@ -193,7 +169,6 @@ function initializeMenu() {
     
     window.addEventListener("resize", updateBodyPadding);
 
-    // Toggle Menu Mobile
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener("click", () => {
             const isOpen = mobileMenu.classList.toggle("open");
@@ -204,7 +179,6 @@ function initializeMenu() {
         });
     }
 
-    // Submenus no Mobile
     submenuLinks.forEach((link) => {
         link.addEventListener("click", (event) => {
             if (window.innerWidth <= 991) {
@@ -217,7 +191,6 @@ function initializeMenu() {
         });
     });
 
-    // Efeito Scrolled
     window.addEventListener("scroll", () => {
         if (window.scrollY > 60) {
             header.classList.add("scrolled");
@@ -226,7 +199,6 @@ function initializeMenu() {
         }
     });
 
-    // Reset ao redimensionar
     window.addEventListener("resize", () => {
         if (window.innerWidth > 991 && mobileMenu) {
             mobileMenu.classList.remove("open");
@@ -236,4 +208,4 @@ function initializeMenu() {
             document.querySelectorAll(".menu-navegacao li.open").forEach((item) => item.classList.remove("open"));
         }
     });
-}
+}
