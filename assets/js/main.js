@@ -7,18 +7,19 @@ async function loadComponent(elementId, filePath) {
     }
 
     try {
-        console.log(`[CTG] Carregando ${filePath}...`);
         const response = await fetch(filePath);
         if (response.ok) {
             const html = await response.text();
             placeholder.innerHTML = html;
             console.log(`[CTG] ${filePath} carregado com sucesso`);
         } else {
-            console.error(`[CTG] Erro ao carregar ${filePath}: ${response.status} ${response.statusText}`);
+            console.error(`[CTG] Erro ao carregar ${filePath}: ${response.status}`);
             placeholder.innerHTML = `<div style="padding: 20px; color: red; text-align: center;">Erro ao carregar componente: ${filePath}</div>`;
         }
     } catch (error) {
         console.error(`[CTG] Erro na requisição para ${filePath}:`, error);
+    }
+}
 
         // Alerta amigável para erro de CORS (comum ao abrir via file://)
         if (window.location.protocol === 'file:') {
@@ -37,27 +38,15 @@ async function loadComponent(elementId, filePath) {
 
 // Executa o carregamento quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("[CTG] DOM carregado, iniciando componentes...");
-
-    // Carregar componentes imediatamente
-    try {
-        await loadComponent("espaco-cabecalho", "components/header.html");
-        await loadComponent("espaco-rodape", "components/footer.html");
-        console.log("[CTG] Todos os componentes carregados com sucesso");
-
-        // Inicializar menu após carregamento
-        setTimeout(() => {
-            initializeMenu();
-        }, 100);
-
-    } catch (error) {
-        console.error("[CTG] Erro geral no carregamento de componentes:", error);
-    }
+    console.log("[CTG] DOM carregado, iniciando...");
+    
+    // Menu já está inline no HTML, apenas inicializar as funcionalidades
+    initializeMenu();
 });
 
 // Função separada para inicializar o menu
 function initializeMenu() {
-    console.log("[CTG] Inicializando funcionalidades do menu...");
+    console.log("[CTG] Inicializando menu...");
 
     const menuToggle = document.querySelector(".icone-menu");
     const mobileMenu = document.querySelector(".menu-navegacao");
@@ -86,7 +75,11 @@ function initializeMenu() {
     }
 
     function toggleMobileMenu() {
-        if (!mobileMenu || !menuToggle) return;
+        console.log("[CTG] Clicou no menu toggle!");
+        if (!mobileMenu || !menuToggle) {
+            console.log("[CTG] mobileMenu ou menuToggle não encontrado");
+            return;
+        }
         const isOpen = mobileMenu.classList.toggle("open");
         menuToggle.classList.toggle("open", isOpen);
         menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
@@ -95,7 +88,10 @@ function initializeMenu() {
     }
 
     if (menuToggle && mobileMenu) {
+        console.log("[CTG] Adicionando evento de click ao menu toggle");
         menuToggle.addEventListener("click", toggleMobileMenu);
+    } else {
+        console.log("[CTG] Elementos não encontrados! menuToggle:", menuToggle, "mobileMenu:", mobileMenu);
     }
 
     submenuLinks.forEach((link) => {

@@ -297,12 +297,14 @@ nav {
 
 /* Hamburger: visível apenas em mobile */
 .icone-menu {
-    display: none;
+    display: inline-flex;
     background: transparent;
     border: none;
     padding: 6px;
     color: var(--dark-color);
     cursor: pointer;
+    position: relative;
+    z-index: 100;
 }
 
 .icone-fechar-menu {
@@ -1332,4 +1334,61 @@ body.menu-aberto {
 
 .menu-navegacao a.active {
     color: var(--primary-color);
+}
+
+/* Submenu aninhado (dropdown dentro de dropdown) */
+.submenu .com-submenu {
+    position: relative;
+}
+
+.submenu .submenu {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 10px);
+    min-width: 320px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.submenu .com-submenu:hover > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Efeito de tarja فقط para links principais do menu */
+.menu-navegacao > ul > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.35s ease;
+}
+
+.menu-navegacao > ul > li > a:hover::after,
+.menu-navegacao > ul > li > a.active::after {
+    width: 100%;
+}
+
+/* Páginas de segmento */
+.pagina-conteudo {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark-color);
+}
 }
