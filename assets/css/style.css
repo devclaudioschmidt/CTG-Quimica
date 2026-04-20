@@ -1377,6 +1377,575 @@ body.menu-aberto {
 }
 
 /* ============================================
+   AVICULTURA PAGE - Layout de Referência
+   ============================================ */
+
+.titulo-pagina {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: var(--dark-color);
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.titulo-pagina::after {
+    content: '';
+    display: block;
+    margin: 1rem auto 0;
+    width: 100px;
+    height: 5px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.titulo-principal {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.titulo-secundario {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.titulo-secundario .titulo-verde {
+    color: var(--secondary-color);
+    font-weight: 900;
+}
+
+/* Animações de Entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.avicultura-anima-titulo,
+.avicultura-anima-intro,
+.avicultura-anima-grid,
+.avicultura-anima-img,
+.avicultura-anima-coluna,
+.avicultura-titulo-secao {
+    opacity: 0;
+}
+
+.avicultura-anima-titulo.visible,
+.avicultura-anima-intro.visible,
+.avicultura-anima-grid.visible,
+.avicultura-anima-img.visible,
+.avicultura-anima-coluna.visible,
+.avicultura-titulo-secao.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.avicultura-anima-grid.visible {
+    animation-delay: 0.4s;
+}
+
+.avicultura-anima-img.visible {
+    animation: zoomIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.avicultura-anima-coluna.visible {
+    animation-delay: 0.5s;
+}
+
+.avicultura-anima-grid:nth-of-type(2).visible .avicultura-anima-coluna,
+.avicultura-anima-grid:nth-of-type(2).visible .avicultura-anima-img {
+    animation-delay: 1s;
+}
+
+.avicultura-anima-grid:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.avicultura-anima-grid:nth-of-type(2) .avicultura-anima-coluna {
+    animation-delay: 1.2s;
+}
+
+.avicultura-anima-grid:nth-of-type(2) .avicultura-anima-img {
+    animation-delay: 1s;
+}
+
+.avicultura-titulo-secao {
+    text-align: center;
+    margin: 4rem 0 2rem;
+}
+
+.titulo-secao-produtos {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: var(--dark-color);
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.titulo-secao-produtos::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.titulo-destaque {
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.titulo-verde {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.titulo-secundario .titulo-verde {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.avicultura-resumo {
+    max-width: 1400px;
+    margin: 0 auto 3rem;
+    text-align: justify;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    background: transparent;
+}
+
+.avicultura-subtitulo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.avicultura-subtitulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.avicultura-intro-texto {
+    margin-bottom: 1.2rem;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.avicultura-lista-intro {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.avicultura-lista-intro p {
+    margin-bottom: 0;
+    color: #555;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--medium-gray);
+    transition: all 0.3s ease;
+}
+
+.avicultura-lista-intro p:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.avicultura-lista-intro strong {
+    color: var(--secondary-color);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.avicultura-intro-destaque {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+    border-radius: 12px;
+    color: var(--white);
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.avicultura-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.avicultura-grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.avicultura-coluna-3 {
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.avicultura-coluna-esquerda {
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.avicultura-espaco-imagem {
+    border-radius: 8px;
+    display: block;
+    color: #999;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+.avicultura-img-produto {
+    max-width: 76%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.avicultura-coluna-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.avicultura-secao3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.avicultura-col-secao3 {
+    border-radius: 8px;
+    padding: 1rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+}
+
+.avicultura-titulo-secao3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.avicultura-item-texto {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.avicultura-check {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.avicultura-div-debug {
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.avicultura-div-debug:first-child {
+    margin-top: 0;
+}
+
+.titulo-alinhado-direita {
+    text-align: right;
+}
+
+.avicultura-texto-justificado {
+    text-align: justify;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.avicultura-destaque {
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.avicultura-titulo-produto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 3rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: visible;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.avicultura-produto-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0;
+}
+
+.avicultura-badge-acid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 0.9rem;
+    border-radius: 30px;
+    margin-left: -30px;
+    z-index: 1;
+    line-height: 1;
+    height: auto;
+}
+
+.avicultura-titulo-produto:hover .avicultura-badge-acid {
+    background: var(--primary-color);
+}
+
+.avicultura-titulo-produto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    border-radius: 50px;
+    z-index: 0;
+}
+
+.avicultura-titulo-produto:hover {
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.avicultura-titulo-produto:hover::before {
+    transform: scaleX(1);
+}
+
+.avicultura-titulo-produto span {
+    position: relative;
+    z-index: 1;
+}
+
+.avicultura-titulo-produto:hover {
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.avultura-titulo-produto:hover::before {
+    transform: scaleX(1);
+}
+
+.avicultura-titulo-produto span {
+    position: relative;
+    z-index: 1;
+}
+
+.nano-destaque {
+    color: var(--secondary-color);
+    font-weight: 800;
+    transition: color 0.4s ease;
+}
+
+.avicultura-titulo-produto:hover .nano-destaque {
+    color: var(--white);
+}
+
+.clean-suave {
+    transition: color 0.4s ease;
+}
+
+.avicultura-titulo-produto:hover .clean-suave {
+    color: #e0e0e0;
+}
+
+.clean-suave {
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.avicultura-topico {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+}
+
+.avicultura-topico span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.avicultura-icone {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+}
+
+.avicultura-icone svg {
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+}
+
+.avicultura-icone-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.avicultura-icon-rotate {
+    transform: rotate(45deg);
+}
+
+/* Responsivo - Mobile */
+@media (max-width: 768px) {
+    .avicultura-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .avicultura-espaco-imagem {
+        min-height: 280px;
+    }
+    
+    .avicultura-resumo {
+        padding: 1.5rem;
+    }
+    
+    .avicultura-coluna-direita {
+        grid-template-columns: 1fr;
+    }
+    
+    .avicultura-secao3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .avicultura-lista-intro {
+        grid-template-columns: 1fr;
+    }
+    
+    .avicultura-subtitulo {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================
    8. MODERN GLASSMORPISM & CONTACT PAGE
    ============================================ */
 

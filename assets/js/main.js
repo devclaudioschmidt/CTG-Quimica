@@ -127,7 +127,7 @@ function initScrollReveal() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.05
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -139,8 +139,15 @@ function initScrollReveal() {
         });
     }, observerOptions);
 
+    // Elementos com classe reveal (padrão existente)
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
+    
+    // Elementos de animação da avicultura (scroll)
+    const aviculturaElements = document.querySelectorAll(
+        '.avicultura-anima-titulo, .avicultura-anima-intro, .avicultura-anima-grid, .avicultura-anima-img, .avicultura-anima-coluna, .avicultura-titulo-secao'
+    );
+    aviculturaElements.forEach(el => observer.observe(el));
 }
 
 /**
