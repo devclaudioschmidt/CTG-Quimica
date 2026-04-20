@@ -55,6 +55,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             e.preventDefault();
             await submitToFormspree(contactForm);
         });
+        
+        // Scroll suave para o formulário ao clicar em links internos
+        document.querySelectorAll('a[href="#formulario-contato"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector('#formulario-contato');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     }
  });
 
