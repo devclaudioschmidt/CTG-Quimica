@@ -45,9 +45,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         phoneInput.addEventListener('input', (e) => applyPhoneMask(e.target));
     }
 
-    // Inicializa seleção dinâmica de Localização (IBGE)
+// Inicializa seleção dinâmica de Localização (IBGE)
     initializeLocationSelects();
-});
+    
+    // Inicializa formulário de contato
+    const contactForm = document.querySelector('.form-tech');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await submitToFormspree(contactForm);
+        });
+    }
+ });
 
 /**
  * Seleção Dinâmica de Estados e Cidades (API IBGE)
@@ -148,6 +157,64 @@ function initScrollReveal() {
         '.avicultura-anima-titulo, .avicultura-anima-intro, .avicultura-anima-grid, .avicultura-anima-img, .avicultura-anima-coluna, .avicultura-titulo-secao'
     );
     aviculturaElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * Envia formulário via Formspree
+ */
+async function submitToFormspree(form) {
+    const formId = 'mojynegb';
+    const endpoint = `https://formspree.io/f/${formId}`;
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
+    const feedbackEl = document.getElementById('form-feedback') || createFeedbackElement(form);
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    feedbackEl.className = 'form-feedback';
+    feedbackEl.textContent = '';
+    feedbackEl.style.display = 'block';
+    
+    try {
+        const formData = new FormData(form);
+        const response = await fetch(endpoint, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            feedbackEl.classList.add('success');
+            feedbackEl.textContent = 'Mensagem enviada com sucesso! Retornaremos em breve.';
+            form.reset();
+        } else {
+            const data = await response.json();
+            throw new Error(data.error || 'Erro ao enviar');
+        }
+    } catch (error) {
+        feedbackEl.classList.add('error');
+        feedbackEl.textContent = 'Erro ao enviar. Tente novamente ou ENTRE EM CONTATO VIA WHATSAPP.';
+        console.error('[CTG] Erro no formulário:', error);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+    }
+}
+
+function createFeedbackElement(form) {
+    const el = document.createElement('div');
+    el.id = 'form-feedback';
+    el.className = 'form-feedback';
+    el.style.marginTop = '20px';
+    el.style.padding = '15px 20px';
+    el.style.borderRadius = '10px';
+    el.style.fontWeight = '600';
+    el.style.display = 'none';
+    form.appendChild(el);
+    return el;
 }
 
 /**
