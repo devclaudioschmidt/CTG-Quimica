@@ -1550,6 +1550,7 @@ body.menu-aberto {
 .titulo-destaque {
     color: var(--primary-color);
     font-weight: 900;
+    transition: color 0.4s ease;
 }
 
 .titulo-verde {
@@ -1864,6 +1865,10 @@ body.menu-aberto {
 
 .avicultura-titulo-produto:hover .clean-suave {
     color: #e0e0e0;
+}
+
+.avicultura-titulo-produto:hover .titulo-destaque {
+    color: var(--white);
 }
 
 .clean-suave {
