@@ -10,6 +10,152 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .produtos-2col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+        .produto-card-2col {
+            background: #fff;
+            border: 1px solid #ff7a00;
+            border-radius: 8px;
+            padding: 1.2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            align-items: start;
+            position: relative;
+        }
+        .produto-card-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        .produto-card-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .produto-card-titulo {
+            margin-bottom: 0.4rem;
+        }
+        .produto-card-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .produto-card-icons {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .produto-card-sizes {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            padding-top: 0.5rem;
+            border-top: 1px solid #eee;
+        }
+        .produto-card-2col::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: #ff7a00;
+        }
+        .produto-card-2col:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .produto-card-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        .produto-card-img img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+        .produto-card-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .produto-card-titulo {
+            margin-bottom: 0.4rem;
+        }
+        .produto-card-titulo .avicultura-titulo-produto {
+            font-size: 1.4rem;
+        }
+        .avicultura-produto-container {
+            display: inline-block;
+            border: 1px solid #1a7a3f;
+            border-radius: 4px;
+            padding: 0.3rem 0.6rem;
+        }
+        .produto-card-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .produto-card-desc .avicultura-texto-justificado {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .produto-card-icons {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .produto-card-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        .produto-card-icon img {
+            width: 18px;
+            height: 18px;
+        }
+        .produto-card-sizes {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            padding-top: 0.5rem;
+            border-top: 1px solid #eee;
+        }
+        .produto-card-sizes .avicultura-titulo-secao3 {
+            font-size: 0.85rem;
+        }
+        .produto-card-size {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.85rem;
+        }
+        .produto-card-size svg {
+            width: 14px;
+            height: 14px;
+        }
+        @media (max-width: 768px) {
+            .produtos-2col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -61,459 +207,397 @@
                 <h2 class="titulo-secao-produtos">Nossos Produtos</h2>
             </div>
 
-            <!-- Produto 01 - Nannoclean -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/nannoclean-5l.png" alt="Nannoclean 5L" class="avicultura-img-produto">
+            <div class="produtos-2col-grid">
+                <!-- Produto 01 - Nannoclean -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/nannoclean-5l.png" alt="Nannoclean 5L">
                     </div>
-                </div>
-                <div class="avicultura-coluna-direita avicultura-anima-coluna">
-                    <div class="avicultura-div-debug">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">nanno</span><span class="clean-suave">clean</span></span>
-                    </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Limpador enzimático de base aquosa...</span><br>
-                            ideal para a desintegração de matéria orgânica pesada (fezes e gordura) em galpões e incubatórios. Por ser biodegradável, é seguro para o ambiente produtivo.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_agroindustria.png" alt="Galpões" class="avicultura-icone-img">
-                        <span>Galpões de Criação</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_incubatorio.svg" alt="Incubatórios" class="avicultura-icone-img">
-                        <span>Incubatórios</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">nanno</span><span class="clean-suave">clean</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Limpador enzimático de base aquosa...</span><br>
+                                ideal para a desintegração de matéria orgânica pesada (fezes e gordura) em galpões e incubatórios. Por ser biodegradável, é seguro para o ambiente produtivo.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_agroindustria.png" alt="Galpões">
+                                <span>Galpões de Criação</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_incubatorio.svg" alt="Incubatórios">
+                                <span>Incubatórios</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Produto 02 - Nannoclean Acid -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-coluna">
-                    <div class="avicultura-produto-container titulo-alinhado-direita">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">nanno</span><span class="clean-suave">clean</span></span>
-                        <span class="avicultura-badge-acid">ACID</span>
+                <!-- Produto 02 - Nannoclean Acid -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/nannoclean-acid-5l.png" alt="Nannoclean Acid 5L">
                     </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Recomendado para a limpeza de sistemas de linha de bebida...</span><br>
-                            (bebedouros nipple) e sistemas de resfriamento (cooling), removendo incrustações minerais e biofilmes que podem obstruir os equipamentos.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_agroindustria.png" alt="Bebedouros" class="avicultura-icone-img">
-                        <span>Linhas de Bebida</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_equipamento_agricola.png" alt="Cooling" class="avicultura-icone-img">
-                        <span>Sistemas de Resfriamento</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo-container">
+                            <div class="produto-card-titulo">
+                                <span class="avicultura-titulo-produto"><span class="nano-destaque">nanno</span><span class="clean-suave">clean</span></span>
+                            </div>
+                            <div class="produto-card-badge">
+                                <span class="avicultura-badge-acid">ACID</span>
+                            </div>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Recomendado para a limpeza de sistemas de linha de bebida...</span><br>
+                                (bebedouros nipple) e sistemas de resfriamento (cooling), removendo incrustações minerais e biofilmes que podem obstruir os equipamentos.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_agroindustria.png" alt="Bebedouros">
+                                <span>Linhas de Bebida</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_equipamento_agricola.png" alt="Cooling">
+                                <span>Sistemas de Resfriamento</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="avicultura-coluna-direita avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/nannoclean-acid-5l.png" alt="Nannoclean Acid 5L" class="avicultura-img-produto">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Produto 03 - D' CROST X -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/d-crost-x.png" alt="D' CROST X" class="avicultura-img-produto">
+                <!-- Produto 03 - D' CROST X -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/d-crost-x.png" alt="D' CROST X">
                     </div>
-                </div>
-                <div class="avicultura-coluna-direita avicultura-anima-coluna">
-                    <div class="avicultura-div-debug">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">D' CROST</span><span class="titulo-destaque">X</span></span>
-                    </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Desincrustante de alta potência para a limpeza profunda...</span><br>
-                            de pisos e superfícies impregnadas durante o vazio sanitário, garantindo a quebra da sujidade mais persistente.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_frigorifico.svg" alt="Pisos" class="avicultura-icone-img">
-                        <span>Pisos Industriais</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_incubatorio.svg" alt="Vazio Sanitário" class="avicultura-icone-img">
-                        <span>Vazio Sanitário</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">D' CROST</span><span class="titulo-destaque">X</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Desincrustante de alta potência para a limpeza profunda...</span><br>
+                                de pisos e superfícies impregnadas durante o vazio sanitário, garantindo a quebra da sujidade mais persistente.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_frigorifico.svg" alt="Pisos">
+                                <span>Pisos Industriais</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_incubatorio.svg" alt="Vazio Sanitário">
+                                <span>Vazio Sanitário</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Produto 04 - D' CROST -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-coluna">
-                    <div class="avicultura-produto-container titulo-alinhado-direita">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">D´CROST</span></span>
+                <!-- Produto 04 - D' CROST -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/d-crost.png" alt="D' CROST">
                     </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Desincrustante concentrado de alto desempenho...</span><br>
-                            para limpeza de pisos e superfícies com sujidades complexas. Sua tecnologia foi desenvolvida para superar os limites dos produtos comuns, atuando com precisão em camadas de difícil remoção.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_agroindustria.png" alt="Pisos" class="avicultura-icone-img">
-                        <span>Pisos Industriais</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_frigorifico.svg" alt="Superfícies" class="avicultura-icone-img">
-                        <span>Superfícies Impregnadas</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">D´CROST</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Desincrustante concentrado de alto desempenho...</span><br>
+                                para limpeza de pisos e superfícies com sujidades complexas. Sua tecnologia foi desenvolvida para superar os limites dos produtos comuns, atuando com precisão em camadas de difícil remoção.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_agroindustria.png" alt="Pisos">
+                                <span>Pisos Industriais</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_frigorifico.svg" alt="Superfícies">
+                                <span>Superfícies Impregnadas</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="avicultura-coluna-direita avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/d-crost.png" alt="D' CROST" class="avicultura-img-produto">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Produto 05 - Zerofly -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/nannoclean-5l.png" alt="Zerofly" class="avicultura-img-produto">
+                <!-- Produto 05 - Zerofly -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/nannoclean-5l.png" alt="Zerofly">
                     </div>
-                </div>
-                <div class="avicultura-coluna-direita avicultura-anima-coluna">
-                    <div class="avicultura-div-debug">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">zero</span><span class="clean-suave">fly</span></span>
-                    </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Repelente 100% natural...</span><br>
-                            fundamental para o controle de moscas e outros insetos nos galpões e áreas de compostagem. Sua composição atóxica permite o uso frequente sem riscos ao plantel ou aos operadores.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_agroindustria.png" alt="Galpões" class="avicultura-icone-img">
-                        <span>Galpões</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_equipamento_agricola.png" alt="Compostagem" class="avicultura-icone-img">
-                        <span>Áreas de Compostagem</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">zero</span><span class="clean-suave">fly</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Repelente 100% natural...</span><br>
+                                fundamental para o controle de moscas e outros insetos nos galpões e áreas de compostagem. Sua composição atóxica permite o uso frequente sem riscos ao plantel ou aos operadores.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_agroindustria.png" alt="Galpões">
+                                <span>Galpões</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_equipamento_agricola.png" alt="Compostagem">
+                                <span>Áreas de Compostagem</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>1 Litro</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Produto 06 - D'RUST -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-coluna">
-                    <div class="avicultura-produto-container titulo-alinhado-direita">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">D'RUST</span></span>
+                <!-- Produto 06 - D'RUST -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/d-crost.png" alt="D'RUST">
                     </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Atua na remoção de ferrugem e proteção...</span><br>
-                            de silos, transportadores de ração, ventiladores e demais estruturas metálicas sujeitas à oxidação em ambientes de alta umidade.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_metalmecanica.png" alt="Silos" class="avicultura-icone-img">
-                        <span>Silos</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_equipamento_agricola.png" alt="Estruturas" class="avicultura-icone-img">
-                        <span>Estruturas Metálicas</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">D'RUST</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Atua na remoção de ferrugem e proteção...</span><br>
+                                de silos, transportadores de ração, ventiladores e demais estruturas metálicas sujeitas à oxidação em ambientes de alta umidade.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_metalmecanica.png" alt="Silos">
+                                <span>Silos</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_equipamento_agricola.png" alt="Estruturas">
+                                <span>Estruturas Metálicas</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="avicultura-coluna-direita avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/d-crost.png" alt="D'RUST" class="avicultura-img-produto">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Produto 07 - AFP-4 -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/nannoclean-acid-5l.png" alt="AFP-4" class="avicultura-img-produto">
+                <!-- Produto 07 - AFP-4 -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/nannoclean-acid-5l.png" alt="AFP-4">
                     </div>
-                </div>
-                <div class="avicultura-coluna-direita avicultura-anima-coluna">
-                    <div class="avicultura-div-debug">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">AFP</span><span class="titulo-destaque">-4</span></span>
-                    </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Indicado para o gerenciamento de lagoas de tratamento...</span><br>
-                            de dejetos e estações de tratamento de água, eliminando a espuma e aumentando a eficiência dos processos químicos e biológicos.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_agroindustria.png" alt="Lagoas" class="avicultura-icone-img">
-                        <span>Lagoas de Tratamento</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_equipamento_agricola.png" alt="ETA" class="avicultura-icone-img">
-                        <span>Estações de Tratamento</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">AFP</span><span class="titulo-destaque">-4</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Indicado para o gerenciamento de lagoas de tratamento...</span><br>
+                                de dejetos e estações de tratamento de água, eliminando a espuma e aumentando a eficiência dos processos químicos e biológicos.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_agroindustria.png" alt="Lagoas">
+                                <span>Lagoas de Tratamento</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_equipamento_agricola.png" alt="ETA">
+                                <span>Estações de Tratamento</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Produto 08 - Bioclean Car -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-coluna">
-                    <div class="avicultura-produto-container titulo-alinhado-direita">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">bio</span><span class="clean-suave">clean</span></span>
-                        <span class="avicultura-badge-acid">CAR</span>
+                <!-- Produto 08 - Bioclean Car -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/nannoclean-5l.png" alt="Bioclean Car">
                     </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Solução para a limpeza da frota de transporte...</span><br>
-                            de aves vivas e caminhões de ração. Remove a sujidade pesada sem necessidade de ácidos agressivos, preservando a vida útil dos veículos.</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_equipamento_agricola.png" alt="Caminhões" class="avicultura-icone-img">
-                        <span>Caminhões de Aves</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_metalmecanica.png" alt="Frotas" class="avicultura-icone-img">
-                        <span>Caminhões de Ração</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo-container">
+                            <div class="produto-card-titulo">
+                                <span class="avicultura-titulo-produto"><span class="nano-destaque">bio</span><span class="clean-suave">clean</span></span>
+                            </div>
+                            <div class="produto-card-badge">
+                                <span class="avicultura-badge-acid">CAR</span>
+                            </div>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Solução para a limpeza da frota de transporte...</span><br>
+                                de aves vivas e caminhões de ração. Remove a sujidade pesada sem necessidade de ácidos agressivos, preservando a vida útil dos veículos.</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_equipamento_agricola.png" alt="Caminhões">
+                                <span>Caminhões de Aves</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_metalmecanica.png" alt="Frotas">
+                                <span>Caminhões de Ração</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>20 Litros</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="avicultura-coluna-direita avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/nannoclean-5l.png" alt="Bioclean Car" class="avicultura-img-produto">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Produto 09 - Fitclean -->
-            <div class="avicultura-grid avicultura-anima-grid">
-                <div class="avicultura-coluna-esquerda avicultura-anima-img">
-                    <div class="avicultura-espaco-imagem">
-                        <img src="assets/img/nannoclean-5l.png" alt="Fitclean" class="avicultura-img-produto">
+                <!-- Produto 09 - Fitclean -->
+                <div class="produto-card-2col">
+                    <div class="produto-card-img">
+                        <img src="assets/img/nannoclean-5l.png" alt="Fitclean">
                     </div>
-                </div>
-                <div class="avicultura-coluna-direita avicultura-anima-coluna">
-                    <div class="avicultura-div-debug">
-                        <span class="avicultura-titulo-produto"><span class="nano-destaque">fit</span><span class="clean-suave">clean</span></span>
-                    </div>
-                    <div class="avicultura-div-debug">
-                        <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Detergente nanotecnológico para a lavanderia industrial...</span><br>
-                            garantindo a higienização completa e a remoção de odores orgânicos dos uniformes e equipamentos de proteção individual (EPIs).</p>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_cozinhas_industriais.png" alt="Lavanderia" class="avicultura-icone-img">
-                        <span>Lavanderia Industrial</span>
-                    </div>
-                    <div class="avicultura-topico">
-                        <img src="assets/img/icone_agroindustria.png" alt="EPIs" class="avicultura-icone-img">
-                        <span>EPIs e Uniformes</span>
-                    </div>
-                    <div class="avicultura-secao3">
-                        <div class="avicultura-col-secao3">
-                            <span class="avicultura-titulo-secao3">Disponível</span>
+                    <div class="produto-card-content">
+                        <div class="produto-card-titulo">
+                            <span class="avicultura-titulo-produto"><span class="nano-destaque">fit</span><span class="clean-suave">clean</span></span>
                         </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                        <div class="produto-card-desc">
+                            <p class="avicultura-texto-justificado"><span class="avicultura-destaque">Detergente nanotecnológico para a lavanderia industrial...</span><br>
+                                garantindo a higienização completa e a remoção de odores orgânicos dos uniformes e equipamentos de proteção individual (EPIs).</p>
+                        </div>
+                        <div class="produto-card-icons">
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_cozinhas_industriais.png" alt="Lavanderia">
+                                <span>Lavanderia Industrial</span>
+                            </div>
+                            <div class="produto-card-icon">
+                                <img src="assets/img/icone_agroindustria.png" alt="EPIs">
+                                <span>EPIs e Uniformes</span>
+                            </div>
+                        </div>
+                        <div class="produto-card-sizes">
+                            <span class="avicultura-titulo-secao3">Disponível</span>
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#ff7a00" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>1 Litro</span>
                             </div>
-                        </div>
-                        <div class="avicultura-col-secao3">
-                            <div class="avicultura-item-texto">
-                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none">
+                            <div class="produto-card-size">
+                                <svg class="avicultura-check" viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;">
                                     <circle cx="12" cy="12" r="10" fill="#1a7a3f" />
-                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5"
-                                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <polyline points="16 8 10 14 7 11" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
                                 </svg>
                                 <span>5 Litros</span>
                             </div>
