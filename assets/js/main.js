@@ -163,11 +163,28 @@ function initScrollReveal() {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
     
-    // Elementos de animação da avicultura (scroll)
-    const aviculturaElements = document.querySelectorAll(
+// Elementos de animação da avicultura (scroll)
+const aviculturaElements = document.querySelectorAll(
         '.avicultura-anima-titulo, .avicultura-anima-intro, .avicultura-anima-grid, .avicultura-anima-img, .avicultura-anima-coluna, .avicultura-titulo-secao'
     );
     aviculturaElements.forEach(el => observer.observe(el));
+
+    const suinoculturaElements = document.querySelectorAll(
+        '.suinocultura-anima-titulo, .suinocultura-anima-intro, .suinocultura-anima-grid, .suinocultura-anima-img, .suinocultura-anima-coluna, .suinocultura-titulo-secao'
+    );
+    suinoculturaElements.forEach(el => observer.observe(el));
+
+    // Elementos de animação da bovinocultura (scroll)
+    const bovinoculturaElements = document.querySelectorAll(
+        '.bovinocultura-anima-titulo, .bovinocultura-anima-intro, .bovinocultura-anima-grid, .bovinocultura-anima-img, .bovinocultura-anima-coluna, .bovinocultura-titulo-secao'
+    );
+    bovinoculturaElements.forEach(el => observer.observe(el));
+
+    // Elementos de animação da aquicultura (scroll)
+    const aquiculturaElements = document.querySelectorAll(
+        '.aquicultura-anima-titulo, .aquicultura-anima-intro, .aquicultura-anima-grid, .aquicultura-anima-img, .aquicultura-anima-coluna, .aquicultura-titulo-secao'
+    );
+    aquiculturaElements.forEach(el => observer.observe(el));
 }
 
 /**
