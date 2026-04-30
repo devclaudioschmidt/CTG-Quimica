@@ -93,11 +93,11 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 28px;
-    border-radius: 50px;
+    padding: 8px 20px;
+    border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     transition: all 0.3s var(--transition);
     border: none;
     cursor: pointer;
@@ -194,7 +194,7 @@ body {
 /* 4. Custom Header - Fixo no Topo */
 .cabecalho-principal {
     background: var(--white);
-    padding: 18px 0;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -215,11 +215,11 @@ body {
 }
 
 .cabecalho-principal.scrolled .logo-principal {
-    height: 52px;
+    height: 40px;
 }
 
 .logo-principal {
-    height: 100px;
+    height: 70px;
     display: block;
     width: auto;
     transition: height 0.4s ease;
@@ -227,8 +227,8 @@ body {
 
 /* Compensa o espaço do header fixo no topo */
 body {
-    padding-top: 136px;
-    /* altura do header expandido (100px logo + 18px*2 padding) */
+    padding-top: 96px;
+    /* altura do header expandido (70px logo + 10px*2 padding) */
 }
 
 
@@ -236,7 +236,7 @@ body {
 .menu-navegacao {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 24px;
     flex-shrink: 1;
     justify-content: center;
 }
@@ -385,29 +385,27 @@ body.menu-aberto {
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
-    padding: 120px 0 140px 0;
+    padding: 80px 0 100px 0;
     position: relative;
     z-index: 1;
-    min-height: 600px;
+    min-height: 500px;
 }
 
 .grade-destaque {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
-    gap: 60px;
+    gap: 30px;
 }
 
 .conteudo-destaque {
     position: relative;
     z-index: 10;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .tag-localizacao {
@@ -425,10 +423,10 @@ body.menu-aberto {
 }
 
 .destaque h1 {
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     line-height: 1.1;
     font-weight: 900;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     color: var(--dark-color);
     letter-spacing: -1px;
 }
@@ -438,9 +436,9 @@ body.menu-aberto {
 }
 
 .destaque p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #444;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     max-width: 550px;
 }
 
@@ -449,41 +447,41 @@ body.menu-aberto {
 /* Barra de busca customizada do painel de destaque */
 .busca-destaque {
     background: #fff;
-    padding: 10px;
-    padding-left: 28px;
-    border-radius: 60px;
+    padding: 8px;
+    padding-left: 20px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-    max-width: 540px;
-    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin-bottom: 30px;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .busca-destaque input {
     flex: 1;
     border: none;
-    padding: 12px;
+    padding: 10px;
     outline: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     background: transparent;
 }
 
 /* Cartões de Categorias (Alimentos, Agro, Águas) iterativos */
 .faixa-categorias {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .cartao-categoria {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     background: #fff;
-    padding: 16px 24px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s var(--transition);
     border: 1px solid transparent;
 }
@@ -501,7 +499,7 @@ body.menu-aberto {
 }
 
 .info-categoria h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     margin-bottom: 2px;
 }
@@ -517,28 +515,28 @@ body.menu-aberto {
 
 .cartao-inferior-destaque {
     position: relative;
-    margin-top: -72px;
-    padding-bottom: 84px;
+    margin-top: -50px;
+    padding-bottom: 60px;
     z-index: 2;
 }
 
 .cartao-destaque {
     background: var(--white);
-    border-radius: 28px;
-    padding: 36px 32px;
-    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.12);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .grade-cartao-destaque {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 16px;
 }
 
 .item-cartao-destaque h3 {
-    margin: 0 0 12px;
-    font-size: 1.35rem;
+    margin: 0 0 10px;
+    font-size: 1.1rem;
     color: var(--dark-color);
 }
 
@@ -549,14 +547,14 @@ body.menu-aberto {
 }
 
 .secao-laboratorio {
-    padding: 100px 0 80px;
+    padding: 60px 0 40px;
     background: var(--white);
 }
 
 .grade-laboratorio {
     display: grid;
     grid-template-columns: 1.05fr 0.95fr;
-    gap: 60px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -585,23 +583,23 @@ body.menu-aberto {
 }
 
 .titulo-laboratorio {
-    margin: 0 0 24px;
-    font-size: clamp(2.8rem, 4vw, 3.8rem);
+    margin: 0 0 20px;
+    font-size: clamp(2rem, 3vw, 2.8rem);
     line-height: 1.05;
     color: var(--dark-color);
 }
 
 .texto-laboratorio {
-    margin: 0 0 32px;
+    margin: 0 0 24px;
     max-width: 580px;
     color: #5a5a5a;
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 .acoes-laboratorio {
     display: flex;
-    gap: 18px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
@@ -613,7 +611,7 @@ body.menu-aberto {
 
 @media (max-width: 1100px) {
     .destaque h1 {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
 
     .grade-cartao-destaque {
@@ -623,13 +621,13 @@ body.menu-aberto {
 
 @media (max-width: 991px) {
     .destaque {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .grade-destaque {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 60px;
+        gap: 40px;
     }
 
     .conteudo-destaque {
@@ -638,10 +636,11 @@ body.menu-aberto {
         align-items: center;
         max-width: 100%;
         box-sizing: border-box;
+        padding: 24px;
     }
 
     .destaque h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         word-break: break-word;
     }
 
@@ -656,7 +655,7 @@ body.menu-aberto {
     }
 
     .imagem-laboratorio {
-        min-height: 320px;
+        min-height: 280px;
     }
 
     .texto-laboratorio {
@@ -666,7 +665,7 @@ body.menu-aberto {
 
     .faixa-categorias {
         justify-content: center;
-        gap: 16px;
+        gap: 12px;
     }
 
     .cabecalho-principal .container {
@@ -879,20 +878,20 @@ body.menu-aberto {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 18px;
+        padding: 0 16px;
     }
 
     .destaque h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .destaque p,
     .texto-laboratorio {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .cartao-destaque {
-        padding: 28px 22px;
+        padding: 20px 16px;
     }
 
     .hero-card-grid,
@@ -909,19 +908,19 @@ body.menu-aberto {
 
 @media (max-width: 610px) {
     .cabecalho-principal {
-        padding: 14px 0;
+        padding: 8px 0;
     }
 
     body {
-        padding-top: 114px;
+        padding-top: 86px;
     }
 
     .destaque {
-        padding: 40px 0 80px;
+        padding: 40px 0 60px;
     }
 
     .busca-destaque {
-        padding-left: 18px;
+        padding-left: 16px;
     }
 
     .acoes-laboratorio {
@@ -1382,11 +1381,11 @@ body.menu-aberto {
    ============================================ */
 
 .titulo-pagina {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 3vw, 2.8rem);
     font-weight: 900;
     color: var(--dark-color);
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     line-height: 1.3;
 }
@@ -1583,11 +1582,11 @@ body.menu-aberto {
 
 .avicultura-resumo {
     max-width: 1400px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     text-align: justify;
-    padding: 2rem 1rem;
-    font-size: 1rem;
-    line-height: 1.7;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #555;
     background: transparent;
 }
@@ -1621,18 +1620,18 @@ body.menu-aberto {
 }
 
 .avicultura-lista-intro {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .avicultura-lista-intro p {
     margin-bottom: 0;
     color: #555;
-    padding: 1.5rem;
+    padding: 1rem;
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid var(--medium-gray);
     transition: all 0.3s ease;
 }
@@ -1653,29 +1652,29 @@ body.menu-aberto {
 .avicultura-intro-destaque {
     font-weight: 600;
     color: var(--dark-color);
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
     background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--white);
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .avicultura-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: start;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .avicultura-grid-3col {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .avicultura-coluna-3 {
@@ -1696,11 +1695,11 @@ body.menu-aberto {
     color: #999;
     font-weight: 600;
     font-size: 1.1rem;
-    padding: 1rem;
+    padding: 0.8rem;
 }
 
 .avicultura-img-produto {
-    max-width: 76%;
+    max-width: 60%;
     width: 100%;
     height: auto;
     display: block;
@@ -1710,18 +1709,18 @@ body.menu-aberto {
 .avicultura-coluna-direita {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    border-radius: 12px;
-    padding: 1rem;
+    gap: 0.3rem;
+    border-radius: 10px;
+    padding: 0.8rem;
 }
 
 .avicultura-secao3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--medium-gray);
     margin-top: 0.5rem;
-    border-radius: 12px;
-    padding: 1rem;
 }
 
 .avicultura-col-secao3 {
@@ -1753,8 +1752,8 @@ body.menu-aberto {
 }
 
 .avicultura-check {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
 }
 
@@ -1774,23 +1773,54 @@ body.menu-aberto {
 .avicultura-texto-justificado {
     text-align: justify;
     margin: 0;
-    line-height: 1.7;
+    line-height: 1.6;
+    color: #555;
+    font-size: 0.95rem;
 }
 
 .avicultura-destaque {
     color: var(--dark-color);
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 1em;
+}
+
+.produto-card-titulo-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.produto-card-titulo {
+    display: inline-block;
+}
+
+.produto-card-badge {
+    display: inline-block;
+    margin-top: 0.2rem;
+}
+
+.produto-card-2col {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.produto-card-img img {
+    max-height: 180px;
+    width: auto;
+    object-fit: contain;
 }
 
 .avicultura-titulo-produto {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem 3rem;
+    padding: 0.3rem 2rem;
     border: 2px solid var(--secondary-color);
     border-radius: 50px;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     transition: all 0.4s ease;
     position: relative;
@@ -1811,23 +1841,18 @@ body.menu-aberto {
 }
 
 .avicultura-badge-acid {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--secondary-color);
-    color: var(--white);
-    font-size: 0.9rem;
-    font-weight: 700;
-    padding: 0.5rem 0.9rem;
-    border-radius: 30px;
-    margin-left: -30px;
-    z-index: 1;
-    line-height: 1;
-    height: auto;
-}
-
-.avicultura-titulo-produto:hover .avicultura-badge-acid {
     background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 16px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: -35px;
+    align-self: center;
+    position: relative;
+    z-index: 10;
 }
 
 .avicultura-titulo-produto::before {
@@ -1903,28 +1928,29 @@ body.menu-aberto {
 .avicultura-topico {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    color: #555;
+    font-size: 1.1rem;
 }
 
 .avicultura-topico span {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #6b7280;
 }
 
 .avicultura-icone {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary-color);
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 3px 10px rgba(255, 122, 0, 0.3);
 }
 
 .avicultura-icone svg {
@@ -1934,10 +1960,9 @@ body.menu-aberto {
 }
 
 .avicultura-icone-img {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
-    flex-shrink: 0;
 }
 
 .avicultura-icon-rotate {
@@ -1981,11 +2006,11 @@ body.menu-aberto {
 
 .suinocultura-resumo {
     max-width: 1400px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     text-align: justify;
-    padding: 2rem 1rem;
-    font-size: 1rem;
-    line-height: 1.7;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #555;
     background: transparent;
 }
@@ -2062,18 +2087,18 @@ body.menu-aberto {
 }
 
 .suinocultura-lista-intro {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .suinocultura-lista-intro p {
     margin-bottom: 0;
     color: #555;
-    padding: 1.5rem;
+    padding: 1rem;
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid var(--medium-gray);
     transition: all 0.3s ease;
 }
@@ -2119,12 +2144,12 @@ body.menu-aberto {
 }
 
 .suinocultura-titulo-secao h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: var(--dark-color);
     position: relative;
     display: inline-block;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
 }
 
 .suinocultura-titulo-secao h2::after {
@@ -2145,7 +2170,7 @@ body.menu-aberto {
     }
     
     .suinocultura-titulo-secao h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -2173,11 +2198,11 @@ body.menu-aberto {
 
 .bovinocultura-resumo {
     max-width: 1400px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     text-align: justify;
-    padding: 2rem 1rem;
-    font-size: 1rem;
-    line-height: 1.7;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #555;
     background: transparent;
 }
@@ -2243,14 +2268,14 @@ body.menu-aberto {
 .bovinocultura-intro-destaque {
     font-weight: 600;
     color: var(--dark-color);
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
     background: linear-gradient(135deg, var(--primary-color) 0%, #e65a00 100%);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--white);
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .bovinocultura-titulo-secao {
@@ -2260,12 +2285,12 @@ body.menu-aberto {
 }
 
 .bovinocultura-titulo-secao h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: var(--dark-color);
     position: relative;
     display: inline-block;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
 }
 
 .bovinocultura-titulo-secao h2::after {
@@ -2286,7 +2311,7 @@ body.menu-aberto {
     }
     
     .bovinocultura-titulo-secao h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -2399,11 +2424,11 @@ body.menu-aberto {
 
 .aquicultura-resumo {
     max-width: 1400px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     text-align: justify;
-    padding: 2rem 1rem;
-    font-size: 1rem;
-    line-height: 1.7;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: #555;
     background: transparent;
 }
@@ -2415,19 +2440,19 @@ body.menu-aberto {
 }
 
 .aquicultura-lista-intro {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .aquicultura-lista-intro p {
     margin-bottom: 0;
     color: #555;
-    padding: 1.5rem;
-    padding-left: 1.8rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid var(--medium-gray);
     border-left: 3px solid var(--primary-color);
     transition: all 0.3s ease;
@@ -2452,14 +2477,14 @@ body.menu-aberto {
 .aquicultura-intro-destaque {
     font-weight: 600;
     color: var(--dark-color);
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
     background: var(--primary-color);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--white);
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .aquicultura-titulo-secao {
@@ -2494,7 +2519,7 @@ body.menu-aberto {
         grid-template-columns: 1fr;
     }
     .aquicultura-titulo-secao h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -2505,14 +2530,14 @@ body.menu-aberto {
 .suinocultura-intro-destaque {
     font-weight: 600;
     color: var(--dark-color);
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
     background: linear-gradient(135deg, var(--secondary-color) 0%, #0d5a2d 100%);
-    border-radius: 12px;
+    border-radius: 10px;
     color: var(--white);
     text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .suinocultura-lista-intro p:hover {
@@ -2535,9 +2560,9 @@ body.menu-aberto {
 .suinocultura-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
     align-items: start;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .suinocultura-grid:nth-of-type(odd) .suinocultura-coluna-esquerda {
@@ -2559,12 +2584,12 @@ body.menu-aberto {
 .suinocultura-espaco-imagem {
     background: linear-gradient(135deg, #f8faf9 0%, #e8f5ec 100%);
     border: 2px solid var(--secondary-color);
-    border-radius: 16px;
-    padding: 2rem;
+    border-radius: 14px;
+    padding: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 300px;
+    min-height: 240px;
 }
 
 .suinocultura-img-produto {
@@ -2572,23 +2597,23 @@ body.menu-aberto {
     height: auto;
     border-radius: 8px;
     object-fit: contain;
-    max-height: 280px;
+    max-height: 220px;
 }
 
 .suinocultura-coluna-esquerda,
 .suinocultura-coluna-direita {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .suinocultura-titulo-produto {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: var(--dark-color);
     display: block;
     position: relative;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
 }
 
 .suinocultura-titulo-produto .nanno-destaque {
@@ -2609,9 +2634,9 @@ body.menu-aberto {
 .suinocultura-badge-pro {
     background: var(--secondary-color);
     color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 16px;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -2630,7 +2655,7 @@ body.menu-aberto {
     text-align: justify;
     line-height: 1.7;
     color: #555;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .suinocultura-destaque {
@@ -2641,25 +2666,25 @@ body.menu-aberto {
 .suinocultura-topico {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
+    gap: 0.4rem;
+    padding: 0.3rem 0;
     color: #555;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .suinocultura-topico-img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
 }
 
 .suinocultura-secao3 {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding: 1rem 0;
+    gap: 0.8rem;
+    padding: 0.5rem 0;
     border-top: 1px solid var(--medium-gray);
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .suinocultura-secao3:first-child {
@@ -2673,7 +2698,8 @@ body.menu-aberto {
 .suinocultura-item-texto {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--dark-color);
 }
@@ -2728,10 +2754,10 @@ body.menu-aberto {
 
 .hero-moderno {
     position: relative;
-    padding: 220px 0 160px;
+    padding: 140px 0 100px;
     background: var(--white);
     overflow: hidden;
-    min-height: 750px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--medium-gray);
@@ -2818,19 +2844,19 @@ body.menu-aberto {
 .grid-moderno {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    gap: 50px;
     position: relative;
     z-index: 10;
     align-items: start;
 }
 
 .titulo-impacto {
-    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 950;
     line-height: 0.9;
     color: var(--dark-color);
-    letter-spacing: -3px;
-    margin-bottom: 25px;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
@@ -2842,12 +2868,12 @@ body.menu-aberto {
 }
 
 .texto-manifesto {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: #555;
     max-width: 500px;
     border-left: 3px solid var(--primary-color);
-    padding-left: 24px;
-    margin-bottom: 50px;
+    padding-left: 20px;
+    margin-bottom: 40px;
 }
 
 .hero-imagem-container {
@@ -2870,14 +2896,14 @@ body.menu-aberto {
 }
 
 .secao-formulario-contato {
-    padding: 120px 0;
+    padding: 80px 0;
     background: #ffffff;
 }
 
 .grid-formulario-duplo {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
-    gap: 100px;
+    gap: 60px;
     align-items: start;
 }
 
@@ -2894,8 +2920,8 @@ body.menu-aberto {
 
 .cartao-info-lateral {
     background: var(--light-gray);
-    padding: 50px;
-    border-radius: 24px;
+    padding: 40px;
+    border-radius: 20px;
     height: 100%;
     opacity: 0;
 }
@@ -2926,6 +2952,11 @@ body.menu-aberto {
     }
 }
 
+.secao-mapa-moderna {
+    padding: 60px 0;
+    background: var(--light-gray);
+}
+
 .secao-mapa-moderna h2, 
 .secao-mapa-moderna p {
     opacity: 0;
@@ -2940,6 +2971,11 @@ body.menu-aberto {
 .container-mapa-reveal {
     opacity: 0;
     transition: transform 0.5s ease;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--medium-gray);
 }
 
 .container-mapa-reveal.visible {
@@ -2948,7 +2984,7 @@ body.menu-aberto {
 }
 
 .form-tech .grupo-campo {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .form-tech input, 
@@ -2956,9 +2992,9 @@ body.menu-aberto {
 .form-tech textarea {
     background: #f8f9fa;
     border: 1px solid var(--medium-gray);
-    padding: 18px 20px;
+    padding: 14px 18px;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--dark-color);
     transition: all 0.3s ease;
     width: 100%;
