@@ -13,23 +13,38 @@
 
 <body>
 
+    <!-- Barra de progresso do scroll -->
+    <div class="scroll-progress"></div>
+
     <div id="header-placeholder"></div>
 
     <main>
         <section class="destaque">
+            <!-- Circulos animados -->
+            <div class="circulos-hero">
+                <div class="circulo circulo-1"></div>
+                <div class="circulo circulo-2"></div>
+                <div class="circulo circulo-3"></div>
+                <div class="circulo circulo-4"></div>
+                <div class="circulo circulo-5"></div>
+                <div class="circulo circulo-6"></div>
+                <div class="circulo circulo-7"></div>
+                <div class="circulo circulo-8"></div>
+            </div>
+            
             <div class="container grade-destaque">
                 <div class="conteudo-destaque">
-                    <div class="tag-localizacao">
+                    <div class="tag-localizacao animate-on-scroll animate-slide-up" data-delay="0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                         Soluções de Ponta | Qualidade & Tecnologia
                     </div>
-                    <h1>Inovação em <span>Nanotecnologia</span> Química</h1>
-                    <p>Fabricante de químicos com foco em nanotecnologia, equipamentos para preservação de água e ar, e projetos sob medida para suas necessidades.</p>
+                    <h1 class="animate-on-scroll animate-slide-up" data-delay="100">Inovação em <span>Nanotecnologia</span> Química</h1>
+                    <p class="animate-on-scroll animate-slide-up" data-delay="200">Fabricante de químicos com foco em nanotecnologia, equipamentos para preservação de água e ar, e projetos sob medida para suas necessidades.</p>
 
-                    <div class="busca-destaque">
+                    <div class="busca-destaque animate-on-scroll animate-slide-up" data-delay="300">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -39,21 +54,21 @@
                     </div>
 
                     <div class="faixa-categorias">
-                        <div class="cartao-categoria">
+                        <div class="cartao-categoria animate-on-scroll animate-slide-up" data-delay="400">
                             <img src="assets/img/cat_solutions.png" alt="Alimentos" class="icone-categoria">
                             <div class="info-categoria">
                                 <h4>Indústria de Alimentos</h4>
                                 <a href="#">Ver soluções →</a>
                             </div>
                         </div>
-                        <div class="cartao-categoria">
+                        <div class="cartao-categoria animate-on-scroll animate-slide-up" data-delay="500">
                             <img src="assets/img/cat_industrial.png" alt="Agro" class="icone-categoria">
                             <div class="info-categoria">
                                 <h4>Agroindústria</h4>
                                 <a href="#">Ver soluções →</a>
                             </div>
                         </div>
-                        <div class="cartao-categoria">
+                        <div class="cartao-categoria animate-on-scroll animate-slide-up" data-delay="600">
                             <img src="assets/img/cat_safety.png" alt="Águas" class="icone-categoria">
                             <div class="info-categoria">
                                 <h4>Esterilização & Águas</h4>
@@ -66,18 +81,40 @@
         </section>
 
         <section class="cartao-inferior-destaque">
+            <!-- Circulos decorativos -->
+            <div class="circulos-card">
+                <div class="circulo-animado circulo-card-1"></div>
+                <div class="circulo-animado circulo-card-2"></div>
+            </div>
             <div class="container">
-                <div class="cartao-destaque">
+                <div class="cartao-destaque animate-on-scroll animate-scale" data-delay="0">
                     <div class="grade-cartao-destaque">
-                        <div class="item-cartao-destaque">
+                        <div class="item-cartao-destaque animate-on-scroll animate-slide-up" data-delay="100">
+                            <div class="item-cartao-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
                             <h3>Atendimento Personalizado</h3>
                             <p>Atendimento ágil e suporte consultivo para projetos de nanotecnologia e proteção hídrica.</p>
                         </div>
-                        <div class="item-cartao-destaque">
+                        <div class="item-cartao-destaque animate-on-scroll animate-slide-up" data-delay="250">
+                            <div class="item-cartao-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M16 8l-4 4-4-4"></path>
+                                    <path d="M12 12v6"></path>
+                                </svg>
+                            </div>
                             <h3>Consultoria especializada</h3>
                             <p>Equipe especializada em soluções químicas para indústria, agro e preservação ambiental.</p>
                         </div>
-                        <div class="item-cartao-destaque">
+                        <div class="item-cartao-destaque animate-on-scroll animate-slide-up" data-delay="400">
+                            <div class="item-cartao-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+                                </svg>
+                            </div>
                             <h3>Processos Simplificados</h3>
                             <p>Processos simples, transparência total e comunicação digital sem burocracia.</p>
                         </div>
@@ -87,15 +124,21 @@
         </section>
 
         <section class="secao-laboratorio">
+            <div class="circulos-lab">
+                <div class="circulo-animado circulo-lab-1"></div>
+                <div class="circulo-animado circulo-lab-2"></div>
+                <div class="circulo-animado circulo-lab-3"></div>
+                <div class="circulo-animado circulo-lab-4"></div>
+            </div>
             <div class="container grade-laboratorio">
-                <div class="imagem-laboratorio">
+                <div class="imagem-laboratorio animate-on-scroll animate-slide-left" data-delay="0">
                     <img src="assets/img/laboratorio.jpg" alt="Laboratório CTG Química">
                 </div>
                 <div class="lab-content">
-                    <span class="subtitulo-laboratorio">Soluções para seu negócio</span>
-                    <h2 class="titulo-laboratorio">Mais que produtos, entregamos inteligência química para o seu negócio</h2>
-                    <p class="texto-laboratorio">Atuamos com foco total na excelência operacional, oferecendo produtos inovadores e suporte técnico ágil. Na CTG-Química, acreditamos que prazos e preços competitivos são a base de uma parceria de sucesso.</p>
-                    <div class="acoes-laboratorio">
+                    <span class="subtitulo-laboratorio animate-on-scroll animate-slide-right" data-delay="100">Soluções para seu negócio</span>
+                    <h2 class="titulo-laboratorio animate-on-scroll animate-slide-right" data-delay="200">Mais que produtos, entregamos inteligência química para o seu negócio</h2>
+                    <p class="texto-laboratorio animate-on-scroll animate-slide-right" data-delay="300">Atuamos com foco total na excelência operacional, oferecendo produtos inovadores e suporte técnico ágil. Na CTG-Química, acreditamos que prazos e preços competitivos são a base de uma parceria de sucesso.</p>
+                    <div class="acoes-laboratorio animate-on-scroll animate-slide-right" data-delay="400">
                         <a href="#" class="btn btn-outline">Consultoria técnica</a>
                         <a href="#" class="btn btn-primary">Nossas soluções</a>
                     </div>
@@ -108,6 +151,92 @@
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observer para animações ao scroll
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -80px 0px'
+            };
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, parseInt(delay));
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                scrollObserver.observe(el);
+            });
+
+            // Barra de progresso do scroll
+            const scrollProgress = document.querySelector('.scroll-progress');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                
+                if (scrollProgress) {
+                    scrollProgress.style.width = scrollPercent + '%';
+                }
+
+                // Parallax nos círculos do hero
+                if (scrollTop < window.innerHeight * 2) {
+                    const circles = document.querySelectorAll('.circulos-hero .circulo');
+                    circles.forEach((circle, i) => {
+                        const speed = 0.05 + (i * 0.03);
+                        const parallax = scrollTop * speed;
+                        circle.style.transform = `translateY(${parallax}px)`;
+                    });
+                }
+
+                // Esconder indicador de scroll ao rolar
+                if (scrollIndicator) {
+                    if (scrollTop > 100) {
+                        scrollIndicator.style.opacity = '0';
+                        scrollIndicator.style.pointerEvents = 'none';
+                    } else {
+                        scrollIndicator.style.opacity = '1';
+                        scrollIndicator.style.pointerEvents = 'auto';
+                    }
+                }
+
+                // Efeito de escala nos cards de categoria ao scroll
+                const cards = document.querySelectorAll('.cartao-categoria');
+                cards.forEach((card, i) => {
+                    const rect = card.getBoundingClientRect();
+                    const cardCenter = rect.top + rect.height / 2;
+                    const viewCenter = window.innerHeight / 2;
+                    const distance = Math.abs(cardCenter - viewCenter);
+                    const maxDistance = window.innerHeight / 2;
+                    const scale = 1 - (distance / maxDistance) * 0.05;
+                    const opacity = 1 - (distance / maxDistance) * 0.1;
+                    
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        card.style.transform = `scale(${scale})`;
+                        card.style.opacity = Math.max(opacity, 0.9);
+                    }
+                });
+
+                // Parallax na imagem do laboratório
+                const labImage = document.querySelector('.imagem-laboratorio');
+                if (labImage) {
+                    const rect = labImage.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const parallax = (rect.top - window.innerHeight / 2) * 0.05;
+                        labImage.querySelector('img').style.transform = `translateY(${parallax}px) scale(1.05)`;
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
