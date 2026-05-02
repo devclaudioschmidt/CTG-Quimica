@@ -256,7 +256,6 @@ function initializeMenu() {
 
     const menuToggle = document.querySelector(".icone-menu");
     const mobileMenu = document.querySelector(".menu-navegacao");
-    const submenuLinks = document.querySelectorAll(".menu-navegacao li.com-submenu > a");
     const header = document.querySelector(".cabecalho-principal");
 
     if (!header) return;
@@ -284,16 +283,19 @@ function initializeMenu() {
         });
     }
 
-    submenuLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            if (window.innerWidth <= 991) {
+    // Event delegation para submenus (incluindo aninhados)
+    document.addEventListener("click", (event) => {
+        if (window.innerWidth <= 991) {
+            const link = event.target.closest("li.com-submenu > a");
+            if (link) {
                 const parentItem = link.parentElement;
                 if (parentItem && parentItem.classList.contains("com-submenu")) {
                     event.preventDefault();
+                    event.stopPropagation();
                     parentItem.classList.toggle("open");
                 }
             }
-        });
+        }
     });
 
     window.addEventListener("scroll", () => {
