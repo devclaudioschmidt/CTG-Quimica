@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         });
     }
+
+    // Inicializa modal de produto
+    initProdutoModal();
  });
 
 /**
@@ -309,5 +312,68 @@ function initializeMenu() {
             menuToggle?.setAttribute("aria-expanded", "false");
             document.querySelectorAll(".menu-navegacao li.open").forEach((item) => item.classList.remove("open"));
         }
+    });
+}
+
+/**
+ * Modal de Detalhes do Produto (avicultura)
+ */
+function initProdutoModal() {
+    const modal = document.getElementById('produto-modal');
+    if (!modal) return;
+
+    const closeBtn = modal.querySelector('.modal-close');
+
+    document.querySelectorAll('.produto-card-2col').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            const img = card.querySelector('.produto-card-img img');
+            const tituloEl = card.querySelector('.avicultura-titulo-produto');
+            const badgeContainer = card.querySelector('.produto-card-badge');
+            const desc = card.querySelector('.produto-card-desc');
+            const icones = card.querySelector('.produto-card-icons');
+            const tamanhos = card.querySelector('.produto-card-sizes');
+
+            if (!img || !tituloEl || !desc) return;
+
+            modal.querySelector('.modal-img img').src = img.src;
+            modal.querySelector('.modal-img img').alt = img.alt;
+            modal.querySelector('.modal-titulo').innerHTML = tituloEl.outerHTML;
+
+            const badgeTarget = modal.querySelector('.modal-badge-container');
+            if (badgeContainer) {
+                badgeTarget.innerHTML = badgeContainer.innerHTML;
+                badgeTarget.style.display = 'inline-block';
+            } else {
+                badgeTarget.style.display = 'none';
+            }
+
+            modal.querySelector('.modal-desc').innerHTML = desc.innerHTML;
+
+            if (icones) {
+                modal.querySelector('.modal-icones').innerHTML = icones.innerHTML;
+            }
+            if (tamanhos) {
+                modal.querySelector('.modal-tamanhos-lista').innerHTML = tamanhos.innerHTML;
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function fecharModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', fecharModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) fecharModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') fecharModal();
     });
 }

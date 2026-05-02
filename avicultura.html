@@ -211,7 +211,7 @@
                 <!-- Produto 01 - Nannoclean -->
                 <div class="produto-card-2col">
                     <div class="produto-card-img">
-                        <img src="assets/img/nannoclean-5l.png" alt="Nannoclean 5L">
+                        <img src="assets/img/produtos-quimicos/nannoclean.webp" alt="Nannoclean">
                     </div>
                     <div class="produto-card-content">
                         <div class="produto-card-titulo">
@@ -223,11 +223,11 @@
                         </div>
                         <div class="produto-card-icons">
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_agroindustria.png" alt="Galpões">
+                                <img src="assets/img/icones/icone-agroindustria.webp" alt="Galpões">
                                 <span>Galpões de Criação</span>
                             </div>
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_incubatorio.svg" alt="Incubatórios">
+                                <img src="assets/img/icones/icone-incubatorios.webp" alt="Incubatórios">
                                 <span>Incubatórios</span>
                             </div>
                         </div>
@@ -271,7 +271,7 @@
                         </div>
                         <div class="produto-card-icons">
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_agroindustria.png" alt="Bebedouros">
+                                <img src="assets/img/icones/icone-agroindustria.webp" alt="Bebedouros">
                                 <span>Linhas de Bebida</span>
                             </div>
                             <div class="produto-card-icon">
@@ -318,8 +318,8 @@
                                 <span>Pisos Industriais</span>
                             </div>
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_incubatorio.svg" alt="Vazio Sanitário">
-                                <span>Vazio Sanitário</span>
+                                <img src="assets/img/icones/icone-incubatorios.webp" alt="Tópicos">
+                                <span>Tópicos</span>
                             </div>
                         </div>
                         <div class="produto-card-sizes">
@@ -357,7 +357,7 @@
                         </div>
                         <div class="produto-card-icons">
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_agroindustria.png" alt="Pisos">
+                                <img src="assets/img/icones/icone-agroindustria.webp" alt="Pisos">
                                 <span>Pisos Industriais</span>
                             </div>
                             <div class="produto-card-icon">
@@ -400,7 +400,7 @@
                         </div>
                         <div class="produto-card-icons">
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_agroindustria.png" alt="Galpões">
+                                <img src="assets/img/icones/icone-agroindustria.webp" alt="Galpões">
                                 <span>Galpões</span>
                             </div>
                             <div class="produto-card-icon">
@@ -486,7 +486,7 @@
                         </div>
                         <div class="produto-card-icons">
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_agroindustria.png" alt="Lagoas">
+                                <img src="assets/img/icones/icone-agroindustria.webp" alt="Lagoas">
                                 <span>Lagoas de Tratamento</span>
                             </div>
                             <div class="produto-card-icon">
@@ -581,7 +581,7 @@
                                 <span>Lavanderia Industrial</span>
                             </div>
                             <div class="produto-card-icon">
-                                <img src="assets/img/icone_agroindustria.png" alt="EPIs">
+                                <img src="assets/img/icones/icone-agroindustria.webp" alt="EPIs">
                                 <span>EPIs e Uniformes</span>
                             </div>
                         </div>
@@ -609,6 +609,39 @@
     </main>
 
     <div id="footer-placeholder"></div>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div id="produto-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-titulo-container">
+                        <div class="modal-titulo"></div>
+                        <div class="modal-badge-container"></div>
+                    </div>
+                    <p class="modal-desc"></p>
+                    <div class="modal-aplicacoes">
+                        <h3>Aplicações</h3>
+                        <div class="modal-icones"></div>
+                    </div>
+                    <div class="modal-tamanhos">
+                        <h3>Disponível em</h3>
+                        <div class="modal-tamanhos-lista"></div>
+                    </div>
+                    <a href="contato.html" class="btn-primary modal-cta">Entre em contato</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>
