@@ -1,0 +1,14 @@
+# Pastas de desenvolvimento local
+desenvolvimento/
+
+# macOS
+.DS_Store
+._.DS_Store
+.DS_Store?
+
+# Editor
+.vscode/
+.idea/
+
+# OS thumbs
+Thumbs.db
