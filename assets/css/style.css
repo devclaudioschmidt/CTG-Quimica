@@ -1626,19 +1626,37 @@ body.menu-aberto {
 }
 
 
-.logo-rodape {
-    height: 90px;
-    width: auto;
+.logo-link {
+    display: inline-block;
     margin-bottom: 20px;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-    opacity: 0.95;
+}
+
+.logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 12px 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     transition: all 0.3s;
 }
 
-.logo-rodape:hover {
+.logo-badge:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+.logo-rodape {
+    height: 70px;
+    width: auto;
+    display: block;
     opacity: 1;
-    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
-    transform: scale(1.02);
+    transition: opacity 0.3s;
+}
+
+.logo-rodape:hover {
+    opacity: 0.9;
 }
 
 .slogan-rodape {
