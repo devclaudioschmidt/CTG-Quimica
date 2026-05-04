@@ -188,6 +188,12 @@ const aviculturaElements = document.querySelectorAll(
         '.aquicultura-anima-titulo, .aquicultura-anima-intro, .aquicultura-anima-grid, .aquicultura-anima-img, .aquicultura-anima-coluna, .aquicultura-titulo-secao'
     );
     aquiculturaElements.forEach(el => observer.observe(el));
+
+    // Elementos de animação da proteína animal (scroll)
+    const proteinaAnimalElements = document.querySelectorAll(
+        '.proteina-animal-titulo, .proteina-animal-intro, .proteina-animal-grid, .proteina-animal-card, .proteina-animal-cta, .proteina-animal-diferenciais, .proteina-animal-grade-dif, .proteina-animal-card-dif, .proteina-animal-abordagem, .proteina-animal-pilares, .proteina-animal-pilar-item, .proteina-animal-solucoes, .proteina-animal-categorias, .proteina-animal-grade-cat, .proteina-animal-card-cat'
+    );
+    proteinaAnimalElements.forEach(el => observer.observe(el));
 }
 
 /**
