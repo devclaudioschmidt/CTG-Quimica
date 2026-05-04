@@ -1631,24 +1631,127 @@ body.menu-aberto {
     margin-bottom: 20px;
 }
 
+.logo-geo-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+}
+
+/* Anel externo rotativo */
+.geo-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    animation: geo-spin 12s linear infinite;
+}
+
+.geo-ring-1 {
+    inset: 0;
+    border-top-color: var(--primary-color);
+    border-right-color: var(--secondary-color);
+}
+
+.geo-ring-2 {
+    inset: 12px;
+    border-bottom-color: var(--secondary-color);
+    border-left-color: var(--primary-color);
+    animation-duration: 8s;
+    animation-direction: reverse;
+}
+
+/* Hexágono central */
+.geo-hex {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color-soft) 0%, var(--secondary-color) 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: 0.15;
+    animation: geo-pulse 4s ease-in-out infinite;
+}
+
+/* Losango decorativo */
+.geo-diamond {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-color);
+    transform: rotate(45deg);
+    opacity: 0.4;
+    top: 8px;
+    right: 12px;
+    animation: geo-float 3s ease-in-out infinite;
+}
+
+/* Grid de pontos */
+.geo-dots {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    bottom: 14px;
+    left: 14px;
+}
+
+.geo-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    opacity: 0;
+    animation: geo-dot 2s ease-in-out infinite;
+}
+
+.geo-dots span:nth-child(1) { animation-delay: 0s; }
+.geo-dots span:nth-child(2) { animation-delay: 0.15s; }
+.geo-dots span:nth-child(3) { animation-delay: 0.3s; }
+.geo-dots span:nth-child(4) { animation-delay: 0.45s; }
+.geo-dots span:nth-child(5) { animation-delay: 0.6s; }
+.geo-dots span:nth-child(6) { animation-delay: 0.75s; }
+.geo-dots span:nth-child(7) { animation-delay: 0.9s; }
+.geo-dots span:nth-child(8) { animation-delay: 1.05s; }
+.geo-dots span:nth-child(9) { animation-delay: 1.2s; }
+
+/* Badge do logo */
 .logo-badge {
+    position: relative;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    border-radius: 16px;
-    padding: 12px 18px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s;
+    border-radius: 14px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s var(--ease-out-expo);
 }
 
 .logo-badge:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255, 122, 0, 0.25);
+    transform: scale(1.04);
 }
 
+.logo-geo-wrapper:hover .geo-ring-1 {
+    border-top-color: var(--secondary-color);
+    border-right-color: var(--primary-color);
+}
+
+.logo-geo-wrapper:hover .geo-ring-2 {
+    border-bottom-color: var(--primary-color);
+    border-left-color: var(--secondary-color);
+}
+
+.logo-geo-wrapper:hover .geo-diamond {
+    opacity: 0.7;
+    border-color: var(--secondary-color);
+}
+
+/* Logo */
 .logo-rodape {
-    height: 70px;
+    height: 60px;
     width: auto;
     display: block;
     opacity: 1;
@@ -1656,7 +1759,44 @@ body.menu-aberto {
 }
 
 .logo-rodape:hover {
-    opacity: 0.9;
+    opacity: 0.85;
+}
+
+/* Animações geométricas */
+@keyframes geo-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes geo-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.08); opacity: 0.25; }
+}
+
+@keyframes geo-float {
+    0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+    50% { transform: rotate(45deg) translateY(-4px); opacity: 0.6; }
+}
+
+@keyframes geo-dot {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.6; transform: scale(1); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .logo-geo-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+    .geo-ring-2 { inset: 10px; }
+    .geo-hex { width: 80px; height: 80px; }
+    .geo-diamond { width: 24px; height: 24px; top: 6px; right: 10px; }
+    .geo-dots { bottom: 12px; left: 12px; gap: 4px; }
+    .geo-dots span { width: 3px; height: 3px; }
+    .logo-badge { padding: 8px 12px; border-radius: 12px; }
+    .logo-rodape { height: 50px; }
 }
 
 .slogan-rodape {
