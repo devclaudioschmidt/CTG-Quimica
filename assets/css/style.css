@@ -4653,10 +4653,11 @@ body.menu-aberto {
     box-shadow: 0 8px 25px rgba(26, 122, 63, 0.3);
 }
 
-.card-segmento-home-icone svg {
+.card-segmento-home-icone svg,
+.card-segmento-home-icone img {
     width: 28px;
     height: 28px;
-    color: #fff;
+    object-fit: contain;
 }
 
 .card-segmento-home h3 {
