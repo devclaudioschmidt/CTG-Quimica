@@ -4005,10 +4005,11 @@ body.menu-aberto {
     box-shadow: 0 8px 25px rgba(255, 122, 0, 0.3);
 }
 
-.card-diferencial-icone svg {
+.card-diferencial-icone svg,
+.card-diferencial-icone img {
     width: 28px;
     height: 28px;
-    color: #fff;
+    object-fit: contain;
 }
 
 .card-diferencial h3 {
