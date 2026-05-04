@@ -1723,8 +1723,10 @@ body.menu-aberto {
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    border-radius: 14px;
-    padding: 10px 14px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    padding: 14px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     transition: all 0.4s var(--ease-out-expo);
 }
@@ -1795,7 +1797,12 @@ body.menu-aberto {
     .geo-diamond { width: 24px; height: 24px; top: 6px; right: 10px; }
     .geo-dots { bottom: 12px; left: 12px; gap: 4px; }
     .geo-dots span { width: 3px; height: 3px; }
-    .logo-badge { padding: 8px 12px; border-radius: 12px; }
+    .logo-badge {
+        width: 72px;
+        height: 72px;
+        padding: 10px;
+        border-radius: 50%;
+    }
     .logo-rodape { height: 50px; }
 }
 
