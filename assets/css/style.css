@@ -4179,8 +4179,8 @@ body.menu-aberto {
 }
 
 .card-diferencial-icone img {
-    width: 28px;
-    height: 28px;
+    width: 54px;
+    height: 54px;
     object-fit: contain;
 }
 
@@ -4473,14 +4473,14 @@ body.menu-aberto {
 }
 
 .card-categoria-solucao-icone {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     transition: all 0.3s var(--ease-spring);
 }
 
@@ -4496,8 +4496,8 @@ body.menu-aberto {
 }
 
 .card-categoria-solucao-icone img {
-    width: 42px;
-    height: 42px;
+    width: 74px;
+    height: 74px;
     object-fit: contain;
 }
 
