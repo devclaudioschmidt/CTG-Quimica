@@ -1005,6 +1005,8 @@ body.menu-aberto {
     max-width: 500px;
     margin-bottom: 30px;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 99998;
 }
 
 .busca-destaque input {
@@ -5068,7 +5070,7 @@ body.menu-aberto {
     border-radius: 8px;
     margin-top: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    z-index: 1000;
+    z-index: 99999;
     max-height: 400px;
     overflow-y: auto;
     display: none;
