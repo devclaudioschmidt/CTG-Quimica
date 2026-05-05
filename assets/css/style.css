@@ -1593,12 +1593,21 @@ body.menu-aberto {
     width: 100%;
 }
 
-/* Footer 3 colunas */
-.grade-rodape-3col {
+/* Footer 4 colunas */
+.grade-rodape-4col {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 40px;
     align-items: flex-start;
+    width: 100%;
+}
+
+.grade-rodape-4col > .footer-col,
+.grade-rodape-3col > .footer-col,
+.grade-rodape-2col > .footer-col,
+.grade-rodape-2col > .footer-left,
+.grade-rodape-2col > .rodape-direita {
+    min-width: 0;
     width: 100%;
 }
     }
@@ -2001,7 +2010,7 @@ body.menu-aberto {
     
     .footer-grid-2col,
     .footer-grid-3col,
-    .grade-rodape-3col {
+    .grade-rodape-4col {
         grid-template-columns: 1fr 1fr;
     }
 
