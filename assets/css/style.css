@@ -1601,6 +1601,7 @@ body.menu-aberto {
     align-items: flex-start;
     width: 100%;
 }
+    }
 
 .grade-rodape-3col > .footer-col,
 .grade-rodape-2col > .footer-col,
@@ -1609,6 +1610,7 @@ body.menu-aberto {
     min-width: 0;
     width: 100%;
 }
+
 
 
 
