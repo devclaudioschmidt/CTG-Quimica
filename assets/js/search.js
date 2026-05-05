@@ -246,22 +246,15 @@ document.addEventListener('DOMContentLoaded', function() {
         initSearchOptionB();
     } else if (page.includes('search-results.html')) {
         initSearchResultsPage();
-    } else if (page.includes('index.html') || page.endsWith('/')) {
-        // Ativar pesquisa na página principal (usar Opção B como padrão)
-        loadSearchData().then(() => {
-            // Adicionar eventos à barra de pesquisa existente
-            const searchInput = document.querySelector('.busca-destaque input');
-            const searchBtn = document.querySelector('.busca-destaque button');
-            
-            if (searchInput && searchBtn) {
-                // Criar dropdown se não existir
-                let dropdown = document.getElementById('search-dropdown');
-                if (!dropdown) {
-                    dropdown = document.createElement('div');
-                    dropdown.id = 'search-dropdown';
-                    dropdown.className = 'search-dropdown';
-                    searchInput.parentElement.appendChild(dropdown);
-                }
+        } else if (page.includes('index.html') || page.endsWith('/')) {
+            // Ativar pesquisa na página principal (usar Opção B como padrão)
+            loadSearchData().then(() => {
+                // Adicionar eventos à barra de pesquisa existente
+                const searchInput = document.querySelector('.busca-destaque input');
+                const searchBtn = document.querySelector('.busca-destaque button');
+                const dropdown = document.getElementById('search-dropdown');
+                
+                if (searchInput && searchBtn && dropdown) {
                 
                 // Usar lógica da Opção B
                 let debounceTimer;
