@@ -49,8 +49,9 @@
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <input type="text" placeholder="Qual solução você busca hoje?">
-                        <button class="btn btn-primary" style="padding: 10px 25px;">Buscar</button>
+                        <input type="text" id="search-input" placeholder="Qual solução você busca hoje?">
+                        <button id="search-btn" class="btn btn-primary" style="padding: 10px 25px;">Buscar</button>
+                        <div id="search-dropdown"></div>
                     </div>
 
                     <div class="faixa-categorias">
@@ -329,9 +330,9 @@
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Observer para animações ao scroll
             const observerOptions = {
                 threshold: 0.15,
                 rootMargin: '0px 0px -80px 0px'

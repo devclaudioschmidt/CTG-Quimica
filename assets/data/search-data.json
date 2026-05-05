@@ -1,0 +1,402 @@
+[
+  {
+    "id": "index-hero",
+    "title": "Inovação em Nanotecnologia Química",
+    "type": "Página Inicial",
+    "page": "index.html",
+    "content": "Fabricante de químicos com foco em nanotecnologia, equipamentos para preservação de água e ar, e projetos sob medida para suas necessidades. Soluções de Ponta | Qualidade & Tecnologia",
+    "keywords": ["inovação", "nanotecnologia", "química", "equipamentos", "preservação", "água", "ar", "projetos"]
+  },
+  {
+    "id": "index-segmentos",
+    "title": "Segmentos de Proteína Animal",
+    "type": "Segmento",
+    "page": "proteina-animal.html",
+    "content": "Soluções completas em nanotecnologia para toda a cadeia produtiva. Avicultura, Suinocultura, Bovinocultura, Aquicultura.",
+    "keywords": ["proteína animal", "avicultura", "suinocultura", "bovinocultura", "aquicultura", "segmentos"]
+  },
+  {
+    "id": "index-produtos-destaque",
+    "title": "Produtos em Destaque",
+    "type": "Produto",
+    "page": "index.html",
+    "content": "Nannoclean, Nannoclean Acid, D'Crost X, Maxyclean. Produtos de alta performance para limpeza enzimática, remoção de incrustações, proteção contra corrosão.",
+    "keywords": ["nannoclean", "d'crost", "maxyclean", "produtos", "destaque", "limpeza", "enzimática"]
+  },
+  {
+    "id": "proteina-animal-hero",
+    "title": "Soluções para a Cadeia de Produção de Proteína Animal",
+    "type": "Segmento",
+    "page": "proteina-animal.html",
+    "content": "A CTG Química oferece soluções completas em nanotecnologia para todos os elos da cadeia produtiva animal, garantindo biosseguridade, eficiência operacional e sustentabilidade ambiental.",
+    "keywords": ["proteína animal", "cadeia produtiva", "biosseguridade", "eficiência", "sustentabilidade"]
+  },
+  {
+    "id": "proteina-avicultura",
+    "title": "Avicultura",
+    "type": "Segmento",
+    "page": "avicultura.html",
+    "content": "Soluções de ponta para biosseguridade em granjas, incubatórios e unidades de processamento avícola. Higienização enzimática, controle de pragas e manutenção de frotas.",
+    "keywords": ["avicultura", "aves", "galpões", "incubatórios", "processamento avícola", "biosseguridade"]
+  },
+  {
+    "id": "proteina-suinocultura",
+    "title": "Suinocultura",
+    "type": "Segmento",
+    "page": "suinocultura.html",
+    "content": "Tecnologias para controle sanitário e eficiência operacional em granjas suínas. Sanitização nanotecnológica, proteção de infraestrutura e gestão hídrica.",
+    "keywords": ["suinocultura", "suínos", "granjas", "controle sanitário", "gestão hídrica"]
+  },
+  {
+    "id": "proteina-bovinocultura",
+    "title": "Bovinocultura",
+    "type": "Segmento",
+    "page": "bovinocultura.html",
+    "content": "Excelência sanitária para sistemas de corte e leite. Higiene de alta performance, bem-estar animal, infraestrutura protegida e gestão de resíduos.",
+    "keywords": ["bovinocultura", "bovinos", "gado", "corte", "leite", "ordenha", "confinamento"]
+  },
+  {
+    "id": "proteina-aquicultura",
+    "title": "Aquicultura",
+    "type": "Segmento",
+    "page": "aquicultura.html",
+    "content": "Tecnologia e sustentabilidade para fazendas aquícolas. Higienização de tanques, gestão da qualidade da água, manutenção de infraestrutura e biosseguridade.",
+    "keywords": ["aquicultura", "peixes", "tanques", "fazendas aquícolas", "qualidade da água"]
+  },
+  {
+    "id": "proteina-biosseguridade",
+    "title": "Biosseguridade",
+    "type": "Diferencial",
+    "page": "proteina-animal.html",
+    "content": "Proteção integrada contra agentes patogênicos e vetores de doenças em todos os elos da cadeia produtiva.",
+    "keywords": ["biosseguridade", "agentes patogênicos", "vetores", "doenças"]
+  },
+  {
+    "id": "proteina-nanotecnologia",
+    "title": "Nanotecnologia",
+    "type": "Diferencial",
+    "page": "proteina-animal.html",
+    "content": "Formulações avançadas com ação em nível molecular para limpeza, sanitização e proteção de superfícies.",
+    "keywords": ["nanotecnologia", "nível molecular", "formulações", "ação molecular"]
+  },
+  {
+    "id": "proteina-sustentabilidade",
+    "title": "Sustentabilidade",
+    "type": "Diferencial",
+    "page": "proteina-animal.html",
+    "content": "Produtos de base aquosa, biodegradáveis e com menor impacto ambiental, alinhados à ESG.",
+    "keywords": ["sustentabilidade", "ESG", "biodegradável", "base aquosa", "impacto ambiental"]
+  },
+  {
+    "id": "proteina-eficiencia",
+    "title": "Eficiência",
+    "type": "Diferencial",
+    "page": "proteina-animal.html",
+    "content": "Resultados mensuráveis em redução de custos, otimização de processos e aumento da produtividade.",
+    "keywords": ["eficiência", "redução de custos", "otimização", "produtividade"]
+  },
+  {
+    "id": "proteina-limpeza-enzimatica",
+    "title": "Limpeza Enzimática",
+    "type": "Categoria",
+    "page": "proteina-animal.html",
+    "content": "Remoção eficiente de matéria orgânica complexa através de enzimas e tensoativos sinérgicos.",
+    "keywords": ["limpeza enzimática", "enzimas", "tensoativos", "matéria orgânica"]
+  },
+  {
+    "id": "proteina-incrustacoes",
+    "title": "Remoção de Incrustações",
+    "type": "Categoria",
+    "page": "proteina-animal.html",
+    "content": "Eliminação de depósitos minerais e incrustações em superfícies e equipamentos industriais.",
+    "keywords": ["incrustações", "depósitos minerais", "superfícies", "equipamentos industriais"]
+  },
+  {
+    "id": "proteina-corrosao",
+    "title": "Controle de Corrosão",
+    "type": "Categoria",
+    "page": "proteina-animal.html",
+    "content": "Proteção de metais e estruturas contra deterioração e oxidação em ambientes agressivos.",
+    "keywords": ["corrosão", "metais", "estruturas", "deterioração", "oxidação"]
+  },
+  {
+    "id": "proteina-antiespumantes",
+    "title": "Antiespumantes",
+    "type": "Categoria",
+    "page": "proteina-animal.html",
+    "content": "Controle de espuma em processos industriais e sistemas de tratamento de efluentes.",
+    "keywords": ["antiespumantes", "espuma", "processos industriais", "tratamento de efluentes"]
+  },
+  {
+    "id": "proteina-repelentes",
+    "title": "Repelentes Naturais",
+    "type": "Categoria",
+    "page": "proteina-animal.html",
+    "content": "Controle de insetos e pragas com formulações naturais e não tóxicas ao meio ambiente.",
+    "keywords": ["repelentes naturais", "insetos", "pragas", "formulações naturais", "não tóxico"]
+  },
+  {
+    "id": "proteina-lavanderia",
+    "title": "Lavanderia Industrial",
+    "type": "Categoria",
+    "page": "proteina-animal.html",
+    "content": "Soluções de higienização para uniformes, EPIs e tecidos utilizados na produção animal.",
+    "keywords": ["lavanderia industrial", "uniformes", "EPIs", "tecidos", "higienização"]
+  },
+  {
+    "id": "avicultura-nannoclean",
+    "title": "Nannoclean",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Limpador enzimático de base aquosa ideal para a desintegração de matéria orgânica pesada (fezes e gordura) em galpões e incubatórios. Por ser biodegradável, é seguro para o ambiente produtivo. Galpões de Criação, Incubatórios.",
+    "keywords": ["nannoclean", "limpeza enzimática", "base aquosa", "galpões", "incubatórios", "biodegradável"]
+  },
+  {
+    "id": "avicultura-nannoclean-acid",
+    "title": "Nannoclean Acid",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Recomendado para a limpeza de sistemas de linha de bebida (bebedouros nipple) e sistemas de resfriamento (cooling), removendo incrustações minerais e biofilmes que podem obstruir os equipamentos. Linhas de Bebida, Sistemas de Resfriamento.",
+    "keywords": ["nannoclean acid", "linha de bebida", "bebedouros", "cooling", "resfriamento", "incrustações", "biofilmes"]
+  },
+  {
+    "id": "avicultura-dcrost-x",
+    "title": "D' CROST X",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Desincrustante de alta potência para a limpeza profunda de pisos e superfícies impregnadas durante o vazio sanitário, garantindo a quebra da sujidade mais persistente. Pisos Industriais, Tópicos.",
+    "keywords": ["d' crost x", "desincrustante", "alta potência", "pisos", "superfícies impregnadas", "vazio sanitário"]
+  },
+  {
+    "id": "avicultura-dcrost",
+    "title": "D'CROST",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Desincrustante concentrado de alto desempenho para limpeza de pisos e superfícies com sujidades complexas. Sua tecnologia foi desenvolvida para superar os limites dos produtos comuns, atuando com precisão em camadas de difícil remoção. Pisos Industriais, Superfícies Impregnadas.",
+    "keywords": ["d'crost", "desincrustante concentrado", "alto desempenho", "pisos", "superfícies"]
+  },
+  {
+    "id": "avicultura-zerofly",
+    "title": "Zerofly",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Repelente 100% natural fundamental para o controle de moscas e outros insetos nos galpões e áreas de compostagem. Sua composição atóxica permite o uso frequente sem riscos ao plantel ou aos operadores. Galpões, Áreas de Compostagem.",
+    "keywords": ["zerofly", "repelente natural", "moscas", "insetos", "galpões", "compostagem", "100% natural"]
+  },
+  {
+    "id": "avicultura-drust",
+    "title": "D'RUST",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Atua na remoção de ferrugem e proteção de silos, transportadores de ração, ventiladores e demais estruturas metálicas sujeitas à oxidação em ambientes de alta umidade. Silos, Estruturas Metálicas.",
+    "keywords": ["d'rust", "ferrugem", "proteção", "silos", "transportadores de ração", "ventiladores", "estruturas metálicas"]
+  },
+  {
+    "id": "avicultura-afp4",
+    "title": "AFP-4",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Indicado para o gerenciamento de lagoas de tratamento de dejetos e estações de tratamento de água, eliminando a espuma e aumentando a eficiência dos processos químicos e biológicos. Lagoas de Tratamento, Estações de Tratamento.",
+    "keywords": ["afp-4", "antiespumante", "lagoas de tratamento", "estações de tratamento", "espuma", "eficiência"]
+  },
+  {
+    "id": "avicultura-bioclean-car",
+    "title": "Bioclean Car",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Solução para a limpeza da frota de transporte de aves vivas e caminhões de ração. Remove a sujidade pesada sem necessidade de ácidos agressivos, preservando a vida útil dos veículos. Caminhões de Aves, Caminhões de Ração.",
+    "keywords": ["bioclean car", "limpeza de frota", "caminhões", "aves vivas", "ração"]
+  },
+  {
+    "id": "avicultura-fitclean",
+    "title": "Fitclean",
+    "type": "Produto",
+    "page": "avicultura.html",
+    "content": "Detergente nanotecnológico para a lavanderia industrial garantindo a higienização completa e a remoção de odores orgânicos dos uniformes e equipamentos de proteção individual (EPIs). Lavanderia Industrial, EPIs e Uniformes.",
+    "keywords": ["fitclean", "lavanderia industrial", "uniformes", "EPIs", "detergente", "nanotecnologia"]
+  },
+  {
+    "id": "suinocultura-nannoclean",
+    "title": "Nannoclean",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Limpador nanotecnológico de base aquosa desenvolvido com formulação balanceada que assegura maior agilidade e alto poder de desincrustação. Totalmente biodegradável, substituindo solventes orgânicos agressivos por alternativa sustentável. Granjas Suínas, Equipamentos Agrícolas.",
+    "keywords": ["nannoclean", "suinocultura", "granjas suínas", "biodegradável", "solventes orgânicos"]
+  },
+  {
+    "id": "suinocultura-dcrost-x",
+    "title": "D' CROST X",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Desincrustante de alta potência que associa agentes de limpeza profunda a componentes desengordurantes. Ideal para superfícies com incrustações severas. Frigoríficos.",
+    "keywords": ["d' crost x", "suinocultura", "frigoríficos", "incrustações severas", "desengordurante"]
+  },
+  {
+    "id": "suinocultura-drust",
+    "title": "D'RUST",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Desengordurante e removedor de ferrugem desenvolvido para as condições severas encontradas em ambientes de suinocultura. Elimina ferrugem e protege contra corrosão, mantendo superfícies metálicas e equipamentos agrícolas em ótimas condições. Equipamentos Agrícolas, Instalações Metálicas.",
+    "keywords": ["d'rust", "suinocultura", "ferrugem", "equipamentos agrícolas", "corrosão"]
+  },
+  {
+    "id": "suinocultura-zerofly",
+    "title": "Zerofly",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Repelente 100% natural para controle de pragas como moscas e larvas. Assegura ambiente livre de infestações sem comprometer a saúde dos animais ou a segurança dos operadores. Granjas Suínas, Áreas de Alimentação.",
+    "keywords": ["zerofly", "suinocultura", "repelente natural", "moscas", "larvas", "pragas"]
+  },
+  {
+    "id": "suinocultura-afp4",
+    "title": "AFP-4",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Antiespumante nanotecnológico que reduz a viscosidade de líquidos e elimina bolhas. Melhora a eficácia dos químicos no tratamento de água e aumenta o volume de efluentes que podem ser tratados. Estações de Tratamento, Gestão de Efluentes.",
+    "keywords": ["afp-4", "suinocultura", "antiespumante", "tratamento de água", "efluentes"]
+  },
+  {
+    "id": "suinocultura-bioclean-car",
+    "title": "Bioclean Car",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Solução para limpeza interna e externa de caminhões, tratores e equipamentos agrícolas. Dispensa o uso de ácidos e o esforço físico excessivo, preservando a pintura e as superfícies. Caminhões, Tratores.",
+    "keywords": ["bioclean car", "suinocultura", "caminhões", "tratores", "equipamentos agrícolas"]
+  },
+  {
+    "id": "suinocultura-fitclean",
+    "title": "Fitclean",
+    "type": "Produto",
+    "page": "suinocultura.html",
+    "content": "Lava-roupas nanotecnológico que dispensa o uso de amaciante e evita o amarelamento das fibras. Ideal para a lavanderia industrial da agroindustria suína. Lavanderia Industrial, Uniformes.",
+    "keywords": ["fitclean", "suinocultura", "lavanderia", "uniformes", "lavagem"]
+  },
+  {
+    "id": "bovinocultura-nannoclean",
+    "title": "Nannoclean",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Essencial para a limpeza de superfícies com alta carga orgânica. Sua ação enzimática desintegra resíduos de gordura e proteínas, sendo ideal para a limpeza geral de áreas de manejo. Por ser biodegradável, é seguro para o uso em ambientes de produção animal. Salas de Ordenha, Áreas de Manejo, Equipamentos.",
+    "keywords": ["nannoclean", "bovinocultura", "salas de ordenha", "áreas de manejo", "gordura", "proteínas"]
+  },
+  {
+    "id": "bovinocultura-dcrost-x",
+    "title": "D' CROST X",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Recomendado para limpeza pesada de pisos e paredes de concreto em confinamentos e salas de espera, onde a compactação de matéria orgânica exige desincrustantes de alta potência. Confinamentos, Salas de Espera.",
+    "keywords": ["d' crost x", "bovinocultura", "confinamentos", "salas de espera", "pisos", "paredes de concreto"]
+  },
+  {
+    "id": "bovinocultura-zerofly",
+    "title": "Zerofly",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Um diferencial estratégico para o setor. Este repelente 100% natural é fundamental para o controle de moscas e outros insetos que geram estresse no rebanho e reduzem a conversão alimentar ou a produção de leite. Confinamentos, Áreas de Pastagem.",
+    "keywords": ["zerofly", "bovinocultura", "repelente", "moscas", "insetos", "pastagem", "rebanho"]
+  },
+  {
+    "id": "bovinocultura-drust",
+    "title": "D'RUST",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "As instalações da bovinocultura sofrem alta corrosão devido à exposição ao tempo e aos dejetos. O D'RUST elimina a oxidação existente e cria uma camada de proteção, reduzindo custos com manutenção corretiva. Cercados, Balanças.",
+    "keywords": ["d'rust", "bovinocultura", "corrosão", "cercados", "balanças", "proteção"]
+  },
+  {
+    "id": "bovinocultura-nannoclean-acid",
+    "title": "Nannoclean Acid",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Crucial para a bovinocultura de leite. Atua na remoção de incrustações minerais (pedra de leite) e resíduos ferruginosos em tubulações e tanques de resfriamento, garantindo a conformidade sanitária dos equipamentos. Tanques de Resfriamento, Tubulações.",
+    "keywords": ["nannoclean acid", "bovinocultura", "leite", "tanques de resfriamento", "tubulações", "pedra de leite"]
+  },
+  {
+    "id": "bovinocultura-afp4",
+    "title": "AFP-4",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Indicado para otimizar o manejo em lagoas de estabilização e sistemas de tratamento de dejetos líquidos. Ao reduzir a espuma e a viscosidade, facilita o bombeamento e a homogeneização do efluente, otimizando o processo de fertirrigação ou reuso. Lagoas de Estabilização, Tratamento.",
+    "keywords": ["afp-4", "bovinocultura", "lagoas de estabilização", "efluentes", "fertirrigação", "reuso"]
+  },
+  {
+    "id": "bovinocultura-bioclean-car",
+    "title": "Bioclean Car",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Solução para limpeza de frotas de transporte de gado (boiadeiros) e máquinas agrícolas (tratores e distribuidores de ração). Garante a remoção de sujidades pesadas sem danificar a pintura ou exigir processos abrasivos. Boiadeiros, Tratores.",
+    "keywords": ["bioclean car", "bovinocultura", "boiadeiros", "gado", "tratores", "distribuidores de ração"]
+  },
+  {
+    "id": "bovinocultura-fitclean",
+    "title": "Fitclean",
+    "type": "Produto",
+    "page": "bovinocultura.html",
+    "content": "Especialmente útil para a higienização de lavanderia e uniformes utilizados na agroindústria bovina, garantindo a remoção de odores e manchas orgânicas persistentes através da nanotecnologia. Lavanderia, Uniformes.",
+    "keywords": ["fitclean", "bovinocultura", "lavanderia", "uniformes", "odores", "manchas orgânicas"]
+  },
+  {
+    "id": "aquicultura-nannoclean",
+    "title": "Nannoclean",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Ideal para a limpeza de tanques de cultivo, redes e berçários. Sua ação enzimática desintegra biofilmes e resíduos orgânicos (restos de ração e dejetos) de forma rápida e segura. Por ser totalmente biodegradável e de base aquosa, reduz os riscos de resíduos químicos tóxicos no ambiente de cultivo. Tanques de Cultivo, Redes e Berçários.",
+    "keywords": ["nannoclean", "aquicultura", "tanques de cultivo", "redes", "berçários", "biofilmes", "ração"]
+  },
+  {
+    "id": "aquicultura-dcrost-x",
+    "title": "D' CROST X",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Indicado para limpeza pesada de áreas externas, calçadas e estruturas de suporte que apresentem alto grau de impregnação orgânica ou lodo. Tecnologia de alta potência para superar os limites dos produtos comuns. Áreas Externas, Estruturas de Suporte.",
+    "keywords": ["d' crost x", "aquicultura", "áreas externas", "calçadas", "estruturas de suporte", "lodo"]
+  },
+  {
+    "id": "aquicultura-afp4",
+    "title": "AFP-4",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Essencial em sistemas de recirculação (RAS) e estações de tratamento de efluentes. Atua na eliminação de espumas geradas pelo excesso de proteínas e matéria orgânica na água, otimizando o processo de oxigenação e a eficiência dos filtros biológicos e mecânicos. RAS, Estações de Tratamento.",
+    "keywords": ["afp-4", "aquicultura", "RAS", "sistemas de recirculação", "espuma", "oxigenação", "filtros"]
+  },
+  {
+    "id": "aquicultura-drust",
+    "title": "D'RUST",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "As instalações da aquicultura sofrem alta corrosão devido à exposição ao tempo e aos dejetos. O D'RUST elimina a oxidação existente e cria uma camada de proteção, reduzindo custos com manutenção corretiva. Aeradores, Estruturas Metálicas.",
+    "keywords": ["d'rust", "aquicultura", "aeradores", "corrosão", "estruturas metálicas"]
+  },
+  {
+    "id": "aquicultura-zerofly",
+    "title": "Zerofly",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Fundamental para manter as áreas de processamento, depósitos de ração e laboratórios livres de insetos. Por ser 100% natural, pode ser utilizado em instalações aquícolas com maior segurança, evitando o uso de inseticidas sintéticos. Processamento, Depósitos de Ração.",
+    "keywords": ["zerofly", "aquicultura", "processamento", "depósitos de ração", "laboratórios", "insetos"]
+  },
+  {
+    "id": "aquicultura-nannoclean-acid",
+    "title": "Nannoclean Acid",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Crucial para a aquicultura. Atua na remoção de incrustações minerais e calcárias em sistemas de tubulação, bombas e aeradores. É eficaz na manutenção preventiva de equipamentos que operam submersos ou em contato constante com a água. Sistemas de Tubulação, Bombas e Aeradores.",
+    "keywords": ["nannoclean acid", "aquicultura", "tubulação", "bombas", "aeradores", "incrustações minerais"]
+  },
+  {
+    "id": "aquicultura-bioclean-car",
+    "title": "Bioclean Car",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Solução para limpeza de frotas de transporte (caminhões-tanque) e embarcações. Garante a remoção de sujidades pesadas e odores característicos da atividade sem danificar a pintura ou as vedações dos veículos. Caminhões-Tanque, Embarcações.",
+    "keywords": ["bioclean car", "aquicultura", "caminhões-tanque", "embarcações", "frotas"]
+  },
+  {
+    "id": "aquicultura-fitclean",
+    "title": "Fitclean",
+    "type": "Produto",
+    "page": "aquicultura.html",
+    "content": "Recomendado para a lavanderia de redes de proteção e uniformes utilizados na aquicultura, garantindo a eliminação de odores e contaminantes orgânicos através da tecnologia de limpeza profunda. Lavanderia, Redes de Proteção.",
+    "keywords": ["fitclean", "aquicultura", "lavanderia", "redes de proteção", "uniformes"]
+  }
+]

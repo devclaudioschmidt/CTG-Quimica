@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Pesquisa - Opção A | CTG Química</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .teste-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .teste-titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .teste-titulo h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .teste-titulo p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .busca-destaque {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            padding: 8px 8px 8px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .busca-destaque svg {
+            flex-shrink: 0;
+            color: #999;
+        }
+        .busca-destaque input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+        }
+        .busca-destaque input::placeholder {
+            color: #999;
+        }
+        .busca-destaque .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .teste-info {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .teste-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        .teste-info ul {
+            margin: 10px 0 0 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+        .teste-voltar {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="teste-container">
+        <div class="teste-titulo">
+            <h1>Teste de Pesquisa - Opção A</h1>
+            <p>Redireciona para uma página de resultados separada</p>
+        </div>
+
+        <div class="busca-destaque">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" placeholder="Qual solução você busca hoje?">
+            <button id="search-btn" class="btn btn-primary">Buscar</button>
+        </div>
+
+        <div class="teste-info">
+            <h3>Como funciona:</h3>
+            <ul>
+                <li>Digite um termo na barra de pesquisa</li>
+                <li>Clique em "Buscar" ou pressione Enter</li>
+                <li>Você será redirecionado para <strong>search-results.html</strong></li>
+                <li>A página mostrará todos os resultados encontrados</li>
+                <li>URL compartilhável: <code>search-results.html?q=termo</code></li>
+            </ul>
+        </div>
+
+        <div class="teste-voltar">
+            <a href="index.html" class="btn btn-outline">← Voltar para Página Inicial</a>
+            <a href="search-option-b.html" class="btn btn-primary" style="margin-left: 10px;">Ver Opção B (Dropdown) →</a>
+        </div>
+    </div>
+
+    <script src="assets/js/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initSearchOptionA();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Pesquisa | CTG Química</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .resultados-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .resultados-header {
+            margin-bottom: 40px;
+        }
+        .resultados-header h1 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        .resultados-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .search-again {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            padding: 8px 8px 8px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .search-again svg {
+            flex-shrink: 0;
+            color: #999;
+        }
+        .search-again input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+        }
+        .search-again .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .search-results-count {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .search-results-count strong {
+            color: var(--dark-color);
+        }
+        .search-results-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .search-result-card {
+            display: block;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .search-result-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .search-result-card-type {
+            display: inline-block;
+            background: var(--primary-color-soft);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .search-result-card-title {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .search-result-card:hover .search-result-card-title {
+            color: var(--primary-color);
+        }
+        .search-result-card-content {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .search-result-card-page {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .search-result-card-page svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s;
+        }
+        .search-result-card:hover .search-result-card-page svg {
+            transform: translateX(4px);
+        }
+        mark {
+            background: #ffe0b2;
+            color: var(--primary-color);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        .search-no-results {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .search-no-results h2 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        .search-no-results p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .search-suggestion {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .search-suggestion h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .search-suggestion ul {
+            list-style: none;
+            padding: 0;
+            color: #666;
+            line-height: 1.8;
+        }
+        .search-suggestion li:before {
+            content: "• ";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .voltar-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="margin-top: 100px;">
+        <div class="resultados-container">
+            <div class="resultados-header">
+                <h1>Resultados da Pesquisa</h1>
+                <p>Encontre as soluções ideais para o seu negócio</p>
+            </div>
+
+            <div class="search-again">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="search-input" placeholder="Pesquisar novamente...">
+                <a href="#" id="search-btn" class="btn btn-primary">Pesquisar</a>
+            </div>
+
+            <div id="search-results"></div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initSearchResultsPage();
+            
+            // Ativar pesquisa novamente
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            
+            if (searchInput && searchBtn) {
+                const urlParams = new URLSearchParams(window.location.search);
+                const query = urlParams.get('q');
+                if (query) {
+                    searchInput.value = query;
+                }
+                
+                searchBtn.addEventListener('click', () => {
+                    const newQuery = searchInput.value.trim();
+                    if (newQuery.length >= 2) {
+                        window.location.href = `search-results.html?q=${encodeURIComponent(newQuery)}`;
+                    }
+                });
+                
+                searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const newQuery = searchInput.value.trim();
+                        if (newQuery.length >= 2) {
+                            window.location.href = `search-results.html?q=${encodeURIComponent(newQuery)}`;
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

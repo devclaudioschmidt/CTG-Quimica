@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Pesquisa - Opção B | CTG Química</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .teste-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .teste-titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .teste-titulo h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .teste-titulo p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .busca-destaque {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            padding: 8px 8px 8px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .busca-destaque svg {
+            flex-shrink: 0;
+            color: #999;
+        }
+        .busca-destaque input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+        }
+        .busca-destaque input::placeholder {
+            color: #999;
+        }
+        .busca-destaque .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        #search-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            z-index: 1000;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+        }
+        #search-dropdown.active {
+            display: block;
+        }
+        .search-result-item {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+        .search-result-item:hover {
+            background: #f8f9fa;
+        }
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        .search-result-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+        .search-result-title mark {
+            background: #ffe0b2;
+            color: var(--primary-color);
+            padding: 0 2px;
+        }
+        .search-result-type {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .search-result-content {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        .search-no-results {
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 0.95rem;
+        }
+        .teste-info {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .teste-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        .teste-info ul {
+            margin: 10px 0 0 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+        .teste-voltar {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="teste-container">
+        <div class="teste-titulo">
+            <h1>Teste de Pesquisa - Opção B</h1>
+            <p>Dropdown na mesma página com resultados em tempo real</p>
+        </div>
+
+        <div class="busca-destaque">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" placeholder="Digite para pesquisar...">
+            <button id="search-btn" class="btn btn-primary">Buscar</button>
+            <div id="search-dropdown"></div>
+        </div>
+
+        <div class="teste-info">
+            <h3>Como funciona:</h3>
+            <ul>
+                <li>Digite um termo na barra de pesquisa (mínimo 2 caracteres)</li>
+                <li>Um dropdown aparecerá abaixo da barra após 300ms</li>
+                <li>Mostra até 10 resultados em tempo real</li>
+                <li>Clique em um resultado → Redireciona para a página</li>
+                <li>Clique fora ou limpe o campo → Fecha dropdown</li>
+            </ul>
+        </div>
+
+        <div class="teste-voltar">
+            <a href="index.html" class="btn btn-outline">← Voltar para Página Inicial</a>
+            <a href="search-option-a.html" class="btn btn-primary" style="margin-left: 10px;">Ver Opção A (Redirecionar) →</a>
+        </div>
+    </div>
+
+    <script src="assets/js/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initSearchOptionB();
+        });
+    </script>
+</body>
+</html>
