@@ -252,12 +252,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Adicionar eventos à barra de pesquisa existente
                 const searchInput = document.querySelector('.busca-destaque input');
                 const searchBtn = document.querySelector('.busca-destaque button');
-                const dropdown = document.getElementById('search-dropdown');
+                let dropdown = document.getElementById('search-dropdown');
                 
-                if (searchInput && searchBtn && dropdown) {
+                // Mover dropdown para o body para evitar problemas de z-index e overflow
+                if (dropdown) {
+                    dropdown.remove();
+                }
+                dropdown = document.createElement('div');
+                dropdown.id = 'search-dropdown';
+                dropdown.className = 'search-dropdown';
+                document.body.appendChild(dropdown);
+                
+                if (searchInput && searchBtn) {
                 
                 // Usar lógica da Opção B
                 let debounceTimer;
+                
+                // Função para posicionar o dropdown
+                function positionDropdown() {
+                    const rect = searchInput.getBoundingClientRect();
+                    dropdown.style.position = 'fixed';
+                    dropdown.style.top = (rect.bottom + 8) + 'px';
+                    dropdown.style.left = rect.left + 'px';
+                    dropdown.style.width = rect.width + 'px';
+                }
                 
                 searchInput.addEventListener('input', () => {
                     clearTimeout(debounceTimer);
@@ -283,9 +301,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             dropdown.innerHTML = html;
                         }
                         
+                        positionDropdown();
                         dropdown.classList.add('active');
                     }, SEARCH_CONFIG.debounceTime);
                 });
+                
+                // Reposicionar no scroll/resize
+                window.addEventListener('scroll', positionDropdown);
+                window.addEventListener('resize', positionDropdown);
                 
                 searchBtn.addEventListener('click', () => {
                     const query = searchInput.value.trim();

@@ -1007,6 +1007,7 @@ body.menu-aberto {
     border: 1px solid rgba(0, 0, 0, 0.05);
     position: relative;
     z-index: 99998;
+    isolation: isolate;
 }
 
 .busca-destaque input {
@@ -5061,19 +5062,16 @@ body.menu-aberto {
 
 /* Dropdown de pesquisa */
 #search-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: fixed;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    margin-top: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    z-index: 99999;
+    z-index: 999999;
     max-height: 400px;
     overflow-y: auto;
     display: none;
+    margin-top: 8px;
 }
 
 #search-dropdown.active {
