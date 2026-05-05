@@ -1602,11 +1602,10 @@ body.menu-aberto {
     width: 100%;
 }
 
-.grade-rodape-3col>.footer-col,
->.footer-col,
-.grade-rodape-2col>.footer-col,
-.grade-rodape-2col>.footer-left,
-.grade-rodape-2col>.rodape-direita {
+.grade-rodape-3col > .footer-col,
+.grade-rodape-2col > .footer-col,
+.grade-rodape-2col > .footer-left,
+.grade-rodape-2col > .rodape-direita {
     min-width: 0;
     width: 100%;
 }
@@ -1997,11 +1996,11 @@ body.menu-aberto {
 }
 
 @media (max-width: 991px) {
-
+    
     .footer-grid-2col,
     .footer-grid-3col,
     .grade-rodape-3col {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .interior-newsletter-rodape {
