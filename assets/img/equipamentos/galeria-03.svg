@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+  <rect width="480" height="320" rx="12" fill="#f0f4f0"/>
+  <rect x="60" y="40" width="360" height="240" rx="12" fill="#e0e8e0" stroke="#ff7a00" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="90" y="80" width="80" height="60" rx="6" fill="#ff7a00" opacity="0.5"/>
+  <rect x="190" y="100" width="60" height="40" rx="6" fill="#1a7a3f" opacity="0.4"/>
+  <rect x="270" y="70" width="70" height="70" rx="6" fill="#ff7a00" opacity="0.4"/>
+  <path d="M90 200 l40 -50 l30 40 l50 -60 l60 70" stroke="#1a7a3f" stroke-width="2" fill="none" opacity="0.4"/>
+  <circle cx="320" cy="210" r="30" fill="#1a7a3f" opacity="0.15"/>
+  <text x="240" y="310" font-family="Inter, sans-serif" font-size="13" fill="#888" text-anchor="middle">Instalação em Propriedade Rural</text>
+  <text x="240" y="12" font-family="Inter, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">Foto ilustrativa</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <rect width="400" height="320" rx="12" fill="#f5f7f5"/>
+  <rect x="20" y="15" width="360" height="210" rx="8" fill="#e8efe8" stroke="#1a7a3f" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="90" y="45" width="90" height="110" rx="8" fill="#ff7a00" opacity="0.6"/>
+  <rect x="195" y="60" width="65" height="95" rx="8" fill="#1a7a3f" opacity="0.5"/>
+  <rect x="275" y="35" width="55" height="120" rx="8" fill="#ff7a00" opacity="0.5"/>
+  <circle cx="240" cy="185" r="22" fill="#1a7a3f" opacity="0.2"/>
+  <circle cx="240" cy="185" r="12" fill="#1a7a3f" opacity="0.4"/>
+  <text x="200" y="260" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#1a7a3f" text-anchor="middle">CTG Pluv 1000</text>
+  <text x="200" y="280" font-family="Inter, sans-serif" font-size="12" fill="#999" text-anchor="middle">Foto ilustrativa</text>
+  <rect x="120" y="290" width="160" height="24" rx="12" fill="#ff7a00" opacity="0.8"/>
+  <text x="200" y="307" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">Até 1.000 L/h</text>
+</svg>

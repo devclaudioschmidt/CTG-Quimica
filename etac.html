@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTG Pluv | Linha de Estações de Tratamento de Água da Chuva — ETAC | CTG Química</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* ============================================
+           ETAC PAGE - Hero
+        ============================================ */
+        .hero-etac {
+            position: relative;
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, rgba(26, 90, 60, 0.65) 0%, rgba(13, 59, 35, 0.75) 100%), url('assets/img/hero_campo_irrigacao.png') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-etac::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 122, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatCircle1 20s ease-in-out infinite;
+        }
+
+        .hero-etac::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatCircle3 15s ease-in-out infinite 2s;
+        }
+
+        .hero-etac .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-etac-conteudo {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-etac h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-etac h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-etac .hero-subtitulo {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-etac .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--primary-color);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+            box-shadow: 0 8px 25px rgba(255, 122, 0, 0.35);
+        }
+
+        .hero-etac .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 122, 0, 0.5);
+            background: var(--primary-dark);
+        }
+
+        .hero-etac .hero-cta svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ============================================
+           ETAC PAGE - Seções genéricas
+        ============================================ */
+        .etac-secao {
+            padding: 80px 0;
+        }
+
+        .etac-secao-bg {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .etac-titulo-secao {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .etac-titulo-secao h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 900;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+        }
+
+        .etac-titulo-secao h2 span {
+            color: var(--primary-color);
+        }
+
+        .etac-titulo-secao p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           Solução - Grid 2 colunas
+        ============================================ */
+        .etac-solucao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .etac-solucao-texto p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .etac-solucao-texto p:last-child {
+            margin-bottom: 0;
+        }
+
+        .etac-solucao-texto strong {
+            color: var(--dark-color);
+        }
+
+        .etac-solucao-imagem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .etac-solucao-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ============================================
+           Aplicações - Cards 2x2
+        ============================================ */
+        .etac-aplicacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .etac-card-aplicacao {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.35s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .etac-card-aplicacao::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s var(--ease-out-expo);
+        }
+
+        .etac-card-aplicacao:hover::before {
+            transform: scaleX(1);
+        }
+
+        .etac-card-aplicacao:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color-soft);
+        }
+
+        .etac-card-aplicacao-icone {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .etac-card-aplicacao:hover .etac-card-aplicacao-icone {
+            transform: scale(1.1) rotate(-5deg);
+            background: var(--primary-dark);
+        }
+
+        .etac-card-aplicacao-icone svg {
+            width: 32px;
+            height: 32px;
+            color: #fff;
+        }
+
+        .etac-card-aplicacao h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .etac-card-aplicacao p {
+            font-size: 0.92rem;
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================
+           Etapas de Purificação - 4 colunas
+        ============================================ */
+        .etac-etapas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .etac-card-etapa {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.35s var(--ease-out-expo);
+            border: 1px solid var(--medium-gray);
+            position: relative;
+        }
+
+        .etac-card-etapa:hover {
+            border-color: var(--primary-color-soft);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .etac-etapa-numero {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #0d5a2d 100%);
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .etac-card-etapa:hover .etac-etapa-numero {
+            transform: scale(1.15);
+            box-shadow: 0 8px 25px rgba(26, 122, 63, 0.3);
+        }
+
+        .etac-card-etapa h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .etac-card-etapa p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================
+           Tabela Comparativa de Modelos
+        ============================================ */
+        .etac-tabela-modelos {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .etac-tabela-linha {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            border-bottom: 1px solid var(--medium-gray);
+            transition: background 0.2s;
+        }
+
+        .etac-tabela-linha:last-child {
+            border-bottom: none;
+        }
+
+        .etac-tabela-linha:hover {
+            background: rgba(255, 122, 0, 0.03);
+        }
+
+        .etac-tabela-linha.etac-tabela-header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #0d5a2d 100%);
+            border-bottom: none;
+        }
+
+        .etac-tabela-linha.etac-tabela-header .etac-tabela-item {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            padding: 20px 24px;
+        }
+
+        .etac-tabela-item {
+            padding: 16px 24px;
+            font-size: 0.92rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .etac-tabela-item:first-child {
+            font-weight: 700;
+            color: var(--dark-color);
+            background: rgba(26, 122, 63, 0.04);
+        }
+
+        .etac-tabela-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .etac-tabela-check {
+            color: var(--secondary-color);
+        }
+
+        .etac-tabela-item .etac-tabela-destaque {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .etac-tabela-nota {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 16px;
+        }
+
+        /* ============================================
+           Características - Fácil de Operar
+        ============================================ */
+        .etac-caracteristicas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .etac-card-caracteristica {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.35s var(--ease-out-expo);
+            border: 1px solid transparent;
+        }
+
+        .etac-card-caracteristica:hover {
+            background: #fff;
+            border-color: var(--primary-color-soft);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .etac-card-caracteristica .etac-carac-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .etac-card-caracteristica:hover .etac-carac-icon {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 8px 25px rgba(26, 122, 63, 0.3);
+        }
+
+        .etac-card-caracteristica .etac-carac-icon svg {
+            width: 28px;
+            height: 28px;
+            color: #fff;
+        }
+
+        .etac-card-caracteristica h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .etac-card-caracteristica p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================
+           CTA Box (mesmo padrão do proteina-animal)
+        ============================================ */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-box h3 {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .cta-box .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 36px;
+            background: #fff;
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-box .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: var(--dark-color);
+            color: #fff;
+        }
+
+        /* ============================================
+           Diferenciais - Por que escolher
+        ============================================ */
+        .etac-diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        /* ============================================
+           Especificações Gerais
+        ============================================ */
+        .etac-especificacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .etac-especificacao-item {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .etac-especificacao-item:hover {
+            border-color: var(--primary-color-soft);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .etac-especificacao-item .etac-spec-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .etac-especificacao-item .etac-spec-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .etac-especificacao-item .etac-spec-value span {
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           Modelos - Cards com foto
+        ============================================ */
+        .etac-modelos-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .etac-card-modelo {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--medium-gray);
+            transition: all 0.35s var(--ease-out-expo);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .etac-card-modelo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color-soft);
+        }
+
+        .etac-card-modelo-img {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-gray);
+            overflow: hidden;
+        }
+
+        .etac-card-modelo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .etac-card-modelo:hover .etac-card-modelo-img img {
+            transform: scale(1.05);
+        }
+
+        .etac-card-modelo-body {
+            padding: 24px 28px;
+        }
+
+        .etac-card-modelo-body h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 6px;
+        }
+
+        .etac-card-modelo-body .etac-modelo-capacidade {
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .etac-card-modelo-body p {
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================
+           Especificações - Grid com foto
+        ============================================ */
+        .etac-spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .etac-spec-foto {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .etac-spec-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .etac-spec-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .etac-spec-item {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .etac-spec-item:hover {
+            border-color: var(--primary-color-soft);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .etac-spec-item .etac-spec-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
+        }
+
+        .etac-spec-item .etac-spec-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .etac-spec-item .etac-spec-value span {
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           Galeria de Fotos
+        ============================================ */
+        .etac-galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .etac-galeria-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--medium-gray);
+            transition: all 0.35s var(--ease-out-expo);
+        }
+
+        .etac-galeria-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color-soft);
+        }
+
+        .etac-galeria-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .etac-galeria-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .etac-galeria-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .etac-galeria-item:hover .etac-galeria-overlay {
+            opacity: 1;
+        }
+
+        .etac-galeria-overlay svg {
+            width: 48px;
+            height: 48px;
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        .etac-galeria-legenda {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 16px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           Modal Zoom (reaproveitando .modal-overlay)
+        ============================================ */
+        .modal-zoom-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .modal-zoom-legenda {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .modal-zoom-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 1;
+        }
+
+        .modal-zoom-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-zoom-close svg {
+            width: 22px;
+            height: 22px;
+            stroke: #fff;
+            stroke-width: 2.5;
+        }
+
+        /* ============================================
+           Animações ETAC
+        ============================================ */
+        .etac-anima-titulo,
+        .etac-anima-intro,
+        .etac-anima-grid,
+        .etac-anima-card,
+        .etac-anima-tabela,
+        .etac-anima-cta {
+            opacity: 0;
+        }
+
+        .etac-anima-titulo.visible,
+        .etac-anima-intro.visible,
+        .etac-anima-grid.visible,
+        .etac-anima-card.visible,
+        .etac-anima-tabela.visible,
+        .etac-anima-cta.visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .etac-anima-card.visible:nth-child(2) { animation-delay: 0.1s; }
+        .etac-anima-card.visible:nth-child(3) { animation-delay: 0.2s; }
+        .etac-anima-card.visible:nth-child(4) { animation-delay: 0.3s; }
+
+        /* ============================================
+           Responsivo
+        ============================================ */
+        @media (max-width: 992px) {
+            .etac-solucao-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .etac-solucao-imagem {
+                order: -1;
+            }
+
+            .etac-etapas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .etac-diferenciais-grid,
+            .etac-caracteristicas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .etac-especificacoes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .etac-diferenciais-grid,
+            .etac-caracteristicas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .etac-especificacoes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .etac-modelos-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .etac-spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-etac {
+                padding: 60px 0 40px;
+            }
+
+            .etac-secao,
+            .etac-secao-bg {
+                padding: 60px 0;
+            }
+
+            .etac-aplicacoes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-tabela-linha {
+                grid-template-columns: 1.2fr 1fr 1fr;
+                font-size: 0.85rem;
+            }
+
+            .etac-tabela-item {
+                padding: 12px 14px;
+            }
+
+            .cta-box {
+                padding: 60px 24px;
+            }
+
+            .cta-box .btn-cta {
+                padding: 14px 28px;
+                font-size: 0.9rem;
+            }
+
+            .etac-modelos-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-spec-items {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-galeria-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-card-modelo-img {
+                height: 180px;
+            }
+
+            .etac-galeria-item img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .etac-etapas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-diferenciais-grid,
+            .etac-caracteristicas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-especificacoes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .etac-tabela-linha {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .etac-tabela-item {
+                padding: 10px 16px;
+                border-bottom: 1px solid var(--medium-gray);
+            }
+
+            .etac-tabela-item:first-child {
+                background: rgba(26, 122, 63, 0.06);
+                font-size: 0.95rem;
+            }
+
+            .etac-tabela-linha.etac-tabela-header {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <nav class="breadcrumb-bar" aria-label="Navegação">
+        <div class="container">
+            <a href="index.html">Página Inicial</a>
+            <svg class="separator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            <a href="#">Equipamentos</a>
+            <svg class="separator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            <span class="current">Linha CTG Pluv</span>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero-etac">
+            <div class="container">
+                <div class="hero-etac-conteudo etac-anima-titulo">
+                    <h1>Produtividade e Economia: Transforme a Água da Chuva em <span>Recurso Seguro</span> para o seu Agronegócio</h1>
+                    <p class="hero-subtitulo">Conheça a <strong>Linha CTG Pluv (ETAC)</strong>, com modelos de 500 e 1.000 litros/hora — a solução portátil que garante água tratada de alta qualidade para otimizar os processos na sua fazenda, agroindústria ou granja.</p>
+                    <a href="https://wa.me/5541991536821" target="_blank" rel="noopener noreferrer" class="hero-cta">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Falar com um Especialista
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SOLUÇÃO ==================== -->
+        <section class="etac-secao">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-intro">
+                    <h2>Inteligência Hídrica <span>no Campo</span></h2>
+                    <p>A Linha CTG Pluv foi projetada para dar autonomia e segurança hídrica à sua operação rural</p>
+                </div>
+
+                <div class="etac-solucao-grid etac-anima-grid">
+                    <div class="etac-solucao-texto">
+                        <p>O sucesso no agronegócio depende da gestão eficiente de cada recurso. Depender exclusivamente de poços artesianos ou caminhões-pipa pode inflar os custos operacionais e colocar a produção em risco em períodos de estiagem.</p>
+                        <p>A <strong>Linha CTG Pluv (ETAC)</strong> — Estações de Tratamento de Água da Chuva — da CTG Química foi desenvolvida para dar autonomia hídrica à sua propriedade. Ela atua como um sistema de polimento final portátil, purificando a água captada dos telhados de galpões e estruturas para que ela atenda rigorosamente às exigências físico-químicas e microbiológicas da legislação sanitária.</p>
+                        <p><strong>Mais segurança e economia porteira para dentro.</strong></p>
+                    </div>
+                    <div class="etac-solucao-imagem">
+                        <img src="assets/img/equipamentos/ctg-pluv-equipamento.svg" alt="Linha CTG Pluv (ETAC) - Estações de Tratamento de Água da Chuva">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== APLICAÇÕES ==================== -->
+        <section class="etac-secao-bg">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Aplicações Inteligentes na <span>Propriedade Rural</span></h2>
+                    <p>Versatilidade para os desafios do dia a dia no campo</p>
+                </div>
+
+                <div class="etac-aplicacoes-grid etac-anima-grid">
+                    <div class="etac-card-aplicacao etac-anima-card">
+                        <div class="etac-card-aplicacao-icone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Lavagem de Frota e Maquinários</h3>
+                        <p>Água livre de areia e partículas pesadas para limpar tratores, colheitadeiras e implementos sem riscar ou danificar os componentes.</p>
+                    </div>
+
+                    <div class="etac-card-aplicacao etac-anima-card">
+                        <div class="etac-card-aplicacao-icone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Higienização de Galpões e Granjas</h3>
+                        <p>Garanta a biosseguridade no manejo de animais utilizando água livre de vírus e bactérias na limpeza das instalações.</p>
+                    </div>
+
+                    <div class="etac-card-aplicacao etac-anima-card">
+                        <div class="etac-card-aplicacao-icone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Preparação de Caldas e Pulverização</h3>
+                        <p>A filtragem por carvão ativado retira compostos orgânicos e toxinas da água, evitando reações indesejadas que possam reduzir a eficácia de defensivos agrícolas.</p>
+                    </div>
+
+                    <div class="etac-card-aplicacao etac-anima-card">
+                        <div class="etac-card-aplicacao-icone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Sistemas de Resfriamento e Irrigação Localizada</h3>
+                        <p>Evite o entupimento de bicos e tubulações com um sistema que retém sólidos de até 25 micras.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ETAPAS DE PURIFICAÇÃO ==================== -->
+        <section class="etac-secao">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Tecnologia de Ponta em <span>4 Etapas</span> de Purificação</h2>
+                    <p>Como a Linha CTG Pluv garante a segurança que o campo precisa</p>
+                </div>
+
+                <div class="etac-etapas-grid etac-anima-grid">
+                    <div class="etac-card-etapa etac-anima-card">
+                        <div class="etac-etapa-numero">1</div>
+                        <h3>Filtração por Quartzo</h3>
+                        <p>Retém terra, poeira e partículas sólidas superiores a 25 micras, comuns em captações de telhados rurais.</p>
+                    </div>
+
+                    <div class="etac-card-etapa etac-anima-card">
+                        <div class="etac-etapa-numero">2</div>
+                        <h3>Adsorção por Carvão Ativado</h3>
+                        <p>Remove odores, gostos e compostos orgânicos, entregando uma água limpa e polida para uso seguro.</p>
+                    </div>
+
+                    <div class="etac-card-etapa etac-anima-card">
+                        <div class="etac-etapa-numero">3</div>
+                        <h3>Esterilização UV-C</h3>
+                        <p>Destruição biológica sem uso de química agressiva. Elimina vírus e bactérias por contato instantâneo através da tecnologia UVTRAT.</p>
+                    </div>
+
+                    <div class="etac-card-etapa etac-anima-card">
+                        <div class="etac-etapa-numero">4</div>
+                        <h3>Dosagem Automática de Cloro</h3>
+                        <p>Uma bomba de precisão mantém os reservatórios e tubulações protegidos contra a formação de algas e contaminações posteriores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DIFERENCIAIS ==================== -->
+        <section class="etac-secao-bg">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Por que escolher a <span>Linha CTG Pluv</span>?</h2>
+                    <p>Benefícios estratégicos para a gestão hídrica da sua propriedade</p>
+                </div>
+
+                <div class="etac-diferenciais-grid etac-anima-grid">
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Economia Comprovada</h3>
+                        <p>Reduza em até 60% os custos com caminhão-pipa e poços artesianos. O investimento se paga rapidamente com a eliminação de despesas recorrentes com abastecimento externo.</p>
+                    </div>
+
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Autonomia Hídrica</h3>
+                        <p>Água tratada de alta qualidade disponível na sua propriedade mesmo em períodos críticos de estiagem, reduzindo a dependência de fontes externas imprevisíveis.</p>
+                    </div>
+
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Biosseguridade Garantida</h3>
+                        <p>Água livre de vírus, bactérias e contaminantes químicos. A esterilização UV-C associada à dosagem de cloro assegura conformidade com as normas sanitárias mais rigorosas.</p>
+                    </div>
+
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                <polyline points="4 9 20 9"></polyline>
+                                <line x1="9" y1="4" x2="9" y2="20"></line>
+                            </svg>
+                        </div>
+                        <h3>Portabilidade e Robustez</h3>
+                        <p>Estrutura SKID em Aço Inox 304 com tubulação PPR fundida. Projetado para ser transportado e instalado em diferentes pontos da propriedade com facilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MODELOS ==================== -->
+        <section class="etac-secao">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Conheça os Modelos da <span>Linha CTG Pluv</span></h2>
+                    <p>Escolha a capacidade ideal para a demanda da sua propriedade</p>
+                </div>
+
+                <div class="etac-modelos-cards etac-anima-grid">
+                    <div class="etac-card-modelo etac-anima-card">
+                        <div class="etac-card-modelo-img">
+                            <img src="assets/img/equipamentos/ctg-pluv-500-foto.svg" alt="CTG Pluv 500">
+                        </div>
+                        <div class="etac-card-modelo-body">
+                            <h3>CTG Pluv 500</h3>
+                            <div class="etac-modelo-capacidade">Até 500 litros/hora</div>
+                            <p>Modelo de entrada da Linha CTG Pluv. Ideal para pequenas e médias propriedades, atende demandas moderadas de água tratada para lavagem de maquinários e higienização de instalações.</p>
+                        </div>
+                    </div>
+                    <div class="etac-card-modelo etac-anima-card">
+                        <div class="etac-card-modelo-img">
+                            <img src="assets/img/equipamentos/ctg-pluv-1000-foto.svg" alt="CTG Pluv 1000">
+                        </div>
+                        <div class="etac-card-modelo-body">
+                            <h3>CTG Pluv 1000</h3>
+                            <div class="etac-modelo-capacidade">Até 1.000 litros/hora</div>
+                            <p>Modelo de alta capacidade da Linha CTG Pluv. Recomendado para médias e grandes operações agroindustriais, com maior vazão para atender demandas intensivas em múltiplos pontos da propriedade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="etac-tabela-modelos etac-anima-tabela">
+                    <div class="etac-tabela-linha etac-tabela-header">
+                        <div class="etac-tabela-item">Recursos e Capacidades</div>
+                        <div class="etac-tabela-item">CTG Pluv 500</div>
+                        <div class="etac-tabela-item">CTG Pluv 1000</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Capacidade de Tratamento
+                        </div>
+                        <div class="etac-tabela-item"><span class="etac-tabela-destaque">Até 500 L/h</span></div>
+                        <div class="etac-tabela-item"><span class="etac-tabela-destaque">Até 1.000 L/h</span></div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                            Estrutura
+                        </div>
+                        <div class="etac-tabela-item">SKID em Aço Inox 304</div>
+                        <div class="etac-tabela-item">SKID em Aço Inox 304</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            Durabilidade no Campo
+                        </div>
+                        <div class="etac-tabela-item">Filtros em Inox (Não resseca ao sol)</div>
+                        <div class="etac-tabela-item">Filtros em Inox (Não resseca ao sol)</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            Potência e Performance
+                        </div>
+                        <div class="etac-tabela-item">Motobomba Centrífuga de ½ CV</div>
+                        <div class="etac-tabela-item">Motobomba Centrífuga de 1 CV</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+                            Desinfecção Biológica
+                        </div>
+                        <div class="etac-tabela-item">Lâmpada UV-C Germicida 18W</div>
+                        <div class="etac-tabela-item">Lâmpada UV-C Germicida 36W</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            Dimensões (L x P x A)
+                        </div>
+                        <div class="etac-tabela-item">800 x 600 x 1200 mm</div>
+                        <div class="etac-tabela-item">1000 x 700 x 1400 mm</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            Peso
+                        </div>
+                        <div class="etac-tabela-item">~85 kg</div>
+                        <div class="etac-tabela-item">~120 kg</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Pressão de Trabalho
+                        </div>
+                        <div class="etac-tabela-item">2 a 4 bar</div>
+                        <div class="etac-tabela-item">2 a 4 bar</div>
+                    </div>
+
+                    <div class="etac-tabela-linha">
+                        <div class="etac-tabela-item">
+                            <svg class="etac-tabela-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            Consumo Elétrico
+                        </div>
+                        <div class="etac-tabela-item">370 W</div>
+                        <div class="etac-tabela-item">750 W</div>
+                    </div>
+                </div>
+
+                <p class="etac-tabela-nota">* Ambos os modelos da Linha CTG Pluv contam com dosagem automática de cloro, painel de comando IP55 e tubulação em PPR fundido. Outras capacidades e configurações estarão disponíveis em breve.</p>
+            </div>
+        </section>
+
+        <!-- ==================== CARACTERÍSTICAS ==================== -->
+        <section class="etac-secao-bg">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Projetada para a Rotina do Produtor: <span>Fácil de Operar e Manter</span></h2>
+                    <p>Equipamento robusto que não dá dor de cabeça — o tempo no campo é precioso</p>
+                </div>
+
+                <div class="etac-caracteristicas-grid etac-anima-grid">
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>Painel Blindado IP55</h3>
+                        <p>Proteção total contra poeira do campo e umidade, garantindo funcionamento confiável em qualquer condição.</p>
+                    </div>
+
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="7.86 2 16.14 2 21 7.86 21 16.14 16.14 21 7.86 21 2 16.14 2 7.86 7.86 2"></polygon>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <h3>Alarme de Retrolavagem</h3>
+                        <p>Alarme sonoro e luminoso (Pressostato) que avisa exatamente a hora de fazer a retrolavagem do filtro de areia.</p>
+                    </div>
+
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Contador Digital UV</h3>
+                        <p>Mostra na tela os dias de uso da lâmpada, garantindo que você programe a manutenção preventiva sem interromper sua operação.</p>
+                    </div>
+
+                    <div class="etac-card-caracteristica etac-anima-card">
+                        <div class="etac-carac-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Hidrômetro Integrado</h3>
+                        <p>Meça exatamente quantos litros de água tratada utilizou e calcule o retorno do seu investimento com precisão.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ESPECIFICAÇÕES GERAIS ==================== -->
+        <section class="etac-secao">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Especificações <span>Gerais</span></h2>
+                    <p>Características comuns aos modelos da Linha CTG Pluv</p>
+                </div>
+
+                <div class="etac-spec-grid etac-anima-grid">
+                    <div class="etac-spec-foto etac-anima-card">
+                        <img src="assets/img/equipamentos/ctg-pluv-painel.svg" alt="Painel de controle CTG Pluv">
+                    </div>
+                    <div class="etac-spec-items">
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Voltagem</div>
+                            <div class="etac-spec-value">Bivolt <span>127 / 220 V</span></div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Frequência</div>
+                            <div class="etac-spec-value"><span>60 Hz</span></div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Material do SKID</div>
+                            <div class="etac-spec-value">Aço Inox <span>304</span></div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Tubulações</div>
+                            <div class="etac-spec-value"><span>PPR</span> Fundido</div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Proteção Elétrica</div>
+                            <div class="etac-spec-value"><span>IP55</span></div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Garantia</div>
+                            <div class="etac-spec-value"><span>12 meses</span> contra defeitos de fabricação</div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Filtragem Mecânica</div>
+                            <div class="etac-spec-value">Partículas <span>&gt; 25 micras</span></div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Classe da Bomba</div>
+                            <div class="etac-spec-value">Motobomba <span>Centrífuga</span></div>
+                        </div>
+                        <div class="etac-spec-item etac-anima-card">
+                            <div class="etac-spec-label">Certificações</div>
+                            <div class="etac-spec-value">Conforme normas <span>ABNT/NBR</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== GALERIA DE FOTOS ==================== -->
+        <section class="etac-secao-bg">
+            <div class="container">
+                <div class="etac-titulo-secao etac-anima-titulo">
+                    <h2>Galeria de <span>Fotos</span></h2>
+                    <p>Veja o CTG Pluv em detalhes</p>
+                </div>
+
+                <div class="etac-galeria-grid etac-anima-grid" id="etac-galeria">
+                    <div class="etac-galeria-item etac-anima-card" data-img="assets/img/equipamentos/galeria-01.svg" data-legenda="CTG Pluv — Vista frontal do equipamento">
+                        <img src="assets/img/equipamentos/galeria-01.svg" alt="CTG Pluv — Vista Frontal">
+                        <div class="etac-galeria-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <div class="etac-galeria-legenda">CTG Pluv — Vista Frontal</div>
+                    </div>
+
+                    <div class="etac-galeria-item etac-anima-card" data-img="assets/img/equipamentos/galeria-02.svg" data-legenda="Detalhe do Painel de Controle IP55">
+                        <img src="assets/img/equipamentos/galeria-02.svg" alt="Detalhe do Painel de Controle">
+                        <div class="etac-galeria-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <div class="etac-galeria-legenda">Detalhe do Painel de Controle IP55</div>
+                    </div>
+
+                    <div class="etac-galeria-item etac-anima-card" data-img="assets/img/equipamentos/galeria-03.svg" data-legenda="Instalação em Propriedade Rural">
+                        <img src="assets/img/equipamentos/galeria-03.svg" alt="Instalação em Propriedade Rural">
+                        <div class="etac-galeria-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <div class="etac-galeria-legenda">Instalação em Propriedade Rural</div>
+                    </div>
+
+                    <div class="etac-galeria-item etac-anima-card" data-img="assets/img/equipamentos/galeria-04.svg" data-legenda="CTG Pluv 500 e 1000 — Comparativo">
+                        <img src="assets/img/equipamentos/galeria-04.svg" alt="CTG Pluv 500 e 1000 — Comparativo">
+                        <div class="etac-galeria-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <div class="etac-galeria-legenda">CTG Pluv 500 e 1000 — Comparativo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <div class="cta-box etac-anima-cta">
+            <div class="container">
+                <h3>Reduza os custos fixos da sua propriedade e aumente sua autonomia hídrica</h3>
+                <p>Fale com nossos engenheiros especialistas em agronegócio e descubra qual modelo da Linha CTG Pluv é o ideal para a demanda da sua fazenda ou agroindústria.</p>
+                <a href="https://wa.me/5541991536821" target="_blank" rel="noopener noreferrer" class="btn-cta">
+                    Solicitar Dimensionamento de Projeto no WhatsApp
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ==================== MODAL ZOOM ==================== -->
+    <div id="modal-zoom" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Zoom de imagem">
+        <button class="modal-zoom-close" aria-label="Fechar" id="modal-zoom-close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div>
+            <img class="modal-zoom-img" src="" alt="">
+            <p class="modal-zoom-legenda"></p>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.etac-anima-titulo, .etac-anima-intro, .etac-anima-grid, .etac-anima-card, .etac-anima-tabela, .etac-anima-cta').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Modal de zoom da galeria
+            const modalZoom = document.getElementById('modal-zoom');
+            const modalZoomImg = modalZoom.querySelector('.modal-zoom-img');
+            const modalZoomLegenda = modalZoom.querySelector('.modal-zoom-legenda');
+            const modalZoomClose = document.getElementById('modal-zoom-close');
+
+            document.querySelectorAll('.etac-galeria-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.getAttribute('data-img');
+                    const legenda = this.getAttribute('data-legenda');
+                    modalZoomImg.src = img;
+                    modalZoomImg.alt = legenda;
+                    modalZoomLegenda.textContent = legenda;
+                    modalZoom.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            function fecharModalZoom() {
+                modalZoom.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            modalZoomClose.addEventListener('click', fecharModalZoom);
+            modalZoom.addEventListener('click', function(e) {
+                if (e.target === this) fecharModalZoom();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') fecharModalZoom();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
